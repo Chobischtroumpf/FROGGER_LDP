@@ -7,7 +7,6 @@
                 "${workspaceFolder}/includes/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
             "cppStandard": "gnu++20",
             "intelliSenseMode": "linux-gcc-x86"
