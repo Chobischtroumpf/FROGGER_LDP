@@ -1,14 +1,21 @@
-#include "froggers.hpp"
+#ifndef CELL_HPP
+#define CELL_HPP 1
 
+#include "Rectangle.hpp"
+
+template <typename Drawable>
 class Cell {
-  Rectangle drawable;
+  Drawable   drawable;
+
 
  public:
   // Constructor
-  Cell(Rectangle drawable);
+  Cell(Drawable drawable);
 
   // Methods that draw and handle events
-
   void draw();
   void mouseClick(Point mouseLoc);
+
+  ~Cell() {}
 };
+#endif

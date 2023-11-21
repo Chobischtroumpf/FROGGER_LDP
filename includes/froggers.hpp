@@ -6,12 +6,4 @@
 # include <FL/Fl_Double_Window.H>
 # include <FL/fl_draw.H>
 
-struct Point {
-  int x, y;
-};
-
-#include "Canvas.hpp"
-#include "Rectangle.hpp"
-#include "Cell.hpp"
-
 #endif

@@ -11,21 +11,23 @@
 /* ************************************************************************** */
 
 #include "froggers.hpp"
+#include "Canvas.hpp"
 
 class MainWindow : public Fl_Window {
   Canvas canvas;
-  static int refreshPerSecond;
+  int refreshPerSecond;
  public:
-  MainWindow(int windowWidth, int windowHeight, char *title, int refreshPerSecond) :
-    Fl_Window(500, 500, windowWidth, windowHeight, title) {
-    this->refreshPerSecond = refreshPerSecond;
+  MainWindow(int windowWidth, int windowHeight, std::string title, int refreshPerSecond) :
+    Fl_Window(500, 500, windowWidth, windowHeight, title.c_str()), refreshPerSecond(refreshPerSecond) {
     Fl::add_timeout(1.0 / refreshPerSecond, Timer_CB, this);
     resizable(this);
   }
+
   void draw() override {
     Fl_Window::draw();
     canvas.draw();
   }
+
   int handle(int event) override {
     switch (event) {
       case FL_PUSH:
@@ -42,7 +44,7 @@ class MainWindow : public Fl_Window {
   static void Timer_CB(void *userdata) {
     MainWindow *o = static_cast<MainWindow *>(userdata);
     o->redraw();
-    Fl::repeat_timeout(1.0 / refreshPerSecond, Timer_CB, userdata);
+    Fl::repeat_timeout(1.0 / o->refreshPerSecond, Timer_CB, userdata);
   }
 };
 

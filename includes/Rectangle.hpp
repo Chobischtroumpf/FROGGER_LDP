@@ -1,7 +1,8 @@
 #ifndef RECTANGLE_HPP
 # define RECTANGLE_HPP 1
 
-#include "froggers.hpp"
+# include "froggers.hpp" 
+# include "Point.hpp" 
 # include <array>
 # include <chrono>
 # include <iostream>

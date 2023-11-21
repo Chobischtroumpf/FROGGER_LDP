@@ -1,13 +1,13 @@
 # ================================ VARIABLES ================================= #
 
-# The name of your executable
-NAME	= webserv
+# The name of the executable
+NAME	= froggers
 
 # Compiler and compiling flags
-CC	= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
+CC	= g++
+CFLAGS	= -Wall -Wextra -Wpedantic -std=gnu++17
 
-# Debug, use with`make DEBUG=1`
+# Debug, use with `make DEBUG=1`
 ifeq ($(DEBUG),1)
 CFLAGS	+= -g3 -fsanitize=address
 endif
@@ -21,10 +21,13 @@ OBJDIR	= bin/
 CFLAGS	+= -I $(INCDIR)
 
 # Linking stage flags
-LDFLAGS =
+LDFLAGS = -lfltk
 
 SRCS =\
 	./srcs/main.cpp\
+	./srcs/Cell.cpp\
+	./srcs/Rectangle.cpp\
+	./srcs/Canvas.cpp\
 
 HEADERS =\
 	./includes/

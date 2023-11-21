@@ -1,0 +1,8 @@
+/usr/bin/ld: bin/Canvas.o: in function `Canvas::Canvas()':
+Canvas.cpp:(.text+0x8e): undefined reference to `Cell<Rectangle, Translation>::Cell(Rectangle)'
+/usr/bin/ld: bin/Canvas.o: in function `Canvas::draw()':
+Canvas.cpp:(.text+0x1a7): undefined reference to `Cell<Rectangle, Translation>::draw()'
+/usr/bin/ld: bin/Canvas.o: in function `Canvas::mouseClick(Point)':
+Canvas.cpp:(.text+0x257): undefined reference to `Cell<Rectangle, Translation>::mouseClick(Point)'
+clang-16: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:54: webserv] Error 1

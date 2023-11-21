@@ -2,9 +2,12 @@
 #define CANVAS_HPP 1
 
 #include <vector>
+#include "Cell.hpp"
+#include "Rectangle.hpp"
+#include "Animation.hpp"
 
 class Canvas {
-  std::vector<Cell> cc;
+  std::vector<Cell<Rectangle>> cc;
 
  public:
   Canvas();

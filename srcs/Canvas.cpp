@@ -1,10 +1,13 @@
 #include "Canvas.hpp"
 
 Canvas::Canvas() {
-  for (int x = 50; x < 500; x += 100)
-    cc.push_back({
-        {{x, 400}, 50, 100}
-    });
+  for (int x = 0; x < 850; x += 50)
+  {
+    for (int y = 0; y < 850; y += 50)
+    {
+      cc.push_back(Cell<Rectangle>(Rectangle({x, y}, 50, 50)));
+    }
+  }
 }
 
 void Canvas::draw() {

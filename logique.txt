@@ -1,0 +1,15 @@
+frogger :
+Modele : pattern voitures/camions/rondins/tortues, lignes/colonnes. check grenouille dans case de voiture ou pas, 
+View : separation par cases.
+Controlleur : deplacements haut/bas/gauche/droite, limité au nombre de cases.
+
+
+classes : 
+Cell (comme faite en TP)
+Sidewalk : herite de Cell, zone safe, pas d'obstacles.
+Road : herite de Cell, contient un obstacle qui fait 1, 2 ou 3 cases.
+River : herite de Cell, zone dangereuse, contient tortues et rondins, qui sont "safe", tortues ont une chance aleatoire de disparaitre, ne sont plus safe a la fin de l'animation.
+Forest : herite de Cell, zone de victoire
+Canvas : matrice de Cells
+
+obstacle1
