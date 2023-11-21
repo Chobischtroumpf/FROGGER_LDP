@@ -3,8 +3,6 @@
 
 #include <vector>
 #include "Cell.hpp"
-#include "Rectangle.hpp"
-#include "Animation.hpp"
 
 class Canvas {
   std::vector<Cell<Rectangle>> cc;

@@ -25,7 +25,6 @@ LDFLAGS = -lfltk
 
 SRCS =\
 	./srcs/main.cpp\
-	./srcs/Cell.cpp\
 	./srcs/Rectangle.cpp\
 	./srcs/Canvas.cpp\
 
