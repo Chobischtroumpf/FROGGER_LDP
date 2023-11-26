@@ -4,7 +4,7 @@
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Alessandro Dorigo                          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*   And : Carlos Sanchez Espinosa                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:04:48 by adorigo           #+#    #+#             */
 /*   Updated: 2023/11/13 16:04:49 by adorigo          ###   ########.fr       */
 /*                                                                            */
@@ -16,6 +16,7 @@
 class MainWindow : public Fl_Window {
   Canvas canvas;
   int refreshPerSecond;
+
  public:
   MainWindow(int windowWidth, int windowHeight, std::string title, int refreshPerSecond) :
     Fl_Window(500, 500, windowWidth, windowHeight, title.c_str()), refreshPerSecond(refreshPerSecond) {
@@ -53,3 +54,12 @@ int main(int argc, char *argv[]) {
   window.show(argc, argv);
   return Fl::run();
 }
+
+
+
+if {
+
+} else if {
+
+}
+

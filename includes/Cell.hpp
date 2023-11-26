@@ -1,5 +1,5 @@
-#ifndef CELL_HPP
-#define CELL_HPP 1
+#ifndef __CELL_HPP
+#define __CELL_HPP
 
 #include "Rectangle.hpp"
 
