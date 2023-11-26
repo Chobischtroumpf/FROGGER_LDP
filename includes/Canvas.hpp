@@ -1,17 +1,20 @@
-#ifndef CANVAS_HPP
-#define CANVAS_HPP 1
+#ifndef __CANVAS_HPP
+#define __CANVAS_HPP
 
 #include <vector>
 #include "Cell.hpp"
+#include "Frog.hpp"
+
 
 class Canvas {
-  std::vector<Cell<Rectangle>> cc;
+  std::vector<std::vector<Cell<Rectangle>>> cc;
+  Frog frog;
 
  public:
   Canvas();
   void draw();
-  void mouseClick(Point mouseLoc);
+  // void mouseClick(Point mouseLoc);
   void keyPressed(int keyCode);
 };
 
-#endif
+#endif //!__CANVAS_HPP

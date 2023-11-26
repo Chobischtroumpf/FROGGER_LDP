@@ -1,7 +1,7 @@
 
 #include "Rectangle.hpp"
 
-void Rectangle::draw() {
+void Rectangle::print() {
   std::array<Point, 5> points{Point{center.x - w / 2, center.y - h / 2},
                          Point{center.x - w / 2, center.y + h / 2},
                          Point{center.x + w / 2, center.y + h / 2},

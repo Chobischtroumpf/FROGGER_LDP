@@ -1,15 +1,13 @@
-#ifndef RECTANGLE_HPP
-# define RECTANGLE_HPP 1
+#ifndef __RECTANGLE_HPP
+#define __RECTANGLE_HPP
 
-# include "froggers.hpp" 
-# include "Point.hpp" 
+# include "Froggers.hpp" 
 # include <array>
-# include <chrono>
 # include <iostream>
 # include <string>
 # include <vector>
 
-class Rectangle {
+class Rectangle: public virtual Printable {
   Point    center;
   int      w, h;
   Fl_Color fillColor, frameColor;
@@ -20,17 +18,18 @@ class Rectangle {
             center{center}, w{w}, h{h},
             fillColor{fillColor},
             frameColor{frameColor} {};
-  void     draw();
-  void     setFillColor(Fl_Color newFillColor);
-  Fl_Color getFillColor() { return fillColor; }
-  void     setFrameColor(Fl_Color newFrameColor);
-  Fl_Color getFrameColor() { return frameColor; }
-  void     setWidth(int neww) { w = neww; }
-  void     setHeight(int newh) { h = newh; }
-  int      getWidth() { return w; }
-  int      getHeight() { return h; }
-  bool     contains(Point p);
-  Point    getCenter() { return center; }
+  void      print() override;
+  void      setFillColor(Fl_Color newFillColor);
+  Fl_Color  getFillColor() { return fillColor; }
+  void      setFrameColor(Fl_Color newFrameColor);
+  Fl_Color  getFrameColor() { return frameColor; }
+  void      setWidth(int neww) { w = neww; }
+  void      setHeight(int newh) { h = newh; }
+  int       getWidth() { return w; }
+  int       getHeight() { return h; }
+  bool      contains(Point p);
+  Point     getCenter() { return center; }
+  ~Rectangle() {}
 };
 
-#endif
+#endif //!__RECTANGLE_HPP

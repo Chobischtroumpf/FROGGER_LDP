@@ -1,4 +1,7 @@
-#include "froggers.hpp"
+#ifndef __ANIMATION_HPP
+#define __ANIMATION_HPP
+
+#include "Froggers.hpp"
 #include "Point.hpp"
 
 struct Translation {
@@ -8,3 +11,5 @@ struct Translation {
   }
   ~Translation() { fl_pop_matrix(); }
 };
+
+#endif //!__ANIMATION_HPP
