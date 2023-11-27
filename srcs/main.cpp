@@ -50,7 +50,7 @@ class MainWindow : public Fl_Window {
 };
 
 int main(int argc, char *argv[]) {
-  MainWindow window(850, 850, "Frogger Game", 60);
+  MainWindow window(650, 650, "Frogger Game", 60);
   window.show(argc, argv);
   return Fl::run();
 }

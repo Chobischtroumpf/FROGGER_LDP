@@ -29,6 +29,7 @@ class Rectangle: public virtual Printable {
   int       getHeight() { return h; }
   bool      contains(Point p);
   Point     getCenter() { return center; }
+  void      setCenter(Point p) { center = p;}
   ~Rectangle() {}
 };
 

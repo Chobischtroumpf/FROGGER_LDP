@@ -8,7 +8,7 @@
 
 class Canvas {
   std::vector<std::vector<Cell<Rectangle>>> cc;
-  Frog frog;
+  Frog<Rectangle> frog;
 
  public:
   Canvas();
