@@ -1,6 +1,6 @@
 #include "Canvas.hpp"
 
-Canvas::Canvas(): frog({6, 12}) {
+Canvas::Canvas(): frog{{6, 12}} {
     for (int x = 25; x < 650; x += 50)
     {
         std::vector<Cell<Rectangle>> tmp;
