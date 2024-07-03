@@ -13,7 +13,6 @@ class Cell {
 
   // Methods that draw and handle events
   void print();
-  // void mouseClick(Point mouseLoc);
 
   ~Cell() {}
 };
@@ -26,14 +25,5 @@ template <class Drawable>
 void Cell<Drawable>::print() {
     drawable.print();
 }
-
-// template <class Drawable>
-// void Cell<Drawable>::mouseClick(Point mouseLoc) {
-//   if (drawable.contains(mouseLoc)) {
-//     drawable.setFillColor(FL_RED);
-//   } else {
-//     drawable.setFillColor(FL_WHITE);
-//   }
-// }
 
 #endif

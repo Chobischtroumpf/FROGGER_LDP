@@ -5,6 +5,9 @@
 # include <FL/Fl_Box.H>
 # include <FL/Fl_Double_Window.H>
 # include <FL/fl_draw.H>
+# include <string>
+# include <memory>
+
 
 class Printable {
  public:
