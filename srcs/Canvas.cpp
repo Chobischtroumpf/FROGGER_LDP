@@ -3,14 +3,13 @@
 Canvas::Canvas(): frog{{6, 12}} {
     for (int x = 25; x < 650; x += 50)
     {
-        std::vector<Cell<Rectangle>> tmp;
+        std::vector<Cell> tmp;
         for (int y = 25; y < 650; y += 50)
         {
-        tmp.push_back(Cell<Rectangle>(Rectangle({x, y}, 50, 50)));
+        tmp.push_back(Cell({x, y}, 50, 50));
         }
         cc.push_back(tmp);
     }
-  // this->frog.setCurrentCell(cc[frog.getY()][frog.getX()]);
 }
 
 void Canvas::draw() {
