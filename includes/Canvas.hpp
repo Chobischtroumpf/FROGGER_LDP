@@ -1,15 +1,18 @@
-#ifndef __CANVAS_HPP
-#define __CANVAS_HPP
+#pragma once
 
 #include <vector>
+#include <string>
+#include <memory>
 #include "Cell.hpp"
 #include "Frog.hpp"
 
-
+// The Canvas class is a class that represents the game board.
 class Canvas {
-    std::vector<std::vector<Cell<Rectangle>>> cc;
-
-    Frog<Rectangle> frog;
+  private:
+    // The grid is a 2D vector of Cell objects
+    std::vector<std::vector<Cell>> grid;
+    // The frog is a shared pointer to a Frog object
+    std::shared_ptr<Frog> frog;
 
   public:
     Canvas();
@@ -17,15 +20,3 @@ class Canvas {
     void mouseClick(Point mouseLoc);
     void keyPressed(int keyCode);
 };
-
-// class DisplayCanvas {
-//     std::shared_ptr<Canvas const> canvas;
-
-  
-// };
-
-// class ControlCanvas {
-//     std::shared_ptr<Canvas const> canvas;
-// };
-
-#endif //!__CANVAS_HPP

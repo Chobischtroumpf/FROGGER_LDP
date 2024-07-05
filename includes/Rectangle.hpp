@@ -1,11 +1,11 @@
-#ifndef __RECTANGLE_HPP
-#define __RECTANGLE_HPP
+#pragma once
 
-# include "Froggers.hpp" 
-# include <array>
-# include <iostream>
-# include <string>
-# include <vector>
+#include <FL/Fl.H>
+#include <FL/fl_draw.H>
+
+#include <array>
+#include "Point.hpp"
+# include "Printable.hpp"
 
 class Rectangle: public virtual Printable {
   Point    center;
@@ -32,5 +32,3 @@ class Rectangle: public virtual Printable {
   void      setCenter(Point p) { center = p;}
   ~Rectangle() {}
 };
-
-#endif //!__RECTANGLE_HPP
