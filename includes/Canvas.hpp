@@ -12,11 +12,23 @@ class Canvas {
     // The grid is a 2D vector of Cell objects
     std::vector<std::vector<Cell>> grid;
     // The frog is a shared pointer to a Frog object
-    std::shared_ptr<Frog> frog;
+    Frog frog;
 
   public:
     Canvas();
     void draw();
-    void mouseClick(Point mouseLoc);
     void keyPressed(int keyCode);
+
+    // access operator
+    std::vector<Cell> &operator[](std::size_t i); 
+
+    // movement methods
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+    
+
+    //destructor
+    ~Canvas();
 };

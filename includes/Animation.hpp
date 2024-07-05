@@ -1,7 +1,7 @@
 #ifndef __ANIMATION_HPP
 #define __ANIMATION_HPP
 
-#include "Froggers.hpp"
+#include <FL/fl_draw.H>
 #include "Point.hpp"
 
 struct Translation {

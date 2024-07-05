@@ -1,9 +1,13 @@
 #pragma once
 
+#include <memory>
 #include "Rectangle.hpp"
 #include "Moveable.hpp"
 
+using std::shared_ptr;
+
 class Canvas;
+
 
 class Cell: public virtual Rectangle {
   private:
@@ -19,11 +23,11 @@ class Cell: public virtual Rectangle {
     //getters
     Moveable *getOccupant();
     Canvas *getCanvas();
+    bool getIsSafe();
 
     //setters
     void setOccupant(Moveable *occupant);
     void setCanvas(Canvas *canvas);
-
 
     // Methods that draw and handle events
     void print();
