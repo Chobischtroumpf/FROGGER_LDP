@@ -1,21 +1,23 @@
 #pragma once
 
-# include <FL/Fl.H>
-# include <FL/Fl_Box.H>
-# include <FL/Fl_Double_Window.H>
-# include <FL/fl_draw.H>
-# include <FL/Fl_Window.H>
+#include <FL/Fl.H>
+#include <FL/Fl_Box.H>
+#include <FL/Fl_Double_Window.H>
+#include <FL/fl_draw.H>
+#include <FL/Fl_Window.H>
 #include "Canvas.hpp"
+#include "Notification.hpp"
 
 class MainWindow : public Fl_Window {
   private:
     Canvas canvas;
+    Notification notification;
     int refreshPerSecond = 60;
 
  public:
   // Constructor
   MainWindow(int windowWidth, int windowHeight, std::string title, int refreshPerSecond) :
-    Fl_Window(500, 500, windowWidth, windowHeight, title.c_str()), refreshPerSecond(refreshPerSecond) {
+    Fl_Window{500, 500, windowWidth, windowHeight, title.c_str()}, notification{"Hello World!", Point{250, 250}, 20, FL_BLACK, 10}, refreshPerSecond{refreshPerSecond} {
     Fl::add_timeout(1.0 / refreshPerSecond, Timer_CB, this);
     resizable(this);
   }
@@ -24,6 +26,7 @@ class MainWindow : public Fl_Window {
   void draw() override {
     Fl_Window::draw();
     canvas.draw();
+    notification.draw();
   }
 
   int handle(int event) override {

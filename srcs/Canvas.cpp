@@ -21,10 +21,9 @@ Canvas::Canvas(): frog{{6, 12}, this} {
 void Canvas::draw() {
   for (auto &line : this->grid) {
     for (auto &cell : line) {
-      cell.print();
+      cell.draw();
     }
   }
-  frog.print();
 }
 
 

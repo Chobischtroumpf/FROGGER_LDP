@@ -29,10 +29,10 @@ void Cell::setOccupant(Moveable *occupant) {
 }
 
 // Methods that draw and handle events
-void Cell::print() {
-  Rectangle::print();
+void Cell::draw() {
+  Rectangle::draw();
   if (occupant != nullptr) {
-    occupant->print();
+    occupant->draw();
   }
 }
 

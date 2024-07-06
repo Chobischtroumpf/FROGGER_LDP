@@ -5,9 +5,8 @@
 #include "Moveable.hpp"
 
 using std::shared_ptr;
-
+using frogger::Moveable;
 class Canvas;
-
 
 class Cell: public virtual Rectangle {
   private:
@@ -25,12 +24,12 @@ class Cell: public virtual Rectangle {
     Canvas *getCanvas();
     bool getIsSafe();
 
+    // drawing method
+    void draw() override;
+
     //setters
     void setOccupant(Moveable *occupant);
     void setCanvas(Canvas *canvas);
-
-    // Methods that draw and handle events
-    void print();
 
     // Destructor
     ~Cell();

@@ -3,11 +3,12 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include "Drawable.hpp"
 #include "Cell.hpp"
 #include "Frog.hpp"
 
 // The Canvas class is a class that represents the game board.
-class Canvas {
+class Canvas: public virtual frogger::Drawable{
   private:
     // The grid is a 2D vector of Cell objects
     std::vector<std::vector<Cell>> grid;
@@ -16,7 +17,7 @@ class Canvas {
 
   public:
     Canvas();
-    void draw();
+    void draw() override;
     void keyPressed(int keyCode);
 
     // access operator

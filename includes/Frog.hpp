@@ -11,7 +11,7 @@ class Canvas;
 
 // The Frog class is a subclass of the Moveable and Rectangle classes,
 // and it represents the frog that the player controls in the game.
-class Frog: public virtual Moveable, public virtual Rectangle {
+class Frog: public virtual frogger::Moveable, public virtual Rectangle {
 private:
   Point coordinates;
   Canvas *canvas = nullptr;
@@ -30,7 +30,7 @@ public:
   void setY(int y);
 
   //methods
-  void print();
+  // void draw() override;
   void keyPressed(int keyCode) override {(void)keyCode;};
   void moveLeft() override;
   void moveRight() override;

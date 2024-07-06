@@ -24,10 +24,10 @@ void Frog::setY(int y) {
   this->coordinates.y = y;
 }
 
-//methods
-void Frog::print() {
-  Rectangle::print();
-}
+// //methods
+// void Frog::draw() {
+//   Rectangle::draw();
+// }
 
 void Frog::moveLeft() {
   if (this->getX() > 0) {

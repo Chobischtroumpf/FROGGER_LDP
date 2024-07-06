@@ -29,6 +29,7 @@ SRCS =\
 	./srcs/Canvas.cpp\
 	./srcs/Cell.cpp\
 	./srcs/Frog.cpp\
+	./srcs/Text.cpp\
 
 HEADERS =\
 	./includes/
