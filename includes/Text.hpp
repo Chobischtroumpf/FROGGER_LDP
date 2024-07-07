@@ -3,6 +3,7 @@
 #include <FL/Fl.H>
 #include <FL/fl_draw.H>
 #include <string>
+#include <iostream>
 #include "Point.hpp"
 #include "Drawable.hpp"
 
@@ -14,23 +15,23 @@ class Text: public Drawable {
     string   s;
     Point    center;
     int      fontSize;
-    int      text_width;
-    int      text_height;
+    double   width;
+    double   height;
     Fl_Color color;
 
     void setSize() {
-      int width, height;
       fl_font(FL_HELVETICA, fontSize);
-      fl_measure(s.c_str(), width, height, false);
-      text_width = width;
-      text_height = height;
+      width = fl_width(s.c_str());
+      height = fontSize;
+      std::cout << "TEXT: Width: " << width << " Height: " << height << std::endl;
     }
 
   public:
     // Constructor
-    Text(): s{""}, center{0,0}, fontSize{0}, color{FL_BLACK} {
+    Text(): s{""}, center{0,0}, fontSize{10}, color{FL_BLACK} {
       setSize();
     }
+
     Text(string s, Point center, int fontSize = 10, Fl_Color color = FL_BLACK)
         : s{s}, center{center}, fontSize{fontSize}, color{color} {
           setSize();
@@ -48,8 +49,8 @@ class Text: public Drawable {
     int    getFontSize() const { return fontSize; }
     Point  getCenter() const { return center; }
     Fl_Color getColor() const { return color; }
-    int    getWidth() const { return text_width; }
-    int    getHeight() const { return text_height; }
+    int    getWidth() const { return width; }
+    int    getHeight() const { return height; }
 
     // Setters
 

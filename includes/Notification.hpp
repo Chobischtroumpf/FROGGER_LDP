@@ -19,8 +19,6 @@ class Notification : public virtual Text {
       : Text{s, center, fontSize, color}, background{center, getWidth() + padding * 2, getHeight() + padding * 2}, padding{padding} {
         // if we want to add a close button
         // close = Rectangle(Point(center.x + width / 2 + padding/2, center.y + height / 2 + padding/2), padding, padding, FL_BLACK, FL_RED);
-        std::cout << "Notification created" << std::endl;
-        std::cout << "Width: " << getWidth() << " Height: " << getHeight() << std::endl;
     }
 
     void draw() override {
