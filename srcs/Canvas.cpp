@@ -2,6 +2,7 @@
 #include <iostream>
 
 Canvas::Canvas(): frog{{6, 12}, this} {
+  std::clog << "Canvas constructor" << std::endl;
   for (int x = 25; x < 650; x += 50) {
     std::vector<Cell> tmp;
     for (int y = 25; y < 650; y += 50) {
@@ -12,9 +13,17 @@ Canvas::Canvas(): frog{{6, 12}, this} {
   this->grid[6][12].setOccupant(&frog);
 
   if (this->grid[6][12].getOccupant() == nullptr) {
-    std::cout << "Frog not set" << std::endl;
+    std::clog << "Frog not set" << std::endl;
   } else {
-    std::cout << "Frog set" << std::endl;
+    std::clog << "Frog set" << std::endl;
+  }
+}
+
+void Canvas::updateGameState() {
+  if (this->frog.getY() == 0) {
+    this->gameState = GAMESTATE::WON;
+  } else if (this->grid[this->frog.getY()][this->frog.getX()].getIsSafe() == false) {
+    this->gameState = GAMESTATE::GAMEOVER;
   }
 }
 
@@ -53,8 +62,12 @@ void Canvas::keyPressed(int keyCode) {
       break;
     default:
       break;
-      break;
-    }  // pass (normal)
+  }
+  this->updateGameState();
+}
+
+GAMESTATE Canvas::getGameState() const {
+  return this->gameState;
 }
 
 void Canvas::moveLeft() {

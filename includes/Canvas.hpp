@@ -21,8 +21,12 @@ class Canvas: public virtual frogger::Drawable{
     // The gameState is an enum that represents the current state of the game
     GAMESTATE gameState;
 
+    void updateGameState();
+
   public:
     Canvas();
+    
+    // handlers
     void draw() override;
     void keyPressed(int keyCode);
 
@@ -37,8 +41,7 @@ class Canvas: public virtual frogger::Drawable{
     void moveRight();
     void moveUp();
     void moveDown();
-    
 
-    //destructor
+    // destructor
     ~Canvas();
 };

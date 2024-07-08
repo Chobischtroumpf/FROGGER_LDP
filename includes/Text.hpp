@@ -23,7 +23,7 @@ class Text: public Drawable {
       fl_font(FL_HELVETICA, fontSize);
       width = fl_width(s.c_str());
       height = fontSize;
-      std::cout << "TEXT: Width: " << width << " Height: " << height << std::endl;
+      std::clog << "TEXT: Width: " << width << " Height: " << height << std::endl;
     }
 
   public:
