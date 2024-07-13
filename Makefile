@@ -1,57 +1,54 @@
 # ================================ VARIABLES ================================= #
 
 # The name of the executable
-NAME	= froggers
+NAME    = froggers
 
 # Compiler and compiling flags
-CC	= g++
-CFLAGS	= -Wall -Wextra -Wpedantic -std=gnu++17
+CC      = g++
+CFLAGS  = -Wall -Wextra -Wpedantic -std=gnu++17
 
 # Debug, use with `make DEBUG=1`
 ifeq ($(DEBUG),1)
-CFLAGS	+= -g3 -fsanitize=address
+CFLAGS  += -g3 -fsanitize=address
 endif
 
 # Folder name
-SRCDIR	= srcs/
-INCDIR	= includes/
-OBJDIR	= bin/
+SRCDIR  = srcs/
+INCDIR  = includes/
+OBJDIR  = bin/
 
 # Add include folder
-CFLAGS	+= -I $(INCDIR)
+CFLAGS  += -I $(INCDIR)
+
+# Detecting macOS
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	# macOS specific include path for FLTK
+	# Use fltk-config to get compiler and linker flags
+	FLTK_CXXFLAGS := $(shell fltk-config --cxxflags)
+	FLTK_LDFLAGS := $(shell fltk-config --ldflags)
+	CFLAGS += $(FLTK_CXXFLAGS)
+	LDFLAGS += $(FLTK_LDFLAGS)
+endif
 
 # Linking stage flags
-LDFLAGS = -lfltk
+LDFLAGS += -lfltk
 
-SRCS =\
-	./srcs/main.cpp\
-	./srcs/Rectangle.cpp\
-	./srcs/Canvas.cpp\
-	./srcs/Cell.cpp\
-	./srcs/Frog.cpp\
-
-HEADERS =\
-	./includes/
-
-# String manipulation magic
-SRC		:= $(notdir $(SRCS))
-OBJ		:= $(SRC:.cpp=.o)
-OBJS	:= $(addprefix $(OBJDIR), $(OBJ))
-
-# Implicit rules
-VPATH := $(SRCDIR) $(OBJDIR) $(shell find $(SRCDIR) -type d)
+# Sources and headers
+SRCS = $(wildcard $(SRCDIR)*.cpp)
+OBJS = $(patsubst $(SRCDIR)%.cpp,$(OBJDIR)%.o,$(SRCS))
 
 # ================================== RULES =================================== #
 
 all : $(NAME)
 
 # Compiling
-$(OBJDIR)%.o : %.cpp
+$(OBJDIR)%.o : $(SRCDIR)%.cpp
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Linking
-$(NAME)	: $(SRCS) $(HEADERS) $(OBJS)
+$(NAME) : $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
 
 # Cleaning
@@ -65,4 +62,4 @@ fclean : clean
 re : fclean all
 
 # This specifies the rules that does not correspond to any filename
-.PHONY	= all clean fclean re
+.PHONY : all clean fclean re
