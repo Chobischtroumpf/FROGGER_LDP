@@ -5,8 +5,7 @@ NAME    = froggers
 
 # Compiler and compiling flags
 CC      = g++
-CFLAGS  = -Wall -Wextra -Wpedantic -std=gnu++17
-
+CFLAGS  = -Wall -Wextra -Wpedantic -std=gnu++17 -Wno-unused-parameter
 # Debug, use with `make DEBUG=1`
 ifeq ($(DEBUG),1)
 CFLAGS  += -g3 -fsanitize=address
@@ -19,6 +18,8 @@ OBJDIR  = bin/
 
 # Add include folder
 CFLAGS  += -I $(INCDIR)
+# Linking stage flags
+LDFLAGS += -lfltk
 
 # Detecting macOS
 UNAME_S := $(shell uname -s)
@@ -28,11 +29,10 @@ ifeq ($(UNAME_S),Darwin)
 	FLTK_CXXFLAGS := $(shell fltk-config --cxxflags)
 	FLTK_LDFLAGS := $(shell fltk-config --ldflags)
 	CFLAGS += $(FLTK_CXXFLAGS)
-	LDFLAGS += $(FLTK_LDFLAGS)
+	LDFLAGS = $(FLTK_LDFLAGS)
 endif
 
-# Linking stage flags
-LDFLAGS += -lfltk
+
 
 # Sources and headers
 SRCS = $(wildcard $(SRCDIR)*.cpp)
