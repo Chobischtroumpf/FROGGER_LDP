@@ -6,6 +6,7 @@
 #include "Drawable.hpp"
 #include "Cell.hpp"
 #include "Frog.hpp"
+#include "Notification.hpp"
 
 typedef enum {RESET, PLAYING, WON, GAMEOVER} GAMESTATE;
 
@@ -15,12 +16,14 @@ class Canvas: public virtual frogger::Drawable{
     // The grid is a 2D vector of Cell objects
     std::vector<std::vector<Cell>> grid;
 
-    // The frog is a shared pointer to a Frog object
+    // The frog is a Frog object that represents the player's character
     Frog frog;
+    Notification frogInfo;
 
     // The gameState is an enum that represents the current state of the game
     GAMESTATE gameState;
 
+    void resetFrogPosition();
     void updateGameState();
 
   public:

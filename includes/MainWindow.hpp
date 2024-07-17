@@ -12,25 +12,32 @@
 class MainWindow : public Fl_Window {
   private:
     std::shared_ptr<Canvas> canvas;
-    std::shared_ptr<Notification> notification = nullptr;
+    std::shared_ptr<Notification> gameWon = nullptr;
+    std::shared_ptr<Notification> gameLost = nullptr;
     int refreshPerSecond = 60;
 
-\
+
  public:
   // Constructor
   MainWindow() :
-    Fl_Window{500, 500, 650, 650, "Frogger Game"}, canvas{std::make_shared<Canvas>()} , refreshPerSecond{60} {
+    Fl_Window{500, 500, 750, 650, "Frogger Game"}, canvas{std::make_shared<Canvas>()} , refreshPerSecond{60} {
     Fl::add_timeout(1.0 / refreshPerSecond, Timer_CB, this);
     resizable(this);
-    // notification = std::make_shared<Notification>(std::string("Hello World!"), Point{250, 250}, 20, FL_BLACK, 10);
+    gameWon = std::make_shared<Notification>(std::string("You Won!"), Point{350, 325}, 20, FL_BLACK, 10);
+    gameLost = std::make_shared<Notification>(std::string("You Died!"), Point{350, 325}, 20, FL_BLACK, 10);
   }
 
   // Methods that draw and handle events
   void draw() override {
     Fl_Window::draw();
     canvas->draw();
-    if (notification != nullptr)
-      notification->draw();
+    if (canvas->getGameState() == GAMESTATE::WON) {
+      gameWon->draw();
+    } else if (canvas->getGameState() == GAMESTATE::GAMEOVER)
+    {
+      gameLost->draw();
+    }
+    
   }
 
   int handle(int event) override {
@@ -39,7 +46,20 @@ class MainWindow : public Fl_Window {
         // canvas.mouseClick(Point{Fl::event_x(), Fl::event_y()});
         return 1;
       case FL_KEYDOWN:
-        canvas->keyPressed(Fl::event_key());
+        switch (Fl::event_key())
+        {
+          case FL_Escape:
+            exit(0);
+            break;
+          
+          case FL_BackSpace:
+          case 'r':
+            resetCanvas();
+            break;
+          default:
+            canvas->keyPressed(Fl::event_key());
+            break;
+        }
         return 1;
       default:
         return 0;
@@ -56,9 +76,8 @@ class MainWindow : public Fl_Window {
     if (canvas.unique() == true) 
       canvas.reset();
     canvas = std::make_shared<Canvas>();
+    std::clog << canvas->getGameState() << std::endl;
     std::clog << "Resetting canvas" << std::endl;
-    notification = nullptr;
-    std::clog << "Deleting notification" << std::endl;
   }
 
   void resetLoop() {
@@ -74,11 +93,7 @@ class MainWindow : public Fl_Window {
     MainWindow *o = static_cast<MainWindow *>(userdata);
     switch (o->canvas->getGameState()) {
       case GAMESTATE::WON:
-        o->notification = std::make_shared<Notification>(std::string("You won!"), Point{325, 325}, 20, FL_BLACK, 10);
-        o->reset();
-        break;
       case GAMESTATE::GAMEOVER:
-        o->notification = std::make_shared<Notification>(std::string("Game Over!"), Point{325, 325}, 20, FL_BLACK, 10);
         o->reset();
         break;
       case GAMESTATE::PLAYING:

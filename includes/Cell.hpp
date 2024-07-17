@@ -30,6 +30,7 @@ class Cell: public virtual Rectangle {
     //setters
     void setOccupant(Moveable *occupant);
     void setCanvas(Canvas *canvas);
+    void setIsSafe(bool isSafe);
 
     // Destructor
     ~Cell();

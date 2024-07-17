@@ -24,6 +24,14 @@ void Frog::setY(int y) {
   this->coordinates.y = y;
 }
 
+void Frog::loseLife() {
+  life--;
+}
+
+int Frog::getLife() const {
+  return life;
+}
+
 // //methods
 // void Frog::draw() {
 //   Rectangle::draw();

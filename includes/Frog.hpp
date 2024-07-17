@@ -15,6 +15,7 @@ class Frog: public virtual frogger::Moveable, public virtual Rectangle {
 private:
   Point coordinates;
   Canvas *canvas = nullptr;
+  int life = 3;
 public:
   Frog(Point start_pos, Canvas *canvas);
   Frog &operator=(const Frog &other) = default;
@@ -23,11 +24,13 @@ public:
   // Cell* getCurrentCell() { return this->currentCell;};
   int getX() const;
   int getY() const;
+  int getLife() const;
 
   //setters
   // void setCurrentCell(Cell cell){ this->currentCell = &cell; }
   void setX(int x);
   void setY(int y);
+  void loseLife();
 
   //methods
   // void draw() override;

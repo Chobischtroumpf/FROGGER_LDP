@@ -5,7 +5,7 @@
 #include "Text.hpp"
 #include "Rectangle.hpp"
 
-class Notification : public virtual Text {
+class   Notification : public virtual Text {
   private:
     Rectangle background;
     int       padding;

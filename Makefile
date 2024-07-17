@@ -10,6 +10,8 @@ CFLAGS	= -Wall -Wextra -Wpedantic -std=gnu++17
 # Debug, use with `make DEBUG=1`
 ifeq ($(DEBUG),1)
 CFLAGS	+= -g3 -fsanitize=address -DOUTPUT_DEBUG=1
+else
+CFLAGS	+= -O3
 endif
 
 # Folder name
