@@ -3,6 +3,8 @@
 
 #include "GameModel.hpp"
 #include "GameView.hpp"
+#include <FL/Fl.H>
+#include <iostream>
 
 // Forward declaration to avoid circular dependency
 class GameView;
@@ -22,6 +24,8 @@ public:
 private:
     GameModel* model;
     GameView* view;
+
+    void movePlayer(int x, int y);
 };
 
 #endif // GAMECONTROLLER_HPP
