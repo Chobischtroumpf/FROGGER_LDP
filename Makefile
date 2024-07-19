@@ -11,7 +11,7 @@ ifeq ($(DEBUG),1)
 CFLAGS  += -g3 -fsanitize=address
 endif
 
-# Folder name
+# Folder names
 SRCDIR  = srcs/
 INCDIR  = includes/
 OBJDIR  = bin/
@@ -31,8 +31,6 @@ ifeq ($(UNAME_S),Darwin)
 	CFLAGS += $(FLTK_CXXFLAGS)
 	LDFLAGS = $(FLTK_LDFLAGS)
 endif
-
-
 
 # Sources and headers
 SRCS = $(wildcard $(SRCDIR)*.cpp)
@@ -61,5 +59,5 @@ fclean : clean
 # Special rule to force to remake everything
 re : fclean all
 
-# This specifies the rules that does not correspond to any filename
+# This specifies the rules that do not correspond to any filename
 .PHONY : all clean fclean re
