@@ -23,6 +23,7 @@ public:
 
 class Vehicle {
 public:
+    
     Position position;
     void move(int x);
 };
@@ -49,7 +50,7 @@ public:
     // Returning a const reference to avoid copying and to prevent modification
     const std::vector<Tile>& getTiles() const;
     const std::vector<Vehicle>& getVehicles() const;
-
+    const LaneType getType() const;
 private:
     int length;
     int rowIndex;
