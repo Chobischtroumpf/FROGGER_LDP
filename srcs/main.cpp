@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
     std::cout << "Displaying view" << std::endl;
     // Display the view
     view->show(argc, argv);
-
+    std::cout << "Starting game loop" << std::endl;
     // Game loop using FLTK timeout
     Fl::add_timeout(1.0 / 60, gameLoopCallback, &controller);
 
