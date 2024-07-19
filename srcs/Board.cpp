@@ -5,8 +5,50 @@ Board::Board(int size) : size(size) {
     // Initiate board Lanes ( and tiles )
     
     for (int i = 0; i < size; i++) {
-        Lane lane = {size, i};
+        LaneType laneType = LaneType::Grass;
+        Direction dir = Right;
 
+        // Makes it easier to count lanes
+        int y = 12 - i; 
+
+        switch (y)
+        {
+        case 0 :
+            laneType = LaneType::Grass;
+            break;
+        case 1 :
+            laneType = LaneType::Road;
+            break;
+        case 2 :
+            laneType = LaneType::Road;
+            dir = Left;
+            break;
+        case 4 :
+            laneType = LaneType::Road;
+            break;
+        case 5 :
+            laneType = LaneType::Road;
+            dir = Left;
+            break;
+        case 7 :
+            laneType = LaneType::River;
+            break;
+        case 8 :
+            laneType = LaneType::River;
+            break;
+        case 10 :
+            laneType = LaneType::River;
+            dir = Left;
+            break;
+        case 11 :
+            laneType = LaneType::River;
+            dir = Left;
+            break;
+        default:
+            break;
+        }
+
+        Lane lane = {size, i, laneType, dir};
         lanes.push_back(lane);
     }
 
