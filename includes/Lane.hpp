@@ -51,6 +51,9 @@ public:
     const std::vector<Tile>& getTiles() const;
     const std::vector<Vehicle>& getVehicles() const;
     const LaneType getType() const;
+    const Direction getDirection() const;
+    // Checks if the given position on the lane is safe
+    const bool isSafe(Position pos) const;
 private:
     int length;
     int rowIndex;

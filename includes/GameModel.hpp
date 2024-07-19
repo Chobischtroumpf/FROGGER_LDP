@@ -18,13 +18,12 @@ public:
     Frog2 frog;
     std::vector<Vehicle> vehicles;
 
-    
-    
-
-    
 
     GameModel();
     void update();
+
+    // Checks if the given position is safe for the frog
+    const bool isSafe(Position pos) const;
 private:
     int frameCounter;
 };
