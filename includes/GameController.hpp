@@ -24,8 +24,9 @@ public:
 private:
     GameModel* model;
     GameView* view;
-
+    void resetGame();
     void movePlayer(int x, int y);
+    void checkPlayer();
 };
 
 #endif // GAMECONTROLLER_HPP
