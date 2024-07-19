@@ -28,12 +28,16 @@ void Cell::setOccupant(Moveable *occupant) {
   this->occupant = occupant;
 }
 
+void Cell::setIsSafe(bool isSafe) {
+  this->isSafe = isSafe;
+}
+
 // Methods that draw and handle events
-void Cell::print() {
-  Rectangle::print();
-  if (occupant != nullptr) {
-    occupant->print();
-  }
+void Cell::draw() {
+  Rectangle::draw();
+  // if (occupant != nullptr) {
+  //   occupant->draw();
+  // }
 }
 
 Cell::~Cell() {

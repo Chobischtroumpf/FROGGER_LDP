@@ -5,9 +5,9 @@
 
 #include <array>
 #include "Point.hpp"
-# include "Printable.hpp"
+# include "Drawable.hpp"
 
-class Rectangle: public virtual Printable {
+class Rectangle: public virtual frogger::Drawable {
   Point    center;
   int      w, h;
   Fl_Color fillColor, frameColor;
@@ -18,17 +18,29 @@ class Rectangle: public virtual Printable {
             center{center}, w{w}, h{h},
             fillColor{fillColor},
             frameColor{frameColor} {};
-  void      print() override;
+  Rectangle(const Rectangle &r): center{r.center}, w{r.w}, h{r.h},
+                                 fillColor{r.getFillColor()},
+                                 frameColor{r.getFrameColor()} {};
+  Rectangle &operator=(const Rectangle &r);
+
+  // drawing method
+  void      draw() override;
+  bool      contains(Point p);
+  
+  // Getters
+  Fl_Color  getFillColor() const { return fillColor; }
+  Fl_Color  getFrameColor() const { return frameColor; }
+  int       getWidth() const { return w; }
+  int       getHeight() const { return h; }
+  Point     getCenter() const { return center; }
+
+  // Setters
   void      setFillColor(Fl_Color newFillColor);
-  Fl_Color  getFillColor() { return fillColor; }
   void      setFrameColor(Fl_Color newFrameColor);
-  Fl_Color  getFrameColor() { return frameColor; }
   void      setWidth(int neww) { w = neww; }
   void      setHeight(int newh) { h = newh; }
-  int       getWidth() { return w; }
-  int       getHeight() { return h; }
-  bool      contains(Point p);
-  Point     getCenter() { return center; }
   void      setCenter(Point p) { center = p;}
-  ~Rectangle() {}
+  
+  // Destructor
+  virtual ~Rectangle() {}
 };
