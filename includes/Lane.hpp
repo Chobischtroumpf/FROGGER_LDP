@@ -1,6 +1,7 @@
 #ifndef LANE_HPP
 #define LANE_HPP
 
+#include <cstdlib>
 #include <vector>
 
 // Represents a position on the game board
