@@ -1,7 +1,16 @@
 
 #include "Rectangle.hpp"
 
-void Rectangle::print() {
+Rectangle &Rectangle::operator=(const Rectangle &r) {
+  center = r.center;
+  w = r.w;
+  h = r.h;
+  fillColor = r.fillColor;
+  frameColor = r.frameColor;
+  return *this;
+}
+
+void Rectangle::draw() {
   std::array<Point, 5> points{Point{center.x - w / 2, center.y - h / 2},
                          Point{center.x - w / 2, center.y + h / 2},
                          Point{center.x + w / 2, center.y + h / 2},

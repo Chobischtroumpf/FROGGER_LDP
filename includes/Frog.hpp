@@ -11,10 +11,11 @@ class Canvas;
 
 // The Frog class is a subclass of the Moveable and Rectangle classes,
 // and it represents the frog that the player controls in the game.
-class Frog: public virtual Moveable, public virtual Rectangle {
+class Frog: public virtual frogger::Moveable, public virtual Rectangle {
 private:
   Point coordinates;
   Canvas *canvas = nullptr;
+  int life = 3;
 public:
   Frog(Point start_pos, Canvas *canvas);
   Frog &operator=(const Frog &other) = default;
@@ -23,14 +24,16 @@ public:
   // Cell* getCurrentCell() { return this->currentCell;};
   int getX() const;
   int getY() const;
+  int getLife() const;
 
   //setters
   // void setCurrentCell(Cell cell){ this->currentCell = &cell; }
   void setX(int x);
   void setY(int y);
+  void loseLife();
 
   //methods
-  void print();
+  // void draw() override;
   void keyPressed(int keyCode) override {(void)keyCode;};
   void moveLeft() override;
   void moveRight() override;

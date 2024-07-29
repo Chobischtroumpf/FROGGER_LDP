@@ -1,15 +1,24 @@
-#ifndef __ANIMATION_HPP
-#define __ANIMATION_HPP
+#pragma once
 
 #include <FL/fl_draw.H>
 #include "Point.hpp"
 
-struct Translation {
-  explicit Translation(Point p) {
-    fl_push_matrix();
-    fl_translate(p.x, p.y);
-  }
-  ~Translation() { fl_pop_matrix(); }
-};
+namespace frogger {
 
-#endif //!__ANIMATION_HPP
+  struct Translation {
+    explicit Translation(Point p) {
+      fl_push_matrix();
+      fl_translate(p.x, p.y);
+    }
+    ~Translation() { fl_pop_matrix(); }
+  };
+
+  struct Rotation {
+    explicit Rotation(double angle) {
+      fl_push_matrix();
+      fl_rotate(angle);
+    }
+    ~Rotation() { fl_pop_matrix(); }
+  };
+
+} // namespace frogger
