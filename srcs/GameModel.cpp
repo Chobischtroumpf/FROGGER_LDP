@@ -5,14 +5,14 @@ GameModel::GameModel() : isGameOver(false), board(13), frog({6,12}), frameCounte
 
 }
 
-void Frog2::move(int dx, int dy) {
+void Frog::move(int dx, int dy) {
     position.x += dx;
     position.y += dy;
 }
 
 void GameModel::update() {
     frameCounter++;
-
+    
     if (frameCounter != 30){
         return;
     }

@@ -5,7 +5,7 @@
 #include "Board.hpp"
 
 
-class Frog2 {
+class Frog {
 public:
     Position position;
     void move(int dx, int dy);
@@ -15,7 +15,7 @@ class GameModel {
 public:
     bool isGameOver;
     Board board;
-    Frog2 frog;
+    Frog frog;
     std::vector<Vehicle> vehicles;
 
 
