@@ -6,8 +6,9 @@
 #include "GameModel.hpp"
 #include "GameController.hpp"
 #include "DrawingUtils.hpp"
+#include "OverlayView.hpp"
 #include <iostream>
-
+#include "BoardView.hpp"
 // Froward declaration to avoid circular dependency
 class GameController;
 
@@ -22,6 +23,8 @@ public:
 private:
     GameModel* model;
     GameController* controller;
+    OverlayView* overlay;
+    BoardView* boardView;
     Fl_Box* frogBox;
     std::vector<Fl_Box*> vehicleBoxes;
 };
