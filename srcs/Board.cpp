@@ -18,8 +18,13 @@ Board::Board(int size) : size(size) {
             break;
         case 1 :
             laneType = LaneType::Road;
+            dir = Left;
             break;
         case 2 :
+            laneType = LaneType::Road;
+            dir = Left;
+            break;
+        case 3 :
             laneType = LaneType::Road;
             dir = Left;
             break;
@@ -28,7 +33,6 @@ Board::Board(int size) : size(size) {
             break;
         case 5 :
             laneType = LaneType::Road;
-            dir = Left;
             break;
         case 7 :
             laneType = LaneType::River;
@@ -36,13 +40,14 @@ Board::Board(int size) : size(size) {
         case 8 :
             laneType = LaneType::River;
             break;
+        case 9 :
+            laneType = LaneType::River;
+            break;
         case 10 :
             laneType = LaneType::River;
-            dir = Left;
             break;
         case 11 :
             laneType = LaneType::River;
-            dir = Left;
             break;
         default:
             break;
