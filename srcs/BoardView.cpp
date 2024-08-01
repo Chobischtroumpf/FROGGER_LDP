@@ -3,6 +3,7 @@
 BoardView::BoardView(int x, int y, int w, int h, GameModel* model)
     : Fl_Widget(x, y, w, h), model(model) {}
 
+
 Fl_Color getLaneColor(LaneType type){
     switch(type) {
         case LaneType::Grass :
@@ -16,17 +17,6 @@ Fl_Color getLaneColor(LaneType type){
     };
 }
 
-Fl_Color getVehicleColor(LaneType type){
-    switch(type) {
-        case LaneType::River:
-            return FL_DARK_BLUE;
-        case LaneType::Road:
-            return FL_RED;
-        default:
-            return FL_WHITE;
-    };
-}
-
 void BoardView::draw() {
 
     const std::vector<Lane>& lanes = model->board.getLanes();
@@ -34,7 +24,6 @@ void BoardView::draw() {
     // Draw the board
     for (const auto& lane : lanes) {
         Fl_Color fillColor =  getLaneColor(lane.getType());
-        Fl_Color vColor =  getVehicleColor(lane.getType());
 
         // Draw Each tile
         for (const auto& tile : lane.getTiles()) {
@@ -43,7 +32,7 @@ void BoardView::draw() {
 
         // Draw each Vehicle
         for (const auto& v : lane.getVehicles()) {
-           drawSquare(v.position, 40, vColor, FL_BLACK );
+           drawVehicle(v);
         }
     }
 
