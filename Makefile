@@ -21,7 +21,7 @@ OBJDIR  = bin/
 # Add include folder
 CFLAGS  += -I $(INCDIR)
 # Linking stage flags
-LDFLAGS += -lfltk
+LDFLAGS += -lfltk -lfltk_images
 
 # Detecting macOS
 UNAME_S := $(shell uname -s)
