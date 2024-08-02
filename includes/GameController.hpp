@@ -24,9 +24,18 @@ public:
 private:
     GameModel* model;
     GameView* view;
+    int frameCounter = 0;
+
+    void update(); // Update the game state
+
+
+    void resetPlayerPosition();
+    void killPlayer();
     void resetGame();
+
     void movePlayer(int x, int y);
-    void checkPlayer();
+    void checkVictory();
+
 };
 
 #endif // GAMECONTROLLER_HPP

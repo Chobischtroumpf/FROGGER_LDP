@@ -74,5 +74,94 @@ void drawVehicle(Vehicle v) {
     }
 }
 
+// Draw a PNG image on the board
+void drawPNG(const char* filename, Position pos, int size) {
+    Fl_PNG_Image png(filename);
+    png.draw(pos.x * tileSize + (tileSize - size) / 2, pos.y * tileSize + (tileSize - size) / 2, size, size);
+}
 
+void drawTransformedRectangle(int x, int y, int w, int h) {
+    fl_begin_polygon();
+    fl_vertex(x, y);
+    fl_vertex(x + w, y);
+    fl_vertex(x + w, y + h);
+    fl_vertex(x, y + h);
+    fl_end_polygon();
+}
 
+void drawPlayer(Position pos, int rotation) {
+    
+    int size = 30;  // Size of the frog
+
+    // Calculate the center of the frog
+    int centerX = pos.x * tileSize + tileSize / 2;
+    int centerY = pos.y * tileSize + tileSize / 2;
+
+    // Save the current transformation state
+    fl_push_matrix();
+
+    // Translate to the center of the frog and apply rotation
+    fl_translate(centerX, centerY);
+    fl_rotate(rotation);
+
+    // Draw the body of the frog using the helper function
+    fl_color(FL_GREEN);
+    drawTransformedRectangle(-size / 2, -size / 2, size, size);
+
+    // Draw eyes
+    fl_color(FL_RED);
+    drawTransformedRectangle(-size / 4, -size / 4, 5, 5);
+    drawTransformedRectangle(size / 4 - 5, -size / 4, 5, 5);
+
+    // Draw rectangular legs
+    fl_color(FL_GREEN);
+    drawTransformedRectangle(-size / 2 - 5, size / 3, 10, 10);  // Left back leg
+    drawTransformedRectangle(size / 2 - 5, size / 3, 10, 10);   // Right back leg
+    drawTransformedRectangle(-size / 2 - 5, -size / 3 - 10, 10, 10);  // Left front leg
+    drawTransformedRectangle(size / 2 - 5, -size / 3 - 10, 10, 10);   // Right front leg
+
+    // Restore the transformation matrix
+    fl_pop_matrix();
+}
+
+// Draw a tile on the board
+void drawTile(Tile tile, Fl_Color fillColor) {
+    switch (tile.type)
+    {
+    case TileType::Classic:
+        drawSquare(tile.pos, 50, fillColor, FL_BLACK );
+        break;
+    case TileType::EmptyLilypad:
+        drawSquare(tile.pos, 50, FL_BLUE, FL_BLACK );
+        drawLilyPad(tile.pos, 40);
+        break;
+    case TileType::CompletedLilypad:
+        drawSquare(tile.pos, 50, FL_BLUE, FL_BLACK );
+        drawLilyPad(tile.pos, 40);
+        drawPlayer(tile.pos, 0);
+        break;
+    default:
+        break;
+    }
+}   
+
+// Function to draw a lily pad
+void drawLilyPad(Position pos, int size) {
+    fl_push_matrix();  // Save the current transformation matrix
+
+    // Translate to the center of the lily pad for better positioning
+    fl_translate(pos.x * tileSize + tileSize / 2, pos.y * tileSize + tileSize / 2);
+
+    // Set color to green
+    fl_color(FL_DARK_GREEN);
+
+    // Begin drawing an ellipse representing the lily pad
+    fl_begin_complex_polygon();
+    for (int i = 0; i < 360; i++) {
+        double angle = i * 3.14159 / 180.0;  // Convert angle to radians
+        fl_vertex(cos(angle) * size / 2, sin(angle) * size / 2);
+    }
+    fl_end_complex_polygon();
+
+    fl_pop_matrix();  // Restore the transformation matrix
+}

@@ -29,6 +29,22 @@ void GameController::resetGame(){
     model->frog.position =  Position{6,12};
 }
 
+// Resets the player position to the starting position
+void GameController::resetPlayerPosition(){
+    model->frog.position = Position{6,12};
+}
+
+// Kills the player and checks if the game is over
+void GameController::killPlayer(){
+    model->life--;
+    
+    if (model->life == 0){
+        model->isGameOver = true;
+    } else {
+        resetPlayerPosition();
+    }
+}
+
 void GameController::handleKeyEvent(int key) {
     onKey(key);
 }
@@ -51,9 +67,55 @@ void GameController::movePlayer(int x, int y){
     model->frog.move(x, y);
 
     if (!model->isSafe(newPos)){
-        model->isGameOver = true;
+        killPlayer();
         return;
     }
+
+    if(model->tryEmptyLilyPad(newPos)){
+        std::cout << "PLayer on lily pad" << std::endl;
+        model->victoryScore++;
+        checkVictory();
+        resetPlayerPosition();
+    }
+}
+
+void GameController::checkVictory(){
+    if (model->victoryScore == 5){
+        model->isVictory = true;
+    }
+}
+
+// Update the game state
+void GameController::update() {
+    // Siple frame counter to throttle the game loop
+    frameCounter++;
+    if (frameCounter != 30){
+        return;
+    }
+    frameCounter = 0;
+
+    // Mobile platform check
+    model->transportFrog();
+
+    // Check if frog is out of bounds of board
+    if (!model->board.contains(model->frog.position)){
+        std::cout << "Out of bounds death" << std::endl;
+        killPlayer();
+        return;
+    }
+
+    // Updates each lane by moving their contained objects
+    for (auto& lane : model->board.lanes) {
+        lane.update(); // Update each lane
+    }
+
+    // Check for collisions, game over conditions, etc.
+    // Check if frog collides with any vehicle
+    if (!model->isSafe(model->frog.position)) {
+        killPlayer();
+        return;
+    }
+
 }
 
 // The main loop of the game, it manages the game events 
@@ -61,7 +123,7 @@ void GameController::gameLoop() {
     //std::cout << "Gameloop trigger" << std::endl;
         view->updateView();
     if (!model->isGameOver) {
-        model->update();
+        update();
         view->updateView();
     }
 }

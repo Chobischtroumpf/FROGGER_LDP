@@ -19,10 +19,12 @@ Direction Vehicle::getDirection() const {
 
 
 
-Lane::Lane(int length, int rowIndex, LaneType type, Direction direction) : length(length), rowIndex(rowIndex), type(type), direction(direction), tiles(length, Tile({0, 0})) {
+Lane::Lane(int length, int rowIndex, LaneType type, Direction direction) : length(length), rowIndex(rowIndex), type(type), direction(direction), tiles(length, Tile({0, 0}, Classic)) {
     // Initialize tiles with corresponding positions
+    
     for (int i = 0; i < length; ++i) {
-        tiles[i] = Tile({i, rowIndex}); 
+        TileType tileType = ( type == LaneType::FinishLine && i % 2 == 1 ) ? TileType::EmptyLilypad: TileType::Classic;
+        tiles[i] = Tile({i, rowIndex}, tileType); 
     }
 }
 
@@ -68,7 +70,7 @@ void Lane::spawnVehicle() {
                     // Default case shouldn't happen, so throw an exception if reached
                     throw std::runtime_error("Invalid vehicle type");
             }
-            
+
             vehicles.push_back(Vehicle{spawnPos, newType, newPart, getDirection()});
 
             return;
@@ -77,7 +79,7 @@ void Lane::spawnVehicle() {
     }
         
     // First determine if we spawn a vehicle
-    if( rand() % 2 == 0) {
+    if( ! (rand() % 3 == 0) ) {
         return;
     }
 
@@ -131,12 +133,16 @@ const std::vector<Tile>& Lane::getTiles() const {
     return tiles;
 }
 
+std::vector<Tile>& Lane::getTiles() {
+    return tiles;
+}
+
 const std::vector<Vehicle>& Lane::getVehicles() const {
     return vehicles;
 }
 
 LaneType Lane::getType() const {
-    return type;
+    return this->type;
 }
 Direction Lane::getDirection() const {
     return direction;
@@ -161,6 +167,8 @@ bool Lane::isSafe(Position pos) const {
                 }
             }
             return false;
+        case LaneType::FinishLine:
+            return tiles[pos.x].type == TileType::EmptyLilypad;
         default:
             return true;
     }

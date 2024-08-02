@@ -12,6 +12,8 @@ Fl_Color getLaneColor(LaneType type){
             return FL_BLUE;
         case LaneType::Road:
             return FL_GRAY;
+        case LaneType::FinishLine:
+            return FL_DARK_GREEN;
         default:
             return FL_WHITE;
     };
@@ -27,7 +29,7 @@ void BoardView::draw() {
 
         // Draw Each tile
         for (const auto& tile : lane.getTiles()) {
-           drawSquare(tile.pos, 50, fillColor, FL_BLACK );
+           drawTile(tile, fillColor);
         }
 
         // Draw each Vehicle
@@ -37,5 +39,5 @@ void BoardView::draw() {
     }
 
     // Draw the frog ( player)
-    drawSquare(model->frog.position, 20, FL_GREEN, FL_BLACK );
+    drawPlayer(model->frog.position, model->frog.getRotation());
 }

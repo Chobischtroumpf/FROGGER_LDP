@@ -29,16 +29,10 @@ void GameView::draw() {
     
     Fl_Window::draw();
 
-    
-    
-
-    
 }
 
 void GameView::updateView() {
     // Schedule the redrtaw of the overlay
-    overlay->updateHUD(3, model->isGameOver, false);
+    overlay->updateHUD(model->life, model->isGameOver, model->isVictory);
     redraw();
-
-   
 }

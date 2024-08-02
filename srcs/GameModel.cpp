@@ -1,25 +1,37 @@
 #include "GameModel.hpp"
 #include <iostream>
 
-GameModel::GameModel() : isGameOver(false), board(13), frog({6,12}), frameCounter(0) {
+GameModel::GameModel() : isGameOver(false), isVictory(false), board(13), frog({6,12}) {
 
 }
+Frog::Frog(Position pos) : position(pos) {
+}
 
+// Move the frog by dx and dy and update its rotation
 void Frog::move(int dx, int dy) {
     position.x += dx;
     position.y += dy;
+
+    // Update rotation so the frog faces the direction it's moving (counter-clockwise)
+    if ( abs(dx) > abs(dy) ) {
+        rotation = dx > 0 ? 270 : 90;
+    } else {
+        rotation = dy > 0 ? 180 : 0 ;
+    }
 }
 
-void GameModel::update() {
-    frameCounter++;
-    
-    if (frameCounter != 30){
-        return;
+int Frog::getRotation() const {
+    return rotation;
+}
+
+void GameModel::updateLanes() {
+    for (auto& lane : board.lanes) {
+        lane.update(); // Update each lane
     }
+}
 
-    frameCounter = 0;
-
-     // Check if frog is on a moving platform, if so moves it
+void GameModel::transportFrog() {
+    // Check if frog is on a moving platform, if so moves it
     Lane lane = board.getLanes()[frog.position.y]; 
 
     if( lane.getType() == LaneType::River){
@@ -29,36 +41,30 @@ void GameModel::update() {
             frog.move(-1,0);
         }
     }
+}   
 
-    // Check if frog is out of bounds of board
-    if (!board.contains(frog.position)){
-        std::cout << "Out of bounds death" << std::endl;
-        isGameOver = true;
-        return;
-    }
-
-    // Updates each lane by moving their contained objects
-    for (auto& lane : board.lanes) {
-        lane.update(); // Update each lane
-    }
-
-    // Check for collisions, game over conditions, etc.
-    // Check if frog collides with any vehicle
-    if (!isSafe(frog.position)) {
-        isGameOver = true;
-        return;
-    }
-
-   
-        
-    
-}
-
-const bool GameModel::isSafe(Position pos) const{
+bool GameModel::isSafe(Position pos) const{
     std::vector<Lane> lanes = board.getLanes();
 
     Lane lane = lanes.at(pos.y);
 
     return lane.isSafe(pos);
 }
+
+bool GameModel::tryEmptyLilyPad(Position pos)  {
+    std::vector<Lane>& lanes = board.lanes;
+
+    Lane& lane = lanes.at(pos.y);
+
+    Tile& tile = lane.getTiles().at(pos.x);
+    bool isLilyPad = tile.type == TileType::EmptyLilypad;
+
+    // If the tile is a lily pad, change it to a completed lily pad
+    if (isLilyPad) {
+        std::cout << "Setting tile to completed lily pad" << std::endl;
+        tile.setTileType(TileType::CompletedLilypad);
+    }
+    return isLilyPad;
+}
+
 

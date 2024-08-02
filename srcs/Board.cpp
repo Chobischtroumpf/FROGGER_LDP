@@ -49,6 +49,9 @@ Board::Board(int size) : size(size) {
         case 11 :
             laneType = LaneType::River;
             break;
+        case 12 :
+            laneType = LaneType::FinishLine;
+            break;
         default:
             break;
         }

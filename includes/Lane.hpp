@@ -18,12 +18,23 @@ struct Position {
     }
 };
 
+enum TileType {
+    Classic,
+    EmptyLilypad,
+    CompletedLilypad
+};
+
 // Represents a tile of the game board
 class Tile {
 public:
     Position pos;
+    TileType type = TileType::Classic;
+    Tile(Position pos, TileType t) : pos(pos), type(t) {}
 
-    Tile(Position p) : pos(p) {}
+    void setTileType(TileType t) {
+        type = t;
+    }
+
 };
 
 enum VehicleType { 
@@ -88,8 +99,9 @@ public:
     VehicleType generateVehicleType();
     void update(); // Method to process each game tick
 
-    // Returning a const reference to avoid copying and to prevent modification
-    const std::vector<Tile>& getTiles() const;
+    std::vector<Tile>& getTiles();
+    const std::vector<Tile>& getTiles() const ;
+    
     const std::vector<Vehicle>& getVehicles() const;
     LaneType getType() const;
     Direction getDirection() const;
