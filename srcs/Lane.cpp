@@ -23,7 +23,8 @@ Lane::Lane(int length, int rowIndex, LaneType type, Direction direction) : lengt
     // Initialize tiles with corresponding positions
     
     for (int i = 0; i < length; ++i) {
-        TileType tileType = ( type == LaneType::FinishLine && i % 2 == 1 ) ? TileType::EmptyLilypad: TileType::Classic;
+        // If the lane is a finish line, we need to add empty lilypads
+        TileType tileType = ( type == LaneType::FinishLine && (i % 2 == 0 && i > 1 && i < length - 2)  ) ? TileType::EmptyLilypad: TileType::Classic;
         tiles[i] = Tile({i, rowIndex}, tileType); 
     }
 }
