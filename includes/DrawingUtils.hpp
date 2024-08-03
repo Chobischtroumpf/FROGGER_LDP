@@ -7,6 +7,8 @@
 #include <cmath>
 #include <iostream>
 #include "GameModel.hpp"
+#include "DisplaySettings.hpp"
+#include "Coordinate.hpp"
 
 // Declare the functions
 void drawFilledRect(int x, int y, int width, int height, Fl_Color fillColor, Fl_Color frameColor = FL_BLACK);

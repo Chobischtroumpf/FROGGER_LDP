@@ -5,18 +5,7 @@
 #include <vector>
 #include <stdexcept>
 #include <iostream>
-
-// Represents a position on the game board
-struct Position {
-    // x and y represent the coordinates on the game board,
-    // where x is the horizontal (abscissa) and y is the vertical (ordinate) axis.
-    int x, y;
-
-    // Override the equality operator
-    bool operator==(const Position& other) const {
-        return x == other.x && y == other.y;
-    }
-};
+#include "Coordinate.hpp"
 
 enum TileType {
     Classic,
@@ -101,7 +90,7 @@ public:
 
     std::vector<Tile>& getTiles();
     const std::vector<Tile>& getTiles() const ;
-    
+
     const std::vector<Vehicle>& getVehicles() const;
     LaneType getType() const;
     Direction getDirection() const;
