@@ -5,7 +5,7 @@ GameView::GameView(int w, int h, GameModel* model, GameController* controller)
     : Fl_Window(w, h), model(model), controller(controller)  {
 
     this->resizable(this);
-
+    this->color(FL_BLACK);
     // Initialize the BoardView
     boardView = new BoardView(0, 0, w, h, model);
 

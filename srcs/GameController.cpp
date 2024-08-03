@@ -72,7 +72,6 @@ void GameController::movePlayer(int x, int y){
     }
 
     if(model->tryEmptyLilyPad(newPos)){
-        std::cout << "PLayer on lily pad" << std::endl;
         model->victoryScore++;
         checkVictory();
         resetPlayerPosition();
