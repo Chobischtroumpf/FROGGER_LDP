@@ -18,6 +18,7 @@
 #include "GameModel.hpp"
 #include "GameView.hpp"
 #include "GameController.hpp"
+#include "DisplaySettings.hpp"
 #include <iostream>
 
 void gameLoopCallback(void* controller_ptr) {
@@ -64,7 +65,7 @@ int main(int argc, char** argv) {
     GameController controller(&model, view);
 
     std::cout << "Initializing View" << std::endl;
-    view = new GameView(1000, 1000, &model, &controller);
+    view = new GameView(DisplaySettings::windowSize, DisplaySettings::windowSize, &model, &controller);
 
     controller.linkView(view); // Set the view in the controller
 
