@@ -6,6 +6,17 @@ GameView::GameView(int w, int h, GameModel* model, GameController* controller)
 
     this->resizable(this);
     this->color(FL_BLACK);
+
+    // Get screen dimensions
+    int screen_w = Fl::w();
+    int screen_h = Fl::h();
+
+    // Calculate center position
+    int window_x = (screen_w - this->w()) / 2;
+    int window_y = (screen_h - this->h()) / 2;
+    // Center window
+    this->position(window_x, window_y);
+
     // Initialize the BoardView
     boardView = new BoardView(0, 0, w, h, model);
 
