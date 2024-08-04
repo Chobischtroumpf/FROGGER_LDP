@@ -41,7 +41,20 @@ void GameModel::transportFrog() {
             frog.move(-1,0);
         }
     }
-}   
+} 
+
+void GameModel::resetFinishLine() {
+    // Resets the finish lilipads
+    Lane& lane = board.lanes[0];
+
+    for (auto& tile : lane.getTiles()) {
+        if (tile.type == TileType::CompletedLilypad){
+            tile.setTileType(TileType::EmptyLilypad);
+        }
+    }
+    
+}
+
 
 bool GameModel::isSafe(Position pos) const{
     std::vector<Lane> lanes = board.getLanes();

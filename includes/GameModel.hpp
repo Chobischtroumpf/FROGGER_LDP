@@ -30,9 +30,12 @@ public:
 
 
     GameModel();
-    void updateLanes();   // Updates each lane by moving their contained objects
-    void transportFrog(); // Check if frog is on a moving platform, if so moves it
-
+    // Updates each lane by moving their contained objects
+    void updateLanes();   
+    // Check if frog is on a moving platform, if so moves it
+    void transportFrog(); 
+    // Resets the finish lilipads
+    void resetFinishLine(); 
 
     // Checks if the given position is safe for the frog
     bool isSafe(Position pos) const;
