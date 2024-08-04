@@ -26,6 +26,10 @@ void GameController::onKey(int key) {
 
 void GameController::resetGame(){
     model->isGameOver = false;
+    model->isVictory = false;
+    model->victoryScore = 0;
+    model->resetFinishLine();
+    model->life = 3;
     model->frog.position =  Position{6,12};
 }
 
