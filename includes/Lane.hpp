@@ -78,11 +78,29 @@ private:
     Direction direction;
 };
 
+// Represents a simple pattern of vehicles to spawn
+class SpawnPattern {
+public:
+    std::vector<VehicleType> pattern;
+    // Delay between each vehicle spawn
+    int delay;
+
+    SpawnPattern(std::vector<VehicleType> p, int d) : pattern(p), delay(d), currentIndex(0), delayCounter(0) {}
+    // Returns the next vehicle type in the pattern and updates the internal state
+    VehicleType next();
+
+    // Returns true if the next vehicle should be spawned
+    bool tick();
+
+private:
+    int currentIndex;
+    int delayCounter;
+};
 
 
 class Lane {
 public:
-    Lane(int length, int rowIndex, LaneType type, Direction direction = Direction::Right);
+    Lane(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direction direction = Direction::Right);
 
     void spawnVehicle();
     VehicleType generateVehicleType();
@@ -101,6 +119,7 @@ private:
     int rowIndex;
     LaneType type;
     Direction direction;
+    SpawnPattern pattern;
     std::vector<Tile> tiles;
     std::vector<Vehicle> vehicles;
 };

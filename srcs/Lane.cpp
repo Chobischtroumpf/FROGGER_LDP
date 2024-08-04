@@ -18,8 +18,20 @@ Direction Vehicle::getDirection() const {
 }
 
 
+VehicleType SpawnPattern::next() {
+    // Return the next vehicle type in the pattern
+    currentIndex = (currentIndex + 1) % pattern.size();
 
-Lane::Lane(int length, int rowIndex, LaneType type, Direction direction) : length(length), rowIndex(rowIndex), type(type), direction(direction), tiles(length, Tile({0, 0}, Classic)) {
+    return pattern[currentIndex];
+}
+
+bool SpawnPattern::tick() {
+    // Return true if the next vehicle should be spawned
+    delayCounter = (delayCounter + 1) % delay;
+    return delayCounter == 0;
+}
+
+Lane::Lane(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direction direction) : length(length), rowIndex(rowIndex), type(type), direction(direction), pattern(pattern), tiles(length, Tile({0, 0}, Classic)) {
     // Initialize tiles with corresponding positions
     
     for (int i = 0; i < length; ++i) {
@@ -79,13 +91,17 @@ void Lane::spawnVehicle() {
 
     }
         
-    // First determine if we spawn a vehicle
-    if( ! (rand() % 3 == 0) ) {
+    // // First determine if we spawn a vehicle
+    // if( ! (rand() % 3 == 0) ) {
+    //     return;
+    // }
+
+    if (pattern.tick() == false) {
         return;
     }
 
     // If we do spawn a vehicle, determine the type
-    VehicleType newType = generateVehicleType();
+    VehicleType newType = pattern.next();
     VehiclePart newPart = newType == Bus || newType == Log ? Front : Single;
 
     vehicles.push_back(Vehicle{spawnPos, newType, newPart, getDirection()});

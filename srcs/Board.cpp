@@ -7,6 +7,7 @@ Board::Board(int size) : size(size) {
     for (int i = 0; i < size; i++) {
         LaneType laneType = LaneType::Grass;
         Direction dir = Right;
+        SpawnPattern pattern = SpawnPattern({Car},0);
 
         // Makes it easier to count lanes
         int y = 12 - i; 
@@ -19,35 +20,45 @@ Board::Board(int size) : size(size) {
         case 1 :
             laneType = LaneType::Road;
             dir = Left;
+            pattern = SpawnPattern({Car}, 3);
             break;
         case 2 :
             laneType = LaneType::Road;
             dir = Left;
+            pattern = SpawnPattern({Car, Bus}, 3);
             break;
         case 3 :
             laneType = LaneType::Road;
             dir = Left;
+            pattern = SpawnPattern({Bus, Bus, Car}, 2);
             break;
         case 4 :
             laneType = LaneType::Road;
+            pattern = SpawnPattern({Bus}, 2);
             break;
         case 5 :
             laneType = LaneType::Road;
+            pattern = SpawnPattern({Car}, 3);
             break;
         case 7 :
             laneType = LaneType::River;
+            pattern = SpawnPattern({Log}, 2);
             break;
         case 8 :
             laneType = LaneType::River;
+            pattern = SpawnPattern({Log}, 3);
             break;
         case 9 :
             laneType = LaneType::River;
+            pattern = SpawnPattern({Turtle}, 2);
             break;
         case 10 :
             laneType = LaneType::River;
+            pattern = SpawnPattern({Log}, 3);
             break;
         case 11 :
             laneType = LaneType::River;
+            pattern = SpawnPattern({Log, Turtle}, 1);
             break;
         case 12 :
             laneType = LaneType::FinishLine;
@@ -56,7 +67,7 @@ Board::Board(int size) : size(size) {
             break;
         }
 
-        Lane lane = {size, i, laneType, dir};
+        Lane lane = {size, i, laneType, pattern, dir};
         lanes.push_back(lane);
     }
 
