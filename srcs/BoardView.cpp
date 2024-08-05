@@ -21,6 +21,10 @@ Fl_Color getLaneColor(LaneType type){
 
 void BoardView::draw() {
 
+    Coordinate boardCoords = DisplaySettings::boardCoords;
+    // Define the clipping region to the board boundaries
+    fl_push_clip(boardCoords.x, boardCoords.y, DisplaySettings::boardViewSize, DisplaySettings::boardViewSize);
+
     const std::vector<Lane>& lanes = model->board.getLanes();
     
     // Draw the board
@@ -40,4 +44,7 @@ void BoardView::draw() {
 
     // Draw the frog ( player)
     drawPlayer(model->frog.position, model->frog.getRotation());
+
+    // Remove the clipping region
+    fl_pop_clip();
 }

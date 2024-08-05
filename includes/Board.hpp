@@ -19,6 +19,8 @@ class Board {
 
     const std::vector<Lane>& getLanes() const;
 
+    Lane& hit(Position pos);
+
     private:
     // We assume the board is square
     int size;

@@ -19,7 +19,7 @@ Board::Board(int size) : size(size) {
             break;
         case 1 :
             laneType = LaneType::Road;
-            dir = Left;
+            //dir = Left;
             pattern = SpawnPattern({Car}, 3);
             break;
         case 2 :
@@ -30,35 +30,35 @@ Board::Board(int size) : size(size) {
         case 3 :
             laneType = LaneType::Road;
             dir = Left;
-            pattern = SpawnPattern({Bus, Bus, Car}, 2);
+            pattern = SpawnPattern({Bus, Bus, Car}, 5);
             break;
         case 4 :
             laneType = LaneType::Road;
-            pattern = SpawnPattern({Bus}, 2);
+            pattern = SpawnPattern({Bus}, 5);
             break;
         case 5 :
             laneType = LaneType::Road;
-            pattern = SpawnPattern({Car}, 3);
+            pattern = SpawnPattern({Car}, 5);
             break;
         case 7 :
             laneType = LaneType::River;
-            pattern = SpawnPattern({Log}, 2);
+            pattern = SpawnPattern({{Log, 2}}, 3);
             break;
         case 8 :
             laneType = LaneType::River;
-            pattern = SpawnPattern({Log}, 3);
+            pattern = SpawnPattern({{Log, 2}}, 3);
             break;
         case 9 :
             laneType = LaneType::River;
-            pattern = SpawnPattern({Turtle}, 2);
+            pattern = SpawnPattern({Turtle}, 3);
             break;
         case 10 :
             laneType = LaneType::River;
-            pattern = SpawnPattern({Log}, 3);
+            pattern = SpawnPattern({{Log, 5}}, 6);
             break;
         case 11 :
             laneType = LaneType::River;
-            pattern = SpawnPattern({Log, Turtle}, 1);
+            pattern = SpawnPattern({{Log, 3}, Turtle}, 4);
             break;
         case 12 :
             laneType = LaneType::FinishLine;
@@ -73,11 +73,21 @@ Board::Board(int size) : size(size) {
 
 }
 
-// Checks if given position if inside the board bounds
+// Checks if given position if inside the board bounds using the board size
 bool Board::contains(Position pos) const {
-    return pos.x < 13 && pos.y < 13 && pos.x >= 0 && pos.y >= 0;
+    return !(pos.x < 0 || pos.x > DisplaySettings::boardViewSize || pos.y < 0 || pos.y > DisplaySettings::boardViewSize);
 }
 
 const std::vector<Lane>& Board::getLanes() const{
     return lanes;
+}
+
+Lane& Board::hit(Position pos) {
+    int index = pos.tilePos().second;
+
+    if (index < 0 || index >= static_cast<int>(lanes.size())) {
+        throw std::runtime_error("Invalid index for lane");
+    }
+
+    return lanes.at(index);
 }

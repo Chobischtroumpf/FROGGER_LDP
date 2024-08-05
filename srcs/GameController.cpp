@@ -30,12 +30,12 @@ void GameController::resetGame(){
     model->victoryScore = 0;
     model->resetFinishLine();
     model->life = 3;
-    model->frog.position =  Position{6,12};
+    resetPlayerPosition();
 }
 
 // Resets the player position to the starting position
 void GameController::resetPlayerPosition(){
-    model->frog.position = Position{6,12};
+    model->frog.resetPosition();
 }
 
 // Kills the player and checks if the game is over
@@ -61,14 +61,14 @@ void GameController::movePlayer(int x, int y){
     
     Position pos = model->frog.position;
 
-    Position newPos = Position{pos.x + x , pos.y + y};
+    Position newPos = Position{pos.x + x * DisplaySettings::tileSize , pos.y + y * DisplaySettings::tileSize};
 
     if (!model->board.contains(newPos)){
         std::cout << "Out of bounds" << std::endl;
         return;
     }
 
-    model->frog.move(x, y);
+    model->frog.move(x * DisplaySettings::tileSize, y * DisplaySettings::tileSize);
 
     if (!model->isSafe(newPos)){
         killPlayer();
@@ -92,9 +92,6 @@ void GameController::checkVictory(){
 void GameController::update() {
     // Siple frame counter to throttle the game loop
     frameCounter++;
-    if (frameCounter != 30){
-        return;
-    }
     frameCounter = 0;
 
     // Mobile platform check

@@ -6,9 +6,6 @@ void Vehicle::move(int x) {
     position.x += x;
 }
 
-VehiclePart Vehicle::getPart() const {
-    return part;
-}
 VehicleType Vehicle::getType() const {
     return type;
 }
@@ -18,7 +15,7 @@ Direction Vehicle::getDirection() const {
 }
 
 
-VehicleType SpawnPattern::next() {
+VehicleConfig SpawnPattern::next() {
     // Return the next vehicle type in the pattern
     currentIndex = (currentIndex + 1) % pattern.size();
 
@@ -27,7 +24,7 @@ VehicleType SpawnPattern::next() {
 
 bool SpawnPattern::tick() {
     // Return true if the next vehicle should be spawned
-    delayCounter = (delayCounter + 1) % delay;
+    delayCounter = (int)round( (delayCounter + 1) % (delay * 60));
     return delayCounter == 0;
 }
 
@@ -37,7 +34,7 @@ Lane::Lane(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direct
     for (int i = 0; i < length; ++i) {
         // If the lane is a finish line, we need to add empty lilypads
         TileType tileType = ( type == LaneType::FinishLine && (i % 2 == 0 && i > 1 && i < length - 2)  ) ? TileType::EmptyLilypad: TileType::Classic;
-        tiles[i] = Tile({i, rowIndex}, tileType); 
+        tiles[i] = Tile({i * DisplaySettings::tileSize, rowIndex * DisplaySettings::tileSize}, tileType); 
     }
 }
 
@@ -46,51 +43,13 @@ void Lane::spawnVehicle() {
     Position lastSpawnPos; // The position next to the spawn position
 
     if( direction == Right) {
-        spawnPos = {0, rowIndex};
-        lastSpawnPos = {1, rowIndex};
+        spawnPos = {0, rowIndex * DisplaySettings::tileSize};
+        lastSpawnPos = {1, rowIndex * DisplaySettings::tileSize};
     } else {
-        spawnPos = {length - 1, rowIndex};
-        lastSpawnPos = {length - 2, rowIndex};
+        spawnPos = {length * DisplaySettings::tileSize - 1, rowIndex * DisplaySettings::tileSize};
+        lastSpawnPos = {length * DisplaySettings::tileSize - 2, rowIndex * DisplaySettings::tileSize};
     }
 
-
-    if (!getVehicles().empty()) {
-
-        Vehicle lastVehicle = this->getVehicles().back();
-
-        // Check if the spawn case of the lane already contained a vehicle
-        if ( lastVehicle.position == lastSpawnPos ) {
-            
-            // Don't allow two vehicles to spawn adjacent.
-            if( lastVehicle.getPart() == VehiclePart::End || lastVehicle.getPart() == VehiclePart::Single){ return; }
-            
-            // At this point we know we will spawn a vehicle part;
-            VehicleType newType;
-            VehiclePart newPart;
-
-            switch(lastVehicle.getType()) {
-                // Buses are two parts long, so we need to spawn the second part
-                case Bus : 
-                    newType = Bus;
-                    newPart = End;
-                    break;
-                // Logs have no size limit, so we spawn a new log part randomly
-                case Log:
-                    newType = Log;
-                    newPart = rand() % 2 == 0 ? Center : End;
-                    break;
-                default:
-                    // Default case shouldn't happen, so throw an exception if reached
-                    throw std::runtime_error("Invalid vehicle type");
-            }
-
-            vehicles.push_back(Vehicle{spawnPos, newType, newPart, getDirection()});
-
-            return;
-        }
-
-    }
-        
     // // First determine if we spawn a vehicle
     // if( ! (rand() % 3 == 0) ) {
     //     return;
@@ -101,12 +60,10 @@ void Lane::spawnVehicle() {
     }
 
     // If we do spawn a vehicle, determine the type
-    VehicleType newType = pattern.next();
-    VehiclePart newPart = newType == Bus || newType == Log ? Front : Single;
+    VehicleConfig newConfig = pattern.next();
 
-    vehicles.push_back(Vehicle{spawnPos, newType, newPart, getDirection()});
+    vehicles.push_back(Vehicle{spawnPos, newConfig, getDirection()});
 
-    
 }
 
 // Generate a random vehicle type based on the lane type
@@ -121,19 +78,28 @@ VehicleType Lane::generateVehicleType() {
     }
 }
 
+// Check if the vehicle collides with the given position taking length and direction into account
+bool Vehicle::collides(Position pos) const {
+    if (direction == Direction::Right) {
+        return pos.x <= position.x && pos.x > position.x - length * DisplaySettings::tileSize;
+    } else {
+        return pos.x >= position.x && pos.x < position.x + length * DisplaySettings::tileSize;
+    }
+}
+
 void Lane::update() {
 
     
     // Move existing vehicles
     for (auto v = vehicles.begin(); v != vehicles.end(); ) {
         if(direction == Direction::Right) {
-            v->move(+1); // Move each vehicle
+            v->move(speed); // Move each vehicle
         } else {
-            v->move(-1); 
+            v->move(-speed); 
         }
         
         // If the vehicle reaches the end of the lane, remove it
-        if (v->position.x >= length || v->position.x < 0 ) {
+        if (v->position.x >= length * DisplaySettings::tileSize || v->position.x < 0 ) {
             v = vehicles.erase(v); // Erase returns the next iterator
         } else {
             ++v; // Move to the next vehicle
@@ -164,13 +130,15 @@ LaneType Lane::getType() const {
 Direction Lane::getDirection() const {
     return direction;
 }
+
 bool Lane::isSafe(Position pos) const {
+
     switch( type) {
 
         // Checks if there is a vehicle at the given pos, pos is safe otherwise
         case LaneType::Road:
             for( auto& v : vehicles){
-                if( v.position == pos ){
+                if (v.collides(pos)) {
                     return false;
                 }
             }
@@ -179,14 +147,38 @@ bool Lane::isSafe(Position pos) const {
         // Checks if there is a vehicle at the given pos, pos is not safe otherwise
         case LaneType::River:
             for( auto& v : vehicles){
-                if( v.position == pos ){
+                if( v.collides(pos)  ){
                     return true;
                 }
             }
             return false;
+            
         case LaneType::FinishLine:
-            return tiles[pos.x].type == TileType::EmptyLilypad;
+            std::cout << "Checking finish line" << hit(pos).type << std::endl;
+            return this->hit(pos).type == TileType::EmptyLilypad;
         default:
             return true;
     }
+}
+
+Tile& Lane::hit(Position pos) {
+    // Returns the tile at the given position
+    int index = round(pos.x / DisplaySettings::tileSize);
+
+    if (index < 0 || index >= static_cast<int>(tiles.size())) {
+        throw std::runtime_error("Invalid index for lane tile");
+    };
+
+    return tiles.at( index );
+}
+
+const Tile& Lane::hit(Position pos) const {
+    // Returns the tile at the given position
+    int index = round(pos.x / DisplaySettings::tileSize);
+    
+    if (index < 0 || index >= static_cast<int>(tiles.size())) {
+        throw std::runtime_error("Invalid index for lane tile");
+    };
+
+    return tiles.at( index );
 }

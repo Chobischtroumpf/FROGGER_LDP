@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <iostream>
 #include "Coordinate.hpp"
-
+#include <cmath>
 enum TileType {
     Classic,
     EmptyLilypad,
@@ -35,11 +35,11 @@ enum VehicleType {
 
 };
 
-enum VehiclePart { 
-    Front,
-    Center,
-    End,
-    Single
+struct VehicleConfig {
+    VehicleType type;
+    int length;  // This can be used for any vehicle, but primarily for Logs.
+
+    VehicleConfig(VehicleType type, int length = 1) : type(type), length(length) {}
 };
 
 enum class LaneType {
@@ -59,35 +59,36 @@ class Vehicle {
 public:
     
     Position position;
+    int length = 1;
 
     // Constructor
-    Vehicle(Position pos, VehicleType t, VehiclePart p, Direction d ) 
-        : position(pos), type(t), part(p), direction(d) {}
+    Vehicle(Position pos, VehicleType t, Direction d ) 
+        : position(pos), type(t), direction(d) {}
+    
+    Vehicle(Position pos, const VehicleConfig& config, Direction d) : position(pos), type(config.type), direction(d), length(config.length) {}
 
     // Getter methods
     VehicleType getType() const;
-    VehiclePart getPart() const;
     Direction getDirection() const;
 
     void move(int x); // Moves the vehicle x tiles along the lane direction
-
+    bool collides(Position pos) const; // Checks if the vehicle collides with the given position
 private:
     
     VehicleType type;
-    VehiclePart part;
     Direction direction;
 };
 
 // Represents a simple pattern of vehicles to spawn
 class SpawnPattern {
 public:
-    std::vector<VehicleType> pattern;
+    std::vector<VehicleConfig> pattern;
     // Delay between each vehicle spawn
     int delay;
 
-    SpawnPattern(std::vector<VehicleType> p, int d) : pattern(p), delay(d), currentIndex(0), delayCounter(0) {}
+    SpawnPattern(std::vector<VehicleConfig> p, int d) : pattern(p), delay(d), currentIndex(0), delayCounter(0) {}
     // Returns the next vehicle type in the pattern and updates the internal state
-    VehicleType next();
+    VehicleConfig next();
 
     // Returns true if the next vehicle should be spawned
     bool tick();
@@ -108,15 +109,23 @@ public:
 
     std::vector<Tile>& getTiles();
     const std::vector<Tile>& getTiles() const ;
-
     const std::vector<Vehicle>& getVehicles() const;
     LaneType getType() const;
     Direction getDirection() const;
+
     // Checks if the given position on the lane is safe
     bool isSafe(Position pos) const;
+
+    // Returns the tile at the given position
+    Tile& hit(Position pos);
+    // const version of the above method
+    const Tile& hit(Position pos) const;
+    
+    int speed = 1;
 private:
     int length;
     int rowIndex;
+    
     LaneType type;
     Direction direction;
     SpawnPattern pattern;

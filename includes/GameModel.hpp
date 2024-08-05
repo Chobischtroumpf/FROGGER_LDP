@@ -7,11 +7,14 @@
 
 class Frog {
 public:
-    Position position;
+    // The starting position of the frog, centered on a tile
+    static const Position startPosition;
+    Position position = startPosition;
+    Frog(Position pos) : position(pos) {};
+    Frog(){};
 
-    Frog(Position pos);
-
-    void move(int dx, int dy);
+    void move(int dx, int dyn , bool rotate = true);
+    void resetPosition();
     int getRotation() const;
 private:
     int rotation = 0;

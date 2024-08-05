@@ -34,10 +34,6 @@ void drawSquare(Position pos, int size, Fl_Color fillColor , Fl_Color frameColor
     // Set the fill color and draw the filled square
     fl_color(fillColor);
     fl_rectf(coord.x + ( tileSize - size ) / 2 , coord.y + ( tileSize - size ) / 2, size, size);
-
-    // Draw the border
-    fl_color(frameColor);
-    fl_rect(coord.x + ( tileSize - size ) / 2, coord.y + ( tileSize - size ) / 2, size, size);
 }
 
 // Draws a vehicle part on the board
@@ -50,34 +46,17 @@ void drawVehicle(Vehicle v) {
     Fl_Color vehicleColor = getVehicleColor(v.getType());
     fl_color(vehicleColor);
 
-    switch(v.getPart()) {
-        case VehiclePart::Front:
-            // Draw the front part of the vehicle
-            if (v.getDirection() == Direction::Right) {
-                fl_rectf(coord.x , coord.y + ( tileSize - size ) / 2, ( tileSize + size ) / 2, size);
-            } else {
-                fl_rectf(coord.x + ( tileSize - size ) / 2, coord.y + ( tileSize - size ) / 2, (tileSize + size) / 2, size);
+ 
+        
+    // Draw the vechicle
+    if (v.getDirection() == Direction::Right) {
+        fl_rectf(coord.x - v.length * tileSize , coord.y + ( tileSize - size ) / 2, v.length * tileSize, size);
+    } else {
+        fl_rectf(coord.x + ( tileSize - size ) / 2, coord.y + ( tileSize - size ) / 2,  v.length * tileSize, size);
 
-            }
-            break;
-        case VehiclePart::Center:
-            // Set the fill color and draw the middle part of the vehicle
-            fl_rectf(coord.x , coord.y  + ( tileSize - size ) / 2, tileSize, size);
-            break;
-        case VehiclePart::End:
-            if (v.getDirection() == Direction::Right) {
-                fl_rectf(coord.x  + ( tileSize - size ) / 2, coord.y + ( tileSize - size ) / 2, (tileSize + size) / 2, size);
-            } else {
-                fl_rectf(coord.x , coord.y + ( tileSize - size ) / 2, ( tileSize + size ) / 2, size);
-            }
-            break;
-        case VehiclePart::Single:
-            // Set the fill color and draw the single part of the vehicle
-            fl_rectf(coord.x + ( tileSize - size ) / 2 , coord.y + ( tileSize - size ) / 2, size, size);
-            break;
-        default:
-            break;
     }
+       
+    
 }
 
 // Draw a PNG image on the board
@@ -103,8 +82,8 @@ void drawPlayer(Position pos, int rotation) {
     int size = 30;  // Size of the frog
 
     // Calculate the center of the frog
-    int centerX = coord.x + tileSize / 2;
-    int centerY = coord.y + tileSize / 2;
+    int centerX = coord.x ; // Already centered
+    int centerY = coord.y ;
 
     // Save the current transformation state
     fl_push_matrix();
@@ -132,7 +111,7 @@ void drawPlayer(Position pos, int rotation) {
     // Restore the transformation matrix
     fl_pop_matrix();
 }
-
+    
 // Draw a tile on the board
 void drawTile(Tile tile, Fl_Color fillColor) {
     int tileSize = DisplaySettings::tileSize;
@@ -149,7 +128,7 @@ void drawTile(Tile tile, Fl_Color fillColor) {
     case TileType::CompletedLilypad:
         drawSquare(tile.pos, tileSize, FL_BLUE, FL_BLACK );
         drawLilyPad(tile.pos, 40);
-        drawPlayer(tile.pos, 0);
+        drawPlayer(Position{tile.pos.x + tileSize/2, tile.pos.y + tileSize/2}, 0);
         break;
     default:
         break;

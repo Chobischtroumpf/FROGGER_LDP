@@ -1,11 +1,14 @@
 #include "Coordinate.hpp"
 
 
+std::pair<int, int> Position::tilePos() const {
+    return std::make_pair((int) round(x / DisplaySettings::tileSize), (int) round(y / DisplaySettings::tileSize));
+}
+
 Coordinate::Coordinate(int x, int y) : x(x), y(y) {}
 
 // This constructor is used to convert a Position to a Coordinate by taking into account the offset of the BoardView
-// This corresponds to the top-left corner of the tile
 Coordinate::Coordinate(Position pos) {
-	x = DisplaySettings::boardCoords.x + pos.x * DisplaySettings::tileSize;
-	y = DisplaySettings::boardCoords.y + pos.y * DisplaySettings::tileSize;
+	x = DisplaySettings::boardCoords.x + pos.x;
+	y = DisplaySettings::boardCoords.y + pos.y;
 }
