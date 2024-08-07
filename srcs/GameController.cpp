@@ -24,12 +24,18 @@ void GameController::onKey(int key) {
     }
 }
 
+void GameController::handleKeyEvent(int key) {
+    onKey(key);
+}
+
 void GameController::resetGame(){
     model->isGameOver = false;
     model->isVictory = false;
     model->victoryScore = 0;
     model->resetFinishLine();
     model->life = 3;
+    model->resetTimer();
+    model->score = 0;
     resetPlayerPosition();
 }
 
@@ -43,15 +49,13 @@ void GameController::killPlayer(){
     model->life--;
     
     if (model->life == 0){
+        model->endGame();
         model->isGameOver = true;
     } else {
         resetPlayerPosition();
     }
 }
 
-void GameController::handleKeyEvent(int key) {
-    onKey(key);
-}
 
 void GameController::movePlayer(int x, int y){
 
@@ -75,8 +79,15 @@ void GameController::movePlayer(int x, int y){
         return;
     }
 
+    // Increase score for each case forward the frog moves
+    if( y != 0){
+        model->increaseScore(y > 0 ? -10 : 10);
+    }
+
+    // Check if frog reached a lily pad
     if(model->tryEmptyLilyPad(newPos)){
         model->victoryScore++;
+        model->increaseScore(100); // Increase score for reaching a lily pad
         checkVictory();
         resetPlayerPosition();
     }
@@ -85,14 +96,14 @@ void GameController::movePlayer(int x, int y){
 void GameController::checkVictory(){
     if (model->victoryScore == 5){
         model->isVictory = true;
+        model->endGame();
     }
 }
 
 // Update the game state
 void GameController::update() {
-    // Siple frame counter to throttle the game loop
-    frameCounter++;
-    frameCounter = 0;
+    // Increment the time
+    model->time++;
 
     // Mobile platform check
     model->transportFrog();

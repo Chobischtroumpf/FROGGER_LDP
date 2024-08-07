@@ -2,7 +2,7 @@
 
 
 GameView::GameView(int w, int h, GameModel* model, GameController* controller) 
-    : Fl_Window(w, h), model(model), controller(controller)  {
+    : Fl_Double_Window(w, h), model(model), controller(controller)  {
 
     this->resizable(this);
     this->color(FL_BLACK);
@@ -21,7 +21,7 @@ GameView::GameView(int w, int h, GameModel* model, GameController* controller)
     boardView = new BoardView(0, 0, w, h, model);
 
     // Initialize the OverlayView
-    overlay = new OverlayView(0, 0, w, h);
+    overlay = new OverlayView(0, 0, w, h, model);
 
     end();
 }
@@ -44,6 +44,6 @@ void GameView::draw() {
 
 void GameView::updateView() {
     // Schedule the redrtaw of the overlay
-    overlay->updateHUD(model->life, model->isGameOver, model->isVictory);
+    overlay->updateHUD();
     redraw();
 }

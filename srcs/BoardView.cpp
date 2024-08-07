@@ -1,7 +1,11 @@
 #include "BoardView.hpp"
 
 BoardView::BoardView(int x, int y, int w, int h, GameModel* model)
-    : Fl_Widget(x, y, w, h), model(model) {}
+    : Fl_Widget(x, y, w, h), model(model) {
+        // Set the backgorund color to black
+        color(FL_BLACK);
+        
+    }
 
 
 Fl_Color getLaneColor(LaneType type){
@@ -20,6 +24,13 @@ Fl_Color getLaneColor(LaneType type){
 }
 
 void BoardView::draw() {
+    // If game is over, draw the game over message then return
+    if (model->isGameOver || model->isVictory) {
+        drawGameOver(model->isVictory);
+        return;
+    }
+
+
 
     Coordinate boardCoords = DisplaySettings::boardCoords;
     // Define the clipping region to the board boundaries

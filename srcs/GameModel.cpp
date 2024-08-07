@@ -27,7 +27,7 @@ int Frog::getRotation() const {
     return rotation;
 }
 
-GameModel::GameModel() : isGameOver(false), isVictory(false), board(13), frog(Frog()) {
+GameModel::GameModel() : isGameOver(true), isVictory(false), board(13), frog(Frog()) {
 
 }
 
@@ -47,6 +47,22 @@ void GameModel::transportFrog() {
     }
 } 
 
+void  GameModel::increaseScore(int value) {
+    // Increases the score by the given value
+    score += value;
+}
+
+void GameModel::endGame() {
+    
+    if(isVictory) {
+        score += static_cast<int>(360000 / time); // Add time bonus to score
+    }
+
+    score += life * 150; // Add life bonus to score
+
+    resetTimer();
+}
+
 void GameModel::resetFinishLine() {
     // Resets the finish lilipads
     Lane& lane = board.lanes[0];
@@ -58,6 +74,10 @@ void GameModel::resetFinishLine() {
     }
     
 }
+
+void GameModel::resetTimer() {
+    time = 0;
+} 
 
 
 bool GameModel::isSafe(Position pos) const{

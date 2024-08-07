@@ -61,9 +61,13 @@ void drawVehicle(Vehicle v) {
 
 // Draw a PNG image on the board
 void drawPNG(const char* filename, Position pos, int size) {
-    int tileSize = DisplaySettings::tileSize;
-    Fl_PNG_Image png(filename);
-    png.draw(pos.x * tileSize + (tileSize - size) / 2, pos.y * tileSize + (tileSize - size) / 2, size, size);
+    std::string imagePath = "assets/" + std::string(filename);
+    Fl_PNG_Image png(imagePath.c_str());
+    int imageWidth = png.w();
+    int imageHeight = png.h();
+    int x = pos.x - imageWidth / 2;
+    int y = pos.y - imageHeight / 2;
+    png.draw(x, y, imageWidth, imageHeight);
 }
 
 void drawTransformedRectangle(int x, int y, int w, int h) {
@@ -158,4 +162,42 @@ void drawLilyPad(Position pos, int size) {
     fl_end_complex_polygon();
 
     fl_pop_matrix();  // Restore the transformation matrix
+}
+
+
+// Draw the number of lives left
+void drawLife(int life) {
+    // Build the life indicator string
+    std::string heart = "❤️";
+    std::string hearts;
+    for (int i = 0; i < life; ++i) {
+        hearts += heart;
+    }
+
+    fl_color(FL_RED);
+    fl_font(FL_HELVETICA, 18);
+    fl_draw(hearts.c_str(), DisplaySettings::boardCoords.x, DisplaySettings::boardCoords.y - 30);
+}
+
+// Draw the game over message
+void drawGameOver(bool winOrLose) {
+    std::string message = winOrLose ? "You Win!" : "Game Over!";
+
+    // Draw the message at the center of the board
+    fl_color( winOrLose ? FL_GREEN : FL_RED);
+    fl_font(FL_HELVETICA, 36);
+    drawPNG(winOrLose ? "youwin.png" : "gameover.png", Position{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 }, 200);
+    drawPNG("tryagain.png", Position{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 + 100  }, 200);
+    drawPNG("menu.png", Position{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 + 300}, 200);
+
+}
+
+void drawScore(int score) {
+    // Build the score string
+    std::string scoreStr = "Score: " + std::to_string(score);
+
+    // Draw the score at the top right corner of the board
+    fl_color(FL_WHITE);
+    fl_font(FL_COURIER_BOLD, 18);
+    fl_draw(scoreStr.c_str(), DisplaySettings::boardViewSize - 50, DisplaySettings::boardCoords.y - 30);
 }

@@ -26,6 +26,8 @@ public:
     bool isVictory;
     int life = 3;
     int victoryScore = 0;
+    int time = 0;
+    int score = 0;
 
     Board board;
     Frog frog;
@@ -33,12 +35,21 @@ public:
 
 
     GameModel();
+
     // Updates each lane by moving their contained objects
     void updateLanes();   
     // Check if frog is on a moving platform, if so moves it
     void transportFrog(); 
+    
+    // Increases the score by the given value
+    void increaseScore(int value);
+    // Ends the game and saves the score
+    void endGame();
+
     // Resets the finish lilipads
-    void resetFinishLine(); 
+    void resetFinishLine();
+    // Resets the timer
+    void resetTimer();
 
     // Checks if the given position is safe for the frog
     bool isSafe(Position pos) const;

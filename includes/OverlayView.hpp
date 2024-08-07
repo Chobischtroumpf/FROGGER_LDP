@@ -4,18 +4,19 @@
 #include <FL/Fl_Box.H>
 #include <FL/Fl.H>
 #include <string>
+#include "GameModel.hpp"
 
 class OverlayView : public Fl_Box {
 public:
-    OverlayView(int x, int y, int w, int h);
+    OverlayView(int x, int y, int w, int h, GameModel* model);
 
     void draw() override;
-    void updateHUD(int life, bool isGameOver, bool isVictory);
+    void updateHUD();
 
 private:
+    GameModel* model;
     bool gameOver;
     bool gameWon;
-    std::string hudText;
 };
 
 #endif // OVERLAYVIEW_HPP

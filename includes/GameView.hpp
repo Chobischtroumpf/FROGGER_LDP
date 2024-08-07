@@ -3,6 +3,7 @@
 
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
+#include <Fl/Fl_Double_Window.H>
 #include "GameModel.hpp"
 #include "GameController.hpp"
 #include "DrawingUtils.hpp"
@@ -12,7 +13,7 @@
 // Froward declaration to avoid circular dependency
 class GameController;
 
-class GameView : public Fl_Window {
+class GameView : public Fl_Double_Window {
 public:
     GameView(int w, int h, GameModel* model, GameController* controller);
 
