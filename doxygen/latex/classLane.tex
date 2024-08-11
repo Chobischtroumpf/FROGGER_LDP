@@ -1,0 +1,86 @@
+\hypertarget{classLane}{}\doxysection{Lane Class Reference}
+\label{classLane}\index{Lane@{Lane}}
+
+
+Collaboration diagram for Lane\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classLane__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLane_a40837e5673ad1d3f066e1c51f11c1262}\label{classLane_a40837e5673ad1d3f066e1c51f11c1262}} 
+{\bfseries Lane} (int length, int row\+Index, Lane\+Type type, \mbox{\hyperlink{classSpawnPattern}{Spawn\+Pattern}} pattern, Direction direction=Direction\+::\+Right)
+\item 
+\mbox{\Hypertarget{classLane_a4099b285d38108652768e4c817063b03}\label{classLane_a4099b285d38108652768e4c817063b03}} 
+void {\bfseries spawn\+Vehicle} ()
+\item 
+\mbox{\Hypertarget{classLane_aee4e07162b9e770884a804c7b468211e}\label{classLane_aee4e07162b9e770884a804c7b468211e}} 
+Vehicle\+Type {\bfseries generate\+Vehicle\+Type} ()
+\item 
+\mbox{\Hypertarget{classLane_a12c974886f517581abc607f58775d303}\label{classLane_a12c974886f517581abc607f58775d303}} 
+void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classLane_a3a0105d1a32a752f44ad7259f5b15aab}\label{classLane_a3a0105d1a32a752f44ad7259f5b15aab}} 
+std\+::vector$<$ \mbox{\hyperlink{classTile}{Tile}} $>$ \& {\bfseries get\+Tiles} ()
+\item 
+\mbox{\Hypertarget{classLane_a708e31faa2d8f7fbe8521eb215b71ec4}\label{classLane_a708e31faa2d8f7fbe8521eb215b71ec4}} 
+const std\+::vector$<$ \mbox{\hyperlink{classTile}{Tile}} $>$ \& {\bfseries get\+Tiles} () const
+\item 
+\mbox{\Hypertarget{classLane_a9bf647c5eef194d4820df64ba540fab5}\label{classLane_a9bf647c5eef194d4820df64ba540fab5}} 
+const std\+::vector$<$ \mbox{\hyperlink{classVehicle}{Vehicle}} $>$ \& {\bfseries get\+Vehicles} () const
+\item 
+\mbox{\Hypertarget{classLane_af0379cb2aa78196644bf5cfd135b456c}\label{classLane_af0379cb2aa78196644bf5cfd135b456c}} 
+Lane\+Type {\bfseries get\+Type} () const
+\item 
+\mbox{\Hypertarget{classLane_aea44dc9bad20de70c1c73a0ab6785b4b}\label{classLane_aea44dc9bad20de70c1c73a0ab6785b4b}} 
+Direction {\bfseries get\+Direction} () const
+\item 
+\mbox{\Hypertarget{classLane_acc08fdf207fff1db0fc42c2cfdfefcb9}\label{classLane_acc08fdf207fff1db0fc42c2cfdfefcb9}} 
+bool {\bfseries is\+Safe} (\mbox{\hyperlink{structPosition}{Position}} pos) const
+\item 
+\mbox{\Hypertarget{classLane_a7851cec82e3b33003ac39ae26b209e23}\label{classLane_a7851cec82e3b33003ac39ae26b209e23}} 
+\mbox{\hyperlink{classTile}{Tile}} \& {\bfseries hit} (\mbox{\hyperlink{structPosition}{Position}} pos)
+\item 
+\mbox{\Hypertarget{classLane_a565261aed0fd28ef6bf93d670cfb9cb0}\label{classLane_a565261aed0fd28ef6bf93d670cfb9cb0}} 
+const \mbox{\hyperlink{classTile}{Tile}} \& {\bfseries hit} (\mbox{\hyperlink{structPosition}{Position}} pos) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLane_af314ca8432f17242ba08c93b4e07cdef}\label{classLane_af314ca8432f17242ba08c93b4e07cdef}} 
+int {\bfseries speed} = 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLane_a8b3c4cb37184e12f2cc066df563ba444}\label{classLane_a8b3c4cb37184e12f2cc066df563ba444}} 
+int {\bfseries length}
+\item 
+\mbox{\Hypertarget{classLane_ae085698b0aaa7019e5a332b29d1a8a72}\label{classLane_ae085698b0aaa7019e5a332b29d1a8a72}} 
+int {\bfseries row\+Index}
+\item 
+\mbox{\Hypertarget{classLane_af94a5f72ecd946aafd866dcb1535e7d3}\label{classLane_af94a5f72ecd946aafd866dcb1535e7d3}} 
+Lane\+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classLane_a5d9049330b662a6c8852a78c5a1fd13a}\label{classLane_a5d9049330b662a6c8852a78c5a1fd13a}} 
+Direction {\bfseries direction}
+\item 
+\mbox{\Hypertarget{classLane_aeee0b53e40b55b1c27a87fb1bc540c6a}\label{classLane_aeee0b53e40b55b1c27a87fb1bc540c6a}} 
+\mbox{\hyperlink{classSpawnPattern}{Spawn\+Pattern}} {\bfseries pattern}
+\item 
+\mbox{\Hypertarget{classLane_a0833c71460b3c277e2b0f0ca2ed02b0e}\label{classLane_a0833c71460b3c277e2b0f0ca2ed02b0e}} 
+std\+::vector$<$ \mbox{\hyperlink{classTile}{Tile}} $>$ {\bfseries tiles}
+\item 
+\mbox{\Hypertarget{classLane_a8809f8562c71cee93e7d76687b09944e}\label{classLane_a8809f8562c71cee93e7d76687b09944e}} 
+std\+::vector$<$ \mbox{\hyperlink{classVehicle}{Vehicle}} $>$ {\bfseries vehicles}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/Lane.\+hpp\item 
+srcs/Lane.\+cpp\end{DoxyCompactItemize}

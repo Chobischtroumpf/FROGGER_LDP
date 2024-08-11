@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structfrogger_1_1Rotation" kind="struct" language="C++" prot="public">
+    <compoundname>frogger::Rotation</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfrogger_1_1Rotation_1aeb5a083c13c11dae63fc5f1773b13710" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>frogger::Rotation::Rotation</definition>
+        <argsstring>(double angle)</argsstring>
+        <name>Rotation</name>
+        <param>
+          <type>double</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Animation.hpp" line="17" column="14" bodyfile="includes/Animation.hpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structfrogger_1_1Rotation_1a163e58315ba7cd8566016a6cc6569c16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>frogger::Rotation::~Rotation</definition>
+        <argsstring>()</argsstring>
+        <name>~Rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Animation.hpp" line="21" column="5" bodyfile="includes/Animation.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>frogger::Rotation</label>
+        <link refid="structfrogger_1_1Rotation"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Animation.hpp" line="16" column="3" bodyfile="includes/Animation.hpp" bodystart="16" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structfrogger_1_1Rotation_1aeb5a083c13c11dae63fc5f1773b13710" prot="public" virt="non-virtual"><scope>frogger::Rotation</scope><name>Rotation</name></member>
+      <member refid="structfrogger_1_1Rotation_1a163e58315ba7cd8566016a6cc6569c16" prot="public" virt="non-virtual"><scope>frogger::Rotation</scope><name>~Rotation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

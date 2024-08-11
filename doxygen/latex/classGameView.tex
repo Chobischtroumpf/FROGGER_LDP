@@ -1,0 +1,64 @@
+\hypertarget{classGameView}{}\doxysection{Game\+View Class Reference}
+\label{classGameView}\index{GameView@{GameView}}
+
+
+Inheritance diagram for Game\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classGameView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGameView__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameView_ab9b90f18511d6368b40c0a741e60b9ab}\label{classGameView_ab9b90f18511d6368b40c0a741e60b9ab}} 
+{\bfseries Game\+View} (int w, int h, \mbox{\hyperlink{classGameModel}{Game\+Model}} $\ast$model, \mbox{\hyperlink{classGameController}{Game\+Controller}} $\ast$controller)
+\item 
+\mbox{\Hypertarget{classGameView_a125121df2f2efe47c15b009fb4b45a81}\label{classGameView_a125121df2f2efe47c15b009fb4b45a81}} 
+int {\bfseries handle} (int event) override
+\item 
+\mbox{\Hypertarget{classGameView_a02c5bb9b8d203d577a19440aa78bbf4f}\label{classGameView_a02c5bb9b8d203d577a19440aa78bbf4f}} 
+void {\bfseries draw} () override
+\item 
+\mbox{\Hypertarget{classGameView_a8159f7e111f8f05f1ea5b5dd262fac7b}\label{classGameView_a8159f7e111f8f05f1ea5b5dd262fac7b}} 
+void {\bfseries update\+View} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameView_a9be471f321eb0010e640e97018dd6eff}\label{classGameView_a9be471f321eb0010e640e97018dd6eff}} 
+\mbox{\hyperlink{classGameModel}{Game\+Model}} $\ast$ {\bfseries model}
+\item 
+\mbox{\Hypertarget{classGameView_a89f700b49df1b6b1995b67947085d3eb}\label{classGameView_a89f700b49df1b6b1995b67947085d3eb}} 
+\mbox{\hyperlink{classGameController}{Game\+Controller}} $\ast$ {\bfseries controller}
+\item 
+\mbox{\Hypertarget{classGameView_a6de320ea4b1b0595ff711ba48a39a600}\label{classGameView_a6de320ea4b1b0595ff711ba48a39a600}} 
+\mbox{\hyperlink{classOverlayView}{Overlay\+View}} $\ast$ {\bfseries overlay}
+\item 
+\mbox{\Hypertarget{classGameView_ae776ddd49cd5f341c503f6121690d0dd}\label{classGameView_ae776ddd49cd5f341c503f6121690d0dd}} 
+\mbox{\hyperlink{classBoardView}{Board\+View}} $\ast$ {\bfseries board\+View}
+\item 
+\mbox{\Hypertarget{classGameView_af1d7263c21abf7164cb826f66fe40d33}\label{classGameView_af1d7263c21abf7164cb826f66fe40d33}} 
+Fl\+\_\+\+Box $\ast$ {\bfseries frog\+Box}
+\item 
+\mbox{\Hypertarget{classGameView_a5584421c405f4aa795b02c46a3ba8427}\label{classGameView_a5584421c405f4aa795b02c46a3ba8427}} 
+std\+::vector$<$ Fl\+\_\+\+Box $\ast$ $>$ {\bfseries vehicle\+Boxes}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/Game\+View.\+hpp\item 
+srcs/Game\+View.\+cpp\end{DoxyCompactItemize}

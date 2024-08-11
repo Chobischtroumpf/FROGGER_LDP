@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_b73b02d482d1c4a3db20c3d9ad52d395" kind="dir">
+    <compoundname>srcs</compoundname>
+    <innerfile refid="Board_8cpp">Board.cpp</innerfile>
+    <innerfile refid="BoardView_8cpp">BoardView.cpp</innerfile>
+    <innerfile refid="Coordinate_8cpp">Coordinate.cpp</innerfile>
+    <innerfile refid="DisplaySettings_8cpp">DisplaySettings.cpp</innerfile>
+    <innerfile refid="DrawingUtils_8cpp">DrawingUtils.cpp</innerfile>
+    <innerfile refid="GameController_8cpp">GameController.cpp</innerfile>
+    <innerfile refid="GameModel_8cpp">GameModel.cpp</innerfile>
+    <innerfile refid="GameView_8cpp">GameView.cpp</innerfile>
+    <innerfile refid="Lane_8cpp">Lane.cpp</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="OverlayView_8cpp">OverlayView.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="srcs/"/>
+  </compounddef>
+</doxygen>

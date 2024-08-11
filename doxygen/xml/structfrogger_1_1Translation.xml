@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structfrogger_1_1Translation" kind="struct" language="C++" prot="public">
+    <compoundname>frogger::Translation</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfrogger_1_1Translation_1ae82962d2813c2470d684b564d0577cf8" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>frogger::Translation::Translation</definition>
+        <argsstring>(Point p)</argsstring>
+        <name>Translation</name>
+        <param>
+          <type>Point</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Animation.hpp" line="9" column="14" bodyfile="includes/Animation.hpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="structfrogger_1_1Translation_1a0b18e192941f2a34177cdf45816d1e73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>frogger::Translation::~Translation</definition>
+        <argsstring>()</argsstring>
+        <name>~Translation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Animation.hpp" line="13" column="5" bodyfile="includes/Animation.hpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>frogger::Translation</label>
+        <link refid="structfrogger_1_1Translation"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Animation.hpp" line="8" column="3" bodyfile="includes/Animation.hpp" bodystart="8" bodyend="14"/>
+    <listofallmembers>
+      <member refid="structfrogger_1_1Translation_1ae82962d2813c2470d684b564d0577cf8" prot="public" virt="non-virtual"><scope>frogger::Translation</scope><name>Translation</name></member>
+      <member refid="structfrogger_1_1Translation_1a0b18e192941f2a34177cdf45816d1e73" prot="public" virt="non-virtual"><scope>frogger::Translation</scope><name>~Translation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

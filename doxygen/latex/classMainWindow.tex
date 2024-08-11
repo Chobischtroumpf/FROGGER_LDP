@@ -1,0 +1,69 @@
+\hypertarget{classMainWindow}{}\doxysection{Main\+Window Class Reference}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+Inheritance diagram for Main\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classMainWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classMainWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_a1344d21eac13e282cf6644516e129ed4}\label{classMainWindow_a1344d21eac13e282cf6644516e129ed4}} 
+void {\bfseries draw} () override
+\item 
+\mbox{\Hypertarget{classMainWindow_a4131f325ab64885af6c373d85d063c66}\label{classMainWindow_a4131f325ab64885af6c373d85d063c66}} 
+int {\bfseries handle} (int event) override
+\item 
+\mbox{\Hypertarget{classMainWindow_a02076de46e6810174817ebfc6ddd2be5}\label{classMainWindow_a02076de46e6810174817ebfc6ddd2be5}} 
+void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{classMainWindow_acf7be332873a89bce7eec435df6a02c2}\label{classMainWindow_acf7be332873a89bce7eec435df6a02c2}} 
+void {\bfseries reset\+Canvas} ()
+\item 
+\mbox{\Hypertarget{classMainWindow_a64c570679035661523d7105b6dc46799}\label{classMainWindow_a64c570679035661523d7105b6dc46799}} 
+void {\bfseries reset\+Loop} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_a81f02db9847b66815725f657b81e9470}\label{classMainWindow_a81f02db9847b66815725f657b81e9470}} 
+static void {\bfseries Timer\+\_\+\+CB} (void $\ast$userdata)
+\item 
+\mbox{\Hypertarget{classMainWindow_a60954fef1e3df5da2512e717ffd64c74}\label{classMainWindow_a60954fef1e3df5da2512e717ffd64c74}} 
+static void {\bfseries Timer\+\_\+\+Reset} (void $\ast$userdata)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_aaeed1882e2b9bcbaf6fb17e83865b1c8}\label{classMainWindow_aaeed1882e2b9bcbaf6fb17e83865b1c8}} 
+std\+::shared\+\_\+ptr$<$ Canvas $>$ {\bfseries canvas}
+\item 
+\mbox{\Hypertarget{classMainWindow_af802883436df5a506cddd67a27fea1a6}\label{classMainWindow_af802883436df5a506cddd67a27fea1a6}} 
+std\+::shared\+\_\+ptr$<$ Notification $>$ {\bfseries game\+Won} = nullptr
+\item 
+\mbox{\Hypertarget{classMainWindow_aa1a8338ffc31c18fdf57b382f122b841}\label{classMainWindow_aa1a8338ffc31c18fdf57b382f122b841}} 
+std\+::shared\+\_\+ptr$<$ Notification $>$ {\bfseries game\+Lost} = nullptr
+\item 
+\mbox{\Hypertarget{classMainWindow_aef73acaf2325dce2fcedaf1ff00c6f99}\label{classMainWindow_aef73acaf2325dce2fcedaf1ff00c6f99}} 
+int {\bfseries refresh\+Per\+Second} = 60
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/Main\+Window.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classGameController" kind="class" language="C++" prot="public">
+    <compoundname>GameController</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classGameController_1af963b47080dba31038103a7e77130f0c" prot="private" static="no" mutable="no">
+        <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+        <definition>GameModel* GameController::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="25" column="15" bodyfile="includes/GameController.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameController_1aaa02b5f21474b4f9cbc74bce3f87e643" prot="private" static="no" mutable="no">
+        <type><ref refid="classGameView" kindref="compound">GameView</ref> *</type>
+        <definition>GameView* GameController::view</definition>
+        <argsstring></argsstring>
+        <name>view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="26" column="14" bodyfile="includes/GameController.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameController_1a1ec8d1011e4421ed7a5733e787fd44e2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameController::frameCounter</definition>
+        <argsstring></argsstring>
+        <name>frameCounter</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="27" column="9" bodyfile="includes/GameController.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGameController_1a58d1049595b70d00641d432d66a45eec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameController::GameController</definition>
+        <argsstring>(GameModel *model, GameView *view)</argsstring>
+        <name>GameController</name>
+        <param>
+          <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameView" kindref="compound">GameView</ref> *</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="14" column="5" bodyfile="srcs/GameController.cpp" bodystart="4" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a8eb7c601f1daca511b1f556a087c81d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::onKey</definition>
+        <argsstring>(int key)</argsstring>
+        <name>onKey</name>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="16" column="10" bodyfile="srcs/GameController.cpp" bodystart="7" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a2fb59f8cdaa930ebd82a0d924a62dc53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::gameLoop</definition>
+        <argsstring>()</argsstring>
+        <name>gameLoop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="17" column="10" bodyfile="srcs/GameController.cpp" bodystart="133" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a9312026142bdb83599b39f32c6fe9ae1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::handleKeyEvent</definition>
+        <argsstring>(int key)</argsstring>
+        <name>handleKeyEvent</name>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="18" column="10" bodyfile="srcs/GameController.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a5440a27f099c094813e774e0e89cf7ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::linkView</definition>
+        <argsstring>(GameView *view)</argsstring>
+        <name>linkView</name>
+        <param>
+          <type><ref refid="classGameView" kindref="compound">GameView</ref> *</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="20" column="10" bodyfile="includes/GameController.hpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classGameController_1a0cfefdd78ee1b2b61ad1050b3bedf49b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="29" column="10" bodyfile="srcs/GameController.cpp" bodystart="104" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a2b9380471fcfa43b628511eeb93f0f4e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::resetPlayerPosition</definition>
+        <argsstring>()</argsstring>
+        <name>resetPlayerPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="32" column="10" bodyfile="srcs/GameController.cpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a22ac068ef35a83df692146a4dbc5fad9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::killPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>killPlayer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="33" column="10" bodyfile="srcs/GameController.cpp" bodystart="48" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a466726ab5ccac77661d81925be5ea5ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::resetGame</definition>
+        <argsstring>()</argsstring>
+        <name>resetGame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="34" column="10" bodyfile="srcs/GameController.cpp" bodystart="31" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a4914f1e7ceaa6a39c7e79fed09aedb76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::movePlayer</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>movePlayer</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="36" column="10" bodyfile="srcs/GameController.cpp" bodystart="60" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameController_1a01c6afb4b20a9b7e69faf16ba8686a61" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController::checkVictory</definition>
+        <argsstring>()</argsstring>
+        <name>checkVictory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameController.hpp" line="37" column="10" bodyfile="srcs/GameController.cpp" bodystart="96" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>Fl_Double_Window</label>
+      </node>
+      <node id="10">
+        <label>BoardView</label>
+        <link refid="classBoardView"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="2">
+        <label>GameView</label>
+        <link refid="classGameView"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-overlay</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>-boardView</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>-controller</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>GameController</label>
+        <link refid="classGameController"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-view</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OverlayView</label>
+        <link refid="classOverlayView"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Fl_Widget</label>
+      </node>
+      <node id="6">
+        <label>GameModel</label>
+        <link refid="classGameModel"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+frog</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+board</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Fl_Box</label>
+      </node>
+      <node id="9">
+        <label>Board</label>
+        <link refid="classBoard"/>
+      </node>
+      <node id="7">
+        <label>Frog</label>
+        <link refid="classFrog"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+position</edgelabel>
+          <edgelabel>+startPosition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/GameController.hpp" line="12" column="1" bodyfile="includes/GameController.hpp" bodystart="12" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classGameController_1a01c6afb4b20a9b7e69faf16ba8686a61" prot="private" virt="non-virtual"><scope>GameController</scope><name>checkVictory</name></member>
+      <member refid="classGameController_1a1ec8d1011e4421ed7a5733e787fd44e2" prot="private" virt="non-virtual"><scope>GameController</scope><name>frameCounter</name></member>
+      <member refid="classGameController_1a58d1049595b70d00641d432d66a45eec" prot="public" virt="non-virtual"><scope>GameController</scope><name>GameController</name></member>
+      <member refid="classGameController_1a2fb59f8cdaa930ebd82a0d924a62dc53" prot="public" virt="non-virtual"><scope>GameController</scope><name>gameLoop</name></member>
+      <member refid="classGameController_1a9312026142bdb83599b39f32c6fe9ae1" prot="public" virt="non-virtual"><scope>GameController</scope><name>handleKeyEvent</name></member>
+      <member refid="classGameController_1a22ac068ef35a83df692146a4dbc5fad9" prot="private" virt="non-virtual"><scope>GameController</scope><name>killPlayer</name></member>
+      <member refid="classGameController_1a5440a27f099c094813e774e0e89cf7ee" prot="public" virt="non-virtual"><scope>GameController</scope><name>linkView</name></member>
+      <member refid="classGameController_1af963b47080dba31038103a7e77130f0c" prot="private" virt="non-virtual"><scope>GameController</scope><name>model</name></member>
+      <member refid="classGameController_1a4914f1e7ceaa6a39c7e79fed09aedb76" prot="private" virt="non-virtual"><scope>GameController</scope><name>movePlayer</name></member>
+      <member refid="classGameController_1a8eb7c601f1daca511b1f556a087c81d1" prot="public" virt="non-virtual"><scope>GameController</scope><name>onKey</name></member>
+      <member refid="classGameController_1a466726ab5ccac77661d81925be5ea5ff" prot="private" virt="non-virtual"><scope>GameController</scope><name>resetGame</name></member>
+      <member refid="classGameController_1a2b9380471fcfa43b628511eeb93f0f4e" prot="private" virt="non-virtual"><scope>GameController</scope><name>resetPlayerPosition</name></member>
+      <member refid="classGameController_1a0cfefdd78ee1b2b61ad1050b3bedf49b" prot="private" virt="non-virtual"><scope>GameController</scope><name>update</name></member>
+      <member refid="classGameController_1aaa02b5f21474b4f9cbc74bce3f87e643" prot="private" virt="non-virtual"><scope>GameController</scope><name>view</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

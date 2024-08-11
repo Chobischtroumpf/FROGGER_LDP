@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classFrog" kind="class" language="C++" prot="public">
+    <compoundname>Frog</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classFrog_1afc5b06b66155784127b682f92eda0669" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>const Position Frog::startPosition</definition>
+        <argsstring></argsstring>
+        <name>startPosition</name>
+        <initializer>= {(int)(round(6.5 * DisplaySettings::tileSize)), (int)(round(12.5 * DisplaySettings::tileSize))}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="11" column="27" bodyfile="includes/GameModel.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classFrog_1a9fa45c37e4625120ccac9803503fc862" prot="public" static="no" mutable="no">
+        <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>Position Frog::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <initializer>= startPosition</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="12" column="14" bodyfile="includes/GameModel.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFrog_1a4259ab283009475cc223920d4341629a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Frog::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="20" column="9" bodyfile="includes/GameModel.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFrog_1aca4f66f3360ad2d8f8031c6b44890a37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Frog::Frog</definition>
+        <argsstring>(Position pos)</argsstring>
+        <name>Frog</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="13" column="5" bodyfile="includes/GameModel.hpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classFrog_1aca8f9a0c2bf409f2a0f876289881ede1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Frog::Frog</definition>
+        <argsstring>()</argsstring>
+        <name>Frog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="14" column="5" bodyfile="includes/GameModel.hpp" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classFrog_1af73a748d333a9c2fbbfb355d6bfb322e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Frog::move</definition>
+        <argsstring>(int dx, int dyn, bool rotate=true)</argsstring>
+        <name>move</name>
+        <param>
+          <type>int</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dyn</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rotate</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="16" column="10" bodyfile="srcs/GameModel.cpp" bodystart="12" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classFrog_1a6c1b8ade2a39b1f2ab46872235832460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Frog::resetPosition</definition>
+        <argsstring>()</argsstring>
+        <name>resetPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="17" column="10" bodyfile="srcs/GameModel.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classFrog_1ad5bfe17de14f712c60b7c4c191143d7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Frog::getRotation</definition>
+        <argsstring>() const</argsstring>
+        <name>getRotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="18" column="9" bodyfile="srcs/GameModel.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="1">
+        <label>Frog</label>
+        <link refid="classFrog"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+position</edgelabel>
+          <edgelabel>+startPosition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/GameModel.hpp" line="8" column="1" bodyfile="includes/GameModel.hpp" bodystart="8" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classFrog_1aca4f66f3360ad2d8f8031c6b44890a37" prot="public" virt="non-virtual"><scope>Frog</scope><name>Frog</name></member>
+      <member refid="classFrog_1aca8f9a0c2bf409f2a0f876289881ede1" prot="public" virt="non-virtual"><scope>Frog</scope><name>Frog</name></member>
+      <member refid="classFrog_1ad5bfe17de14f712c60b7c4c191143d7d" prot="public" virt="non-virtual"><scope>Frog</scope><name>getRotation</name></member>
+      <member refid="classFrog_1af73a748d333a9c2fbbfb355d6bfb322e" prot="public" virt="non-virtual"><scope>Frog</scope><name>move</name></member>
+      <member refid="classFrog_1a9fa45c37e4625120ccac9803503fc862" prot="public" virt="non-virtual"><scope>Frog</scope><name>position</name></member>
+      <member refid="classFrog_1a6c1b8ade2a39b1f2ab46872235832460" prot="public" virt="non-virtual"><scope>Frog</scope><name>resetPosition</name></member>
+      <member refid="classFrog_1a4259ab283009475cc223920d4341629a" prot="private" virt="non-virtual"><scope>Frog</scope><name>rotation</name></member>
+      <member refid="classFrog_1afc5b06b66155784127b682f92eda0669" prot="public" virt="non-virtual"><scope>Frog</scope><name>startPosition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

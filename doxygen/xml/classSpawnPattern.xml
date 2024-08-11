@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classSpawnPattern" kind="class" language="C++" prot="public">
+    <compoundname>SpawnPattern</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSpawnPattern_1a4a46833a646f019740526dc36416c9cc" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structVehicleConfig" kindref="compound">VehicleConfig</ref> &gt;</type>
+        <definition>std::vector&lt;VehicleConfig&gt; SpawnPattern::pattern</definition>
+        <argsstring></argsstring>
+        <name>pattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="85" column="17" bodyfile="includes/Lane.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSpawnPattern_1a0aa4271c352fe5a28f0b4f46bbe21c2f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpawnPattern::delay</definition>
+        <argsstring></argsstring>
+        <name>delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="87" column="9" bodyfile="includes/Lane.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSpawnPattern_1a9895ac9cb3c2d8c3a3dcd3c900548ae8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpawnPattern::currentIndex</definition>
+        <argsstring></argsstring>
+        <name>currentIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="97" column="9" bodyfile="includes/Lane.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSpawnPattern_1a805b73e86fe3826038f9d4aeb1a84fed" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SpawnPattern::delayCounter</definition>
+        <argsstring></argsstring>
+        <name>delayCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="98" column="9" bodyfile="includes/Lane.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSpawnPattern_1a9f4bff64de38ab0157ce63df004da5ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SpawnPattern::SpawnPattern</definition>
+        <argsstring>(std::vector&lt; VehicleConfig &gt; p, int d)</argsstring>
+        <name>SpawnPattern</name>
+        <param>
+          <type>std::vector&lt; <ref refid="structVehicleConfig" kindref="compound">VehicleConfig</ref> &gt;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="89" column="5" bodyfile="includes/Lane.hpp" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classSpawnPattern_1afcc9230ad3e61f06eedf36694ee12c37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVehicleConfig" kindref="compound">VehicleConfig</ref></type>
+        <definition>VehicleConfig SpawnPattern::next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="91" column="19" bodyfile="srcs/Lane.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classSpawnPattern_1a0cfd1daf7ae2f20b85b8e2d3fd8d1d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SpawnPattern::tick</definition>
+        <argsstring>()</argsstring>
+        <name>tick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="94" column="10" bodyfile="srcs/Lane.cpp" bodystart="25" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SpawnPattern</label>
+        <link refid="classSpawnPattern"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Lane.hpp" line="83" column="1" bodyfile="includes/Lane.hpp" bodystart="83" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classSpawnPattern_1a9895ac9cb3c2d8c3a3dcd3c900548ae8" prot="private" virt="non-virtual"><scope>SpawnPattern</scope><name>currentIndex</name></member>
+      <member refid="classSpawnPattern_1a0aa4271c352fe5a28f0b4f46bbe21c2f" prot="public" virt="non-virtual"><scope>SpawnPattern</scope><name>delay</name></member>
+      <member refid="classSpawnPattern_1a805b73e86fe3826038f9d4aeb1a84fed" prot="private" virt="non-virtual"><scope>SpawnPattern</scope><name>delayCounter</name></member>
+      <member refid="classSpawnPattern_1afcc9230ad3e61f06eedf36694ee12c37" prot="public" virt="non-virtual"><scope>SpawnPattern</scope><name>next</name></member>
+      <member refid="classSpawnPattern_1a4a46833a646f019740526dc36416c9cc" prot="public" virt="non-virtual"><scope>SpawnPattern</scope><name>pattern</name></member>
+      <member refid="classSpawnPattern_1a9f4bff64de38ab0157ce63df004da5ab" prot="public" virt="non-virtual"><scope>SpawnPattern</scope><name>SpawnPattern</name></member>
+      <member refid="classSpawnPattern_1a0cfd1daf7ae2f20b85b8e2d3fd8d1d32" prot="public" virt="non-virtual"><scope>SpawnPattern</scope><name>tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

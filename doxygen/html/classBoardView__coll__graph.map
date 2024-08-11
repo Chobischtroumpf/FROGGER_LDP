@@ -1,0 +1,8 @@
+<map id="BoardView" name="BoardView">
+<area shape="rect" id="node1" title=" " alt="" coords="11,733,129,825"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,491,92,568"/>
+<area shape="rect" id="node3" href="$classGameModel.html" title=" " alt="" coords="116,388,269,671"/>
+<area shape="rect" id="node4" href="$classFrog.html" title=" " alt="" coords="37,189,169,325"/>
+<area shape="rect" id="node5" href="$structPosition.html" title=" " alt="" coords="41,5,165,112"/>
+<area shape="rect" id="node6" href="$classBoard.html" title=" " alt="" coords="194,189,301,325"/>
+</map>

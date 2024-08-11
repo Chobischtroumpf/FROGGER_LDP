@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classDisplaySettings" kind="class" language="C++" prot="public">
+    <compoundname>DisplaySettings</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classDisplaySettings_1a84e86494d82f79b31d580a6493cf6b48" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int DisplaySettings::windowSize</definition>
+        <argsstring></argsstring>
+        <name>windowSize</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DisplaySettings.hpp" line="11" column="12" bodyfile="includes/DisplaySettings.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDisplaySettings_1acf5a4ace45120a1d0d71669775952e75" prot="public" static="yes" mutable="no">
+        <type><ref refid="classCoordinate" kindref="compound">Coordinate</ref></type>
+        <definition>Coordinate DisplaySettings::boardCoords</definition>
+        <argsstring></argsstring>
+        <name>boardCoords</name>
+        <initializer>= <ref refid="classCoordinate" kindref="compound">Coordinate</ref>((windowSize - boardViewSize) / 2, (windowSize - boardViewSize) / 2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DisplaySettings.hpp" line="12" column="23" bodyfile="includes/DisplaySettings.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDisplaySettings_1afc801725c9ad472de82147d386d26025" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int DisplaySettings::boardViewSize</definition>
+        <argsstring></argsstring>
+        <name>boardViewSize</name>
+        <initializer>= 800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DisplaySettings.hpp" line="13" column="16" bodyfile="includes/DisplaySettings.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDisplaySettings_1aaf30a4792832883649a4a8b89b763e2c" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int DisplaySettings::laneLength</definition>
+        <argsstring></argsstring>
+        <name>laneLength</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DisplaySettings.hpp" line="14" column="12" bodyfile="includes/DisplaySettings.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDisplaySettings_1a692e3cdefef36e099edf8877bd33a494" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int DisplaySettings::tileSize</definition>
+        <argsstring></argsstring>
+        <name>tileSize</name>
+        <initializer>= boardViewSize / laneLength</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DisplaySettings.hpp" line="15" column="16" bodyfile="includes/DisplaySettings.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>DisplaySettings</label>
+        <link refid="classDisplaySettings"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+boardCoords</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Coordinate</label>
+        <link refid="classCoordinate"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/DisplaySettings.hpp" line="9" column="1" bodyfile="includes/DisplaySettings.hpp" bodystart="9" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classDisplaySettings_1acf5a4ace45120a1d0d71669775952e75" prot="public" virt="non-virtual"><scope>DisplaySettings</scope><name>boardCoords</name></member>
+      <member refid="classDisplaySettings_1afc801725c9ad472de82147d386d26025" prot="public" virt="non-virtual"><scope>DisplaySettings</scope><name>boardViewSize</name></member>
+      <member refid="classDisplaySettings_1aaf30a4792832883649a4a8b89b763e2c" prot="public" virt="non-virtual"><scope>DisplaySettings</scope><name>laneLength</name></member>
+      <member refid="classDisplaySettings_1a692e3cdefef36e099edf8877bd33a494" prot="public" virt="non-virtual"><scope>DisplaySettings</scope><name>tileSize</name></member>
+      <member refid="classDisplaySettings_1a84e86494d82f79b31d580a6493cf6b48" prot="public" virt="non-virtual"><scope>DisplaySettings</scope><name>windowSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

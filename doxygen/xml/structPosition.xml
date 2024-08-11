@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structPosition" kind="struct" language="C++" prot="public">
+    <compoundname>Position</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPosition_1aeda152ffeee17ae5be9c02327b2408d8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Position::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Coordinate.hpp" line="13" column="9" bodyfile="includes/Coordinate.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPosition_1a3c08e9213d4726b21caba3073192c4a3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Position::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Coordinate.hpp" line="13" column="11" bodyfile="includes/Coordinate.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structPosition_1acf13e7e45c7c07a67c2adf2f7e1dcc5f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Position::operator==</definition>
+        <argsstring>(const Position &amp;other) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structPosition" kindref="compound">Position</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Coordinate.hpp" line="16" column="10" bodyfile="includes/Coordinate.hpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="structPosition_1ac51e6ddc3ca6dd529db82faeab3e307f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt; int, int &gt; Position::tilePos</definition>
+        <argsstring>() const</argsstring>
+        <name>tilePos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Coordinate.hpp" line="21" column="15" bodyfile="srcs/Coordinate.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Coordinate.hpp" line="10" column="1" bodyfile="includes/Coordinate.hpp" bodystart="10" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structPosition_1acf13e7e45c7c07a67c2adf2f7e1dcc5f" prot="public" virt="non-virtual"><scope>Position</scope><name>operator==</name></member>
+      <member refid="structPosition_1ac51e6ddc3ca6dd529db82faeab3e307f" prot="public" virt="non-virtual"><scope>Position</scope><name>tilePos</name></member>
+      <member refid="structPosition_1aeda152ffeee17ae5be9c02327b2408d8" prot="public" virt="non-virtual"><scope>Position</scope><name>x</name></member>
+      <member refid="structPosition_1a3c08e9213d4726b21caba3073192c4a3" prot="public" virt="non-virtual"><scope>Position</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

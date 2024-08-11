@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classNotification" kind="class" language="C++" prot="public">
+    <compoundname>Notification</compoundname>
+    <basecompoundref prot="public" virt="virtual">Text</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classNotification_1a4f8763ca485e60adf2378e22604a5cbe" prot="private" static="no" mutable="no">
+        <type>Rectangle</type>
+        <definition>Rectangle Notification::background</definition>
+        <argsstring></argsstring>
+        <name>background</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="10" column="15" bodyfile="includes/Notification.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classNotification_1ab4d6b7c14c3da54e8d9444aa367c6b5b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Notification::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="11" column="15" bodyfile="includes/Notification.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classNotification_1a1d2014b23265060cebccfb542a60e75a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Notification::Notification</definition>
+        <argsstring>()</argsstring>
+        <name>Notification</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="17" column="5" bodyfile="includes/Notification.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1a9845f78080f851744b52ad07838cf6a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Notification::Notification</definition>
+        <argsstring>(string s, Point center, int fontSize=10, Fl_Color color=FL_BLACK, int padding=10)</argsstring>
+        <name>Notification</name>
+        <param>
+          <type>string</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="structPoint" kindref="compound">Point</ref></type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fontSize</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>Fl_Color</type>
+          <declname>color</declname>
+          <defval>FL_BLACK</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padding</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="18" column="5" bodyfile="includes/Notification.hpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1afd62c9a310d552efe71bf9fd92a0e46c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Notification::draw</definition>
+        <argsstring>() override</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="24" column="10" bodyfile="includes/Notification.hpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1a33f2dc50535409e3fb33b904a7b95cbc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Notification::setFontSize</definition>
+        <argsstring>(int newFontSize)</argsstring>
+        <name>setFontSize</name>
+        <param>
+          <type>int</type>
+          <declname>newFontSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="29" column="10" bodyfile="includes/Notification.hpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1ad37fe28645023b473b71423ad243aef0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Notification::setCenter</definition>
+        <argsstring>(Point newCenter)</argsstring>
+        <name>setCenter</name>
+        <param>
+          <type><ref refid="structPoint" kindref="compound">Point</ref></type>
+          <declname>newCenter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="35" column="10" bodyfile="includes/Notification.hpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1a55fb698ea455062ef8edeac83920391c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Notification::setString</definition>
+        <argsstring>(const string &amp;newString)</argsstring>
+        <name>setString</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>newString</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="40" column="10" bodyfile="includes/Notification.hpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1a526a8f898f4d4a2fa280162efa472c2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Rectangle</type>
+        <definition>Rectangle Notification::getBackground</definition>
+        <argsstring>()</argsstring>
+        <name>getBackground</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="47" column="15" bodyfile="includes/Notification.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classNotification_1a9fa7217dc52e184eafcb54c4cd4002b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Notification::getPadding</definition>
+        <argsstring>()</argsstring>
+        <name>getPadding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Notification.hpp" line="48" column="15" bodyfile="includes/Notification.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Notification</label>
+        <link refid="classNotification"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Text</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Notification</label>
+        <link refid="classNotification"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Text</label>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Notification.hpp" line="8" column="1" bodyfile="includes/Notification.hpp" bodystart="8" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classNotification_1a4f8763ca485e60adf2378e22604a5cbe" prot="private" virt="non-virtual"><scope>Notification</scope><name>background</name></member>
+      <member refid="classNotification_1afd62c9a310d552efe71bf9fd92a0e46c" prot="public" virt="non-virtual"><scope>Notification</scope><name>draw</name></member>
+      <member refid="classNotification_1a526a8f898f4d4a2fa280162efa472c2e" prot="public" virt="non-virtual"><scope>Notification</scope><name>getBackground</name></member>
+      <member refid="classNotification_1a9fa7217dc52e184eafcb54c4cd4002b6" prot="public" virt="non-virtual"><scope>Notification</scope><name>getPadding</name></member>
+      <member refid="classNotification_1a1d2014b23265060cebccfb542a60e75a" prot="public" virt="non-virtual"><scope>Notification</scope><name>Notification</name></member>
+      <member refid="classNotification_1a9845f78080f851744b52ad07838cf6a4" prot="public" virt="non-virtual"><scope>Notification</scope><name>Notification</name></member>
+      <member refid="classNotification_1ab4d6b7c14c3da54e8d9444aa367c6b5b" prot="private" virt="non-virtual"><scope>Notification</scope><name>padding</name></member>
+      <member refid="classNotification_1ad37fe28645023b473b71423ad243aef0" prot="public" virt="non-virtual"><scope>Notification</scope><name>setCenter</name></member>
+      <member refid="classNotification_1a33f2dc50535409e3fb33b904a7b95cbc" prot="public" virt="non-virtual"><scope>Notification</scope><name>setFontSize</name></member>
+      <member refid="classNotification_1a55fb698ea455062ef8edeac83920391c" prot="public" virt="non-virtual"><scope>Notification</scope><name>setString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

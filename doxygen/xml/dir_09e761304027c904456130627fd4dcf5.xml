@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_09e761304027c904456130627fd4dcf5" kind="dir">
+    <compoundname>includes</compoundname>
+    <innerfile refid="Animation_8hpp">Animation.hpp</innerfile>
+    <innerfile refid="Board_8hpp">Board.hpp</innerfile>
+    <innerfile refid="BoardView_8hpp">BoardView.hpp</innerfile>
+    <innerfile refid="Coordinate_8hpp">Coordinate.hpp</innerfile>
+    <innerfile refid="DisplaySettings_8hpp">DisplaySettings.hpp</innerfile>
+    <innerfile refid="DrawingUtils_8hpp">DrawingUtils.hpp</innerfile>
+    <innerfile refid="GameController_8hpp">GameController.hpp</innerfile>
+    <innerfile refid="GameModel_8hpp">GameModel.hpp</innerfile>
+    <innerfile refid="GameView_8hpp">GameView.hpp</innerfile>
+    <innerfile refid="Lane_8hpp">Lane.hpp</innerfile>
+    <innerfile refid="MainWindow_8hpp">MainWindow.hpp</innerfile>
+    <innerfile refid="OverlayView_8hpp">OverlayView.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/"/>
+  </compounddef>
+</doxygen>

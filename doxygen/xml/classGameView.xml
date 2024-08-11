@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classGameView" kind="class" language="C++" prot="public">
+    <compoundname>GameView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fl_Double_Window</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classGameView_1a9be471f321eb0010e640e97018dd6eff" prot="private" static="no" mutable="no">
+        <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+        <definition>GameModel* GameView::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="25" column="15" bodyfile="includes/GameView.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameView_1a89f700b49df1b6b1995b67947085d3eb" prot="private" static="no" mutable="no">
+        <type><ref refid="classGameController" kindref="compound">GameController</ref> *</type>
+        <definition>GameController* GameView::controller</definition>
+        <argsstring></argsstring>
+        <name>controller</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="26" column="20" bodyfile="includes/GameView.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameView_1a6de320ea4b1b0595ff711ba48a39a600" prot="private" static="no" mutable="no">
+        <type><ref refid="classOverlayView" kindref="compound">OverlayView</ref> *</type>
+        <definition>OverlayView* GameView::overlay</definition>
+        <argsstring></argsstring>
+        <name>overlay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="27" column="17" bodyfile="includes/GameView.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameView_1ae776ddd49cd5f341c503f6121690d0dd" prot="private" static="no" mutable="no">
+        <type><ref refid="classBoardView" kindref="compound">BoardView</ref> *</type>
+        <definition>BoardView* GameView::boardView</definition>
+        <argsstring></argsstring>
+        <name>boardView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="28" column="15" bodyfile="includes/GameView.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameView_1af1d7263c21abf7164cb826f66fe40d33" prot="private" static="no" mutable="no">
+        <type>Fl_Box *</type>
+        <definition>Fl_Box* GameView::frogBox</definition>
+        <argsstring></argsstring>
+        <name>frogBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="29" column="12" bodyfile="includes/GameView.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameView_1a5584421c405f4aa795b02c46a3ba8427" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Fl_Box * &gt;</type>
+        <definition>std::vector&lt;Fl_Box*&gt; GameView::vehicleBoxes</definition>
+        <argsstring></argsstring>
+        <name>vehicleBoxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="30" column="17" bodyfile="includes/GameView.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGameView_1ab9b90f18511d6368b40c0a741e60b9ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameView::GameView</definition>
+        <argsstring>(int w, int h, GameModel *model, GameController *controller)</argsstring>
+        <name>GameView</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameController" kindref="compound">GameController</ref> *</type>
+          <declname>controller</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="18" column="5" bodyfile="srcs/GameView.cpp" bodystart="4" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameView_1a125121df2f2efe47c15b009fb4b45a81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int GameView::handle</definition>
+        <argsstring>(int event) override</argsstring>
+        <name>handle</name>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="20" column="9" bodyfile="srcs/GameView.cpp" bodystart="29" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameView_1a02c5bb9b8d203d577a19440aa78bbf4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameView::draw</definition>
+        <argsstring>() override</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="21" column="10" bodyfile="srcs/GameView.cpp" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameView_1a8159f7e111f8f05f1ea5b5dd262fac7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameView::updateView</definition>
+        <argsstring>()</argsstring>
+        <name>updateView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameView.hpp" line="22" column="10" bodyfile="srcs/GameView.cpp" bodystart="45" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Fl_Double_Window</label>
+      </node>
+      <node id="1">
+        <label>GameView</label>
+        <link refid="classGameView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Fl_Double_Window</label>
+      </node>
+      <node id="9">
+        <label>BoardView</label>
+        <link refid="classBoardView"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="1">
+        <label>GameView</label>
+        <link refid="classGameView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-overlay</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-boardView</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>-controller</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GameController</label>
+        <link refid="classGameController"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>-view</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OverlayView</label>
+        <link refid="classOverlayView"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Fl_Widget</label>
+      </node>
+      <node id="5">
+        <label>GameModel</label>
+        <link refid="classGameModel"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+frog</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+board</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Fl_Box</label>
+      </node>
+      <node id="8">
+        <label>Board</label>
+        <link refid="classBoard"/>
+      </node>
+      <node id="6">
+        <label>Frog</label>
+        <link refid="classFrog"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+position</edgelabel>
+          <edgelabel>+startPosition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/GameView.hpp" line="16" column="1" bodyfile="includes/GameView.hpp" bodystart="16" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classGameView_1ae776ddd49cd5f341c503f6121690d0dd" prot="private" virt="non-virtual"><scope>GameView</scope><name>boardView</name></member>
+      <member refid="classGameView_1a89f700b49df1b6b1995b67947085d3eb" prot="private" virt="non-virtual"><scope>GameView</scope><name>controller</name></member>
+      <member refid="classGameView_1a02c5bb9b8d203d577a19440aa78bbf4f" prot="public" virt="non-virtual"><scope>GameView</scope><name>draw</name></member>
+      <member refid="classGameView_1af1d7263c21abf7164cb826f66fe40d33" prot="private" virt="non-virtual"><scope>GameView</scope><name>frogBox</name></member>
+      <member refid="classGameView_1ab9b90f18511d6368b40c0a741e60b9ab" prot="public" virt="non-virtual"><scope>GameView</scope><name>GameView</name></member>
+      <member refid="classGameView_1a125121df2f2efe47c15b009fb4b45a81" prot="public" virt="non-virtual"><scope>GameView</scope><name>handle</name></member>
+      <member refid="classGameView_1a9be471f321eb0010e640e97018dd6eff" prot="private" virt="non-virtual"><scope>GameView</scope><name>model</name></member>
+      <member refid="classGameView_1a6de320ea4b1b0595ff711ba48a39a600" prot="private" virt="non-virtual"><scope>GameView</scope><name>overlay</name></member>
+      <member refid="classGameView_1a8159f7e111f8f05f1ea5b5dd262fac7b" prot="public" virt="non-virtual"><scope>GameView</scope><name>updateView</name></member>
+      <member refid="classGameView_1a5584421c405f4aa795b02c46a3ba8427" prot="private" virt="non-virtual"><scope>GameView</scope><name>vehicleBoxes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

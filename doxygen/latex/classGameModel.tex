@@ -1,0 +1,75 @@
+\hypertarget{classGameModel}{}\doxysection{Game\+Model Class Reference}
+\label{classGameModel}\index{GameModel@{GameModel}}
+
+
+Collaboration diagram for Game\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGameModel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameModel_a3f78244349b809790a0789e6cb59c790}\label{classGameModel_a3f78244349b809790a0789e6cb59c790}} 
+void {\bfseries update\+Lanes} ()
+\item 
+\mbox{\Hypertarget{classGameModel_ad01933940ac20842296465f768b4f4d5}\label{classGameModel_ad01933940ac20842296465f768b4f4d5}} 
+void {\bfseries transport\+Frog} ()
+\item 
+\mbox{\Hypertarget{classGameModel_a2e093becf4149e1e2106172b8b6afa14}\label{classGameModel_a2e093becf4149e1e2106172b8b6afa14}} 
+void {\bfseries increase\+Score} (int value)
+\item 
+\mbox{\Hypertarget{classGameModel_a37c81612e54853e0ee260087bb9b1eae}\label{classGameModel_a37c81612e54853e0ee260087bb9b1eae}} 
+void {\bfseries end\+Game} ()
+\item 
+\mbox{\Hypertarget{classGameModel_a40e65e007283cbd97515c6b46255759c}\label{classGameModel_a40e65e007283cbd97515c6b46255759c}} 
+void {\bfseries reset\+Finish\+Line} ()
+\item 
+\mbox{\Hypertarget{classGameModel_abb30153822fe603325514afe835785ff}\label{classGameModel_abb30153822fe603325514afe835785ff}} 
+void {\bfseries reset\+Timer} ()
+\item 
+\mbox{\Hypertarget{classGameModel_af7f56c01b9ad17d509e3767dcf6d41a2}\label{classGameModel_af7f56c01b9ad17d509e3767dcf6d41a2}} 
+bool {\bfseries is\+Safe} (\mbox{\hyperlink{structPosition}{Position}} pos) const
+\item 
+\mbox{\Hypertarget{classGameModel_a01f0d9fff6a03095306ce632e559624d}\label{classGameModel_a01f0d9fff6a03095306ce632e559624d}} 
+bool {\bfseries try\+Empty\+Lily\+Pad} (\mbox{\hyperlink{structPosition}{Position}} pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameModel_ad3446b64cb180bc61ad3bb166a59e4e2}\label{classGameModel_ad3446b64cb180bc61ad3bb166a59e4e2}} 
+bool {\bfseries is\+Game\+Over}
+\item 
+\mbox{\Hypertarget{classGameModel_a88c17c24cf2a30563aaa6479df75290a}\label{classGameModel_a88c17c24cf2a30563aaa6479df75290a}} 
+bool {\bfseries is\+Victory}
+\item 
+\mbox{\Hypertarget{classGameModel_a9db4026c9fc0f32f8735951f0a64b588}\label{classGameModel_a9db4026c9fc0f32f8735951f0a64b588}} 
+int {\bfseries life} = 3
+\item 
+\mbox{\Hypertarget{classGameModel_a3dace1be4050754c3d3194379da00595}\label{classGameModel_a3dace1be4050754c3d3194379da00595}} 
+int {\bfseries victory\+Score} = 0
+\item 
+\mbox{\Hypertarget{classGameModel_a485ccbaaba24b2b894736773bd83913f}\label{classGameModel_a485ccbaaba24b2b894736773bd83913f}} 
+int {\bfseries time} = 0
+\item 
+\mbox{\Hypertarget{classGameModel_a1992b7ef0f4a923278a61dce8d43992c}\label{classGameModel_a1992b7ef0f4a923278a61dce8d43992c}} 
+int {\bfseries score} = 0
+\item 
+\mbox{\Hypertarget{classGameModel_acb0e21adb86b2801ef67b06da1e6224a}\label{classGameModel_acb0e21adb86b2801ef67b06da1e6224a}} 
+\mbox{\hyperlink{classBoard}{Board}} {\bfseries board}
+\item 
+\mbox{\Hypertarget{classGameModel_a0cb658dd61fc201d85eb4f8d4f47e7dc}\label{classGameModel_a0cb658dd61fc201d85eb4f8d4f47e7dc}} 
+\mbox{\hyperlink{classFrog}{Frog}} {\bfseries frog}
+\item 
+\mbox{\Hypertarget{classGameModel_ac860e1ab0016a5af0bbd09d42c46c837}\label{classGameModel_ac860e1ab0016a5af0bbd09d42c46c837}} 
+std\+::vector$<$ \mbox{\hyperlink{classVehicle}{Vehicle}} $>$ {\bfseries vehicles}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/Game\+Model.\+hpp\item 
+srcs/Game\+Model.\+cpp\end{DoxyCompactItemize}

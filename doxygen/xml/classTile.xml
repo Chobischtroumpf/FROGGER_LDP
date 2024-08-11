@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classTile" kind="class" language="C++" prot="public">
+    <compoundname>Tile</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classTile_1ae99a8c545d554c66a2783cec8f4401a8" prot="public" static="no" mutable="no">
+        <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+        <definition>Position Tile::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="19" column="14" bodyfile="includes/Lane.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classTile_1a86d32444511cf5bdd370330d7d642036" prot="public" static="no" mutable="no">
+        <type>TileType</type>
+        <definition>TileType Tile::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <initializer>= TileType::Classic</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="20" column="14" bodyfile="includes/Lane.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTile_1acc77b25a1268338c7afd0d1b4b09070b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tile::Tile</definition>
+        <argsstring>(Position pos, TileType t)</argsstring>
+        <name>Tile</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>TileType</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="21" column="5" bodyfile="includes/Lane.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classTile_1af6e6681b7f69c4d90a4e50b35d9d831d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tile::setTileType</definition>
+        <argsstring>(TileType t)</argsstring>
+        <name>setTileType</name>
+        <param>
+          <type>TileType</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="23" column="10" bodyfile="includes/Lane.hpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="1">
+        <label>Tile</label>
+        <link refid="classTile"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+pos</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Lane.hpp" line="17" column="1" bodyfile="includes/Lane.hpp" bodystart="17" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classTile_1ae99a8c545d554c66a2783cec8f4401a8" prot="public" virt="non-virtual"><scope>Tile</scope><name>pos</name></member>
+      <member refid="classTile_1af6e6681b7f69c4d90a4e50b35d9d831d" prot="public" virt="non-virtual"><scope>Tile</scope><name>setTileType</name></member>
+      <member refid="classTile_1acc77b25a1268338c7afd0d1b4b09070b" prot="public" virt="non-virtual"><scope>Tile</scope><name>Tile</name></member>
+      <member refid="classTile_1a86d32444511cf5bdd370330d7d642036" prot="public" virt="non-virtual"><scope>Tile</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,56 @@
+\hypertarget{classVehicle}{}\doxysection{Vehicle Class Reference}
+\label{classVehicle}\index{Vehicle@{Vehicle}}
+
+
+Collaboration diagram for Vehicle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classVehicle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVehicle_a0561a069dfc12cbea01ed21a664d108d}\label{classVehicle_a0561a069dfc12cbea01ed21a664d108d}} 
+{\bfseries Vehicle} (\mbox{\hyperlink{structPosition}{Position}} pos, Vehicle\+Type t, Direction d)
+\item 
+\mbox{\Hypertarget{classVehicle_a163055bc427e4ef2c64cc34e3a1005d0}\label{classVehicle_a163055bc427e4ef2c64cc34e3a1005d0}} 
+{\bfseries Vehicle} (\mbox{\hyperlink{structPosition}{Position}} pos, const \mbox{\hyperlink{structVehicleConfig}{Vehicle\+Config}} \&config, Direction d)
+\item 
+\mbox{\Hypertarget{classVehicle_ae29a90948d444574577d4d4ba012eb94}\label{classVehicle_ae29a90948d444574577d4d4ba012eb94}} 
+Vehicle\+Type {\bfseries get\+Type} () const
+\item 
+\mbox{\Hypertarget{classVehicle_a6cbb32a8b500d4ca2a3876b832aa527f}\label{classVehicle_a6cbb32a8b500d4ca2a3876b832aa527f}} 
+Direction {\bfseries get\+Direction} () const
+\item 
+\mbox{\Hypertarget{classVehicle_a50808724ee4061aa2996dc6fb88a40f5}\label{classVehicle_a50808724ee4061aa2996dc6fb88a40f5}} 
+void {\bfseries move} (int x)
+\item 
+\mbox{\Hypertarget{classVehicle_ab0afb329cadce9390a85418fddf96469}\label{classVehicle_ab0afb329cadce9390a85418fddf96469}} 
+bool {\bfseries collides} (\mbox{\hyperlink{structPosition}{Position}} pos) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVehicle_a1412328a2f933db662cdb32179087b65}\label{classVehicle_a1412328a2f933db662cdb32179087b65}} 
+\mbox{\hyperlink{structPosition}{Position}} {\bfseries position}
+\item 
+\mbox{\Hypertarget{classVehicle_ab75b44a1e876ab63b933c0603324704b}\label{classVehicle_ab75b44a1e876ab63b933c0603324704b}} 
+int {\bfseries length} = 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVehicle_a419d733cf899a7bb8d8fb8e0cbf4edeb}\label{classVehicle_a419d733cf899a7bb8d8fb8e0cbf4edeb}} 
+Vehicle\+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{classVehicle_a14cea899b0649e4988cbfbf2f2a84f3b}\label{classVehicle_a14cea899b0649e4988cbfbf2f2a84f3b}} 
+Direction {\bfseries direction}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/Lane.\+hpp\item 
+srcs/Lane.\+cpp\end{DoxyCompactItemize}

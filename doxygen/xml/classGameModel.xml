@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classGameModel" kind="class" language="C++" prot="public">
+    <compoundname>GameModel</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classGameModel_1ad3446b64cb180bc61ad3bb166a59e4e2" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameModel::isGameOver</definition>
+        <argsstring></argsstring>
+        <name>isGameOver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="25" column="10" bodyfile="includes/GameModel.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1a88c17c24cf2a30563aaa6479df75290a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameModel::isVictory</definition>
+        <argsstring></argsstring>
+        <name>isVictory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="26" column="10" bodyfile="includes/GameModel.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1a9db4026c9fc0f32f8735951f0a64b588" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameModel::life</definition>
+        <argsstring></argsstring>
+        <name>life</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="27" column="9" bodyfile="includes/GameModel.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1a3dace1be4050754c3d3194379da00595" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameModel::victoryScore</definition>
+        <argsstring></argsstring>
+        <name>victoryScore</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="28" column="9" bodyfile="includes/GameModel.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1a485ccbaaba24b2b894736773bd83913f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameModel::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="29" column="9" bodyfile="includes/GameModel.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1a1992b7ef0f4a923278a61dce8d43992c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameModel::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="30" column="9" bodyfile="includes/GameModel.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1acb0e21adb86b2801ef67b06da1e6224a" prot="public" static="no" mutable="no">
+        <type><ref refid="classBoard" kindref="compound">Board</ref></type>
+        <definition>Board GameModel::board</definition>
+        <argsstring></argsstring>
+        <name>board</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="32" column="11" bodyfile="includes/GameModel.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1a0cb658dd61fc201d85eb4f8d4f47e7dc" prot="public" static="no" mutable="no">
+        <type><ref refid="classFrog" kindref="compound">Frog</ref></type>
+        <definition>Frog GameModel::frog</definition>
+        <argsstring></argsstring>
+        <name>frog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="33" column="10" bodyfile="includes/GameModel.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classGameModel_1ac860e1ab0016a5af0bbd09d42c46c837" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classVehicle" kindref="compound">Vehicle</ref> &gt;</type>
+        <definition>std::vector&lt;Vehicle&gt; GameModel::vehicles</definition>
+        <argsstring></argsstring>
+        <name>vehicles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="34" column="17" bodyfile="includes/GameModel.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classGameModel_1aa5637be937d4a2ffe81541d513838424" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameModel::GameModel</definition>
+        <argsstring>()</argsstring>
+        <name>GameModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="37" column="5" bodyfile="srcs/GameModel.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1a3f78244349b809790a0789e6cb59c790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameModel::updateLanes</definition>
+        <argsstring>()</argsstring>
+        <name>updateLanes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="40" column="10" bodyfile="srcs/GameModel.cpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1ad01933940ac20842296465f768b4f4d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameModel::transportFrog</definition>
+        <argsstring>()</argsstring>
+        <name>transportFrog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="42" column="10" bodyfile="srcs/GameModel.cpp" bodystart="40" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1a2e093becf4149e1e2106172b8b6afa14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameModel::increaseScore</definition>
+        <argsstring>(int value)</argsstring>
+        <name>increaseScore</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="45" column="10" bodyfile="srcs/GameModel.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1a37c81612e54853e0ee260087bb9b1eae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameModel::endGame</definition>
+        <argsstring>()</argsstring>
+        <name>endGame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="47" column="10" bodyfile="srcs/GameModel.cpp" bodystart="55" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1a40e65e007283cbd97515c6b46255759c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameModel::resetFinishLine</definition>
+        <argsstring>()</argsstring>
+        <name>resetFinishLine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="50" column="10" bodyfile="srcs/GameModel.cpp" bodystart="66" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1abb30153822fe603325514afe835785ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameModel::resetTimer</definition>
+        <argsstring>()</argsstring>
+        <name>resetTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="52" column="10" bodyfile="srcs/GameModel.cpp" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1af7f56c01b9ad17d509e3767dcf6d41a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameModel::isSafe</definition>
+        <argsstring>(Position pos) const</argsstring>
+        <name>isSafe</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="55" column="10" bodyfile="srcs/GameModel.cpp" bodystart="83" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classGameModel_1a01f0d9fff6a03095306ce632e559624d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameModel::tryEmptyLilyPad</definition>
+        <argsstring>(Position pos)</argsstring>
+        <name>tryEmptyLilyPad</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GameModel.hpp" line="56" column="10" bodyfile="srcs/GameModel.cpp" bodystart="91" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="1">
+        <label>GameModel</label>
+        <link refid="classGameModel"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+frog</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+board</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Board</label>
+        <link refid="classBoard"/>
+      </node>
+      <node id="2">
+        <label>Frog</label>
+        <link refid="classFrog"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+position</edgelabel>
+          <edgelabel>+startPosition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/GameModel.hpp" line="23" column="1" bodyfile="includes/GameModel.hpp" bodystart="23" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classGameModel_1acb0e21adb86b2801ef67b06da1e6224a" prot="public" virt="non-virtual"><scope>GameModel</scope><name>board</name></member>
+      <member refid="classGameModel_1a37c81612e54853e0ee260087bb9b1eae" prot="public" virt="non-virtual"><scope>GameModel</scope><name>endGame</name></member>
+      <member refid="classGameModel_1a0cb658dd61fc201d85eb4f8d4f47e7dc" prot="public" virt="non-virtual"><scope>GameModel</scope><name>frog</name></member>
+      <member refid="classGameModel_1aa5637be937d4a2ffe81541d513838424" prot="public" virt="non-virtual"><scope>GameModel</scope><name>GameModel</name></member>
+      <member refid="classGameModel_1a2e093becf4149e1e2106172b8b6afa14" prot="public" virt="non-virtual"><scope>GameModel</scope><name>increaseScore</name></member>
+      <member refid="classGameModel_1ad3446b64cb180bc61ad3bb166a59e4e2" prot="public" virt="non-virtual"><scope>GameModel</scope><name>isGameOver</name></member>
+      <member refid="classGameModel_1af7f56c01b9ad17d509e3767dcf6d41a2" prot="public" virt="non-virtual"><scope>GameModel</scope><name>isSafe</name></member>
+      <member refid="classGameModel_1a88c17c24cf2a30563aaa6479df75290a" prot="public" virt="non-virtual"><scope>GameModel</scope><name>isVictory</name></member>
+      <member refid="classGameModel_1a9db4026c9fc0f32f8735951f0a64b588" prot="public" virt="non-virtual"><scope>GameModel</scope><name>life</name></member>
+      <member refid="classGameModel_1a40e65e007283cbd97515c6b46255759c" prot="public" virt="non-virtual"><scope>GameModel</scope><name>resetFinishLine</name></member>
+      <member refid="classGameModel_1abb30153822fe603325514afe835785ff" prot="public" virt="non-virtual"><scope>GameModel</scope><name>resetTimer</name></member>
+      <member refid="classGameModel_1a1992b7ef0f4a923278a61dce8d43992c" prot="public" virt="non-virtual"><scope>GameModel</scope><name>score</name></member>
+      <member refid="classGameModel_1a485ccbaaba24b2b894736773bd83913f" prot="public" virt="non-virtual"><scope>GameModel</scope><name>time</name></member>
+      <member refid="classGameModel_1ad01933940ac20842296465f768b4f4d5" prot="public" virt="non-virtual"><scope>GameModel</scope><name>transportFrog</name></member>
+      <member refid="classGameModel_1a01f0d9fff6a03095306ce632e559624d" prot="public" virt="non-virtual"><scope>GameModel</scope><name>tryEmptyLilyPad</name></member>
+      <member refid="classGameModel_1a3f78244349b809790a0789e6cb59c790" prot="public" virt="non-virtual"><scope>GameModel</scope><name>updateLanes</name></member>
+      <member refid="classGameModel_1ac860e1ab0016a5af0bbd09d42c46c837" prot="public" virt="non-virtual"><scope>GameModel</scope><name>vehicles</name></member>
+      <member refid="classGameModel_1a3dace1be4050754c3d3194379da00595" prot="public" virt="non-virtual"><scope>GameModel</scope><name>victoryScore</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classOverlayView" kind="class" language="C++" prot="public">
+    <compoundname>OverlayView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fl_Box</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classOverlayView_1afa1611b9bfcc46fe0b070e1bab038cf3" prot="private" static="no" mutable="no">
+        <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+        <definition>GameModel* OverlayView::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/OverlayView.hpp" line="17" column="15" bodyfile="includes/OverlayView.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOverlayView_1ac2644b686ce8bb1894060bd2fd64d64a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OverlayView::gameOver</definition>
+        <argsstring></argsstring>
+        <name>gameOver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/OverlayView.hpp" line="18" column="10" bodyfile="includes/OverlayView.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classOverlayView_1a0feda8a5a631dc2882db537b5ecd8ff9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool OverlayView::gameWon</definition>
+        <argsstring></argsstring>
+        <name>gameWon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/OverlayView.hpp" line="19" column="10" bodyfile="includes/OverlayView.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classOverlayView_1a95a5ece8e2180251a46f4a7caa510ccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OverlayView::OverlayView</definition>
+        <argsstring>(int x, int y, int w, int h, GameModel *model)</argsstring>
+        <name>OverlayView</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/OverlayView.hpp" line="11" column="5" bodyfile="srcs/OverlayView.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classOverlayView_1ad36272bec8490464eb1a8754e5679f63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OverlayView::draw</definition>
+        <argsstring>() override</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/OverlayView.hpp" line="13" column="10" bodyfile="srcs/OverlayView.cpp" bodystart="11" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classOverlayView_1ac72d361f026d000704cc38c8a835972e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void OverlayView::updateHUD</definition>
+        <argsstring>()</argsstring>
+        <name>updateHUD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/OverlayView.hpp" line="14" column="10" bodyfile="srcs/OverlayView.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>OverlayView</label>
+        <link refid="classOverlayView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Fl_Box</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="1">
+        <label>OverlayView</label>
+        <link refid="classOverlayView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GameModel</label>
+        <link refid="classGameModel"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+frog</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+board</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Fl_Box</label>
+      </node>
+      <node id="6">
+        <label>Board</label>
+        <link refid="classBoard"/>
+      </node>
+      <node id="4">
+        <label>Frog</label>
+        <link refid="classFrog"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+position</edgelabel>
+          <edgelabel>+startPosition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/OverlayView.hpp" line="9" column="1" bodyfile="includes/OverlayView.hpp" bodystart="9" bodyend="20"/>
+    <listofallmembers>
+      <member refid="classOverlayView_1ad36272bec8490464eb1a8754e5679f63" prot="public" virt="non-virtual"><scope>OverlayView</scope><name>draw</name></member>
+      <member refid="classOverlayView_1ac2644b686ce8bb1894060bd2fd64d64a" prot="private" virt="non-virtual"><scope>OverlayView</scope><name>gameOver</name></member>
+      <member refid="classOverlayView_1a0feda8a5a631dc2882db537b5ecd8ff9" prot="private" virt="non-virtual"><scope>OverlayView</scope><name>gameWon</name></member>
+      <member refid="classOverlayView_1afa1611b9bfcc46fe0b070e1bab038cf3" prot="private" virt="non-virtual"><scope>OverlayView</scope><name>model</name></member>
+      <member refid="classOverlayView_1a95a5ece8e2180251a46f4a7caa510ccb" prot="public" virt="non-virtual"><scope>OverlayView</scope><name>OverlayView</name></member>
+      <member refid="classOverlayView_1ac72d361f026d000704cc38c8a835972e" prot="public" virt="non-virtual"><scope>OverlayView</scope><name>updateHUD</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

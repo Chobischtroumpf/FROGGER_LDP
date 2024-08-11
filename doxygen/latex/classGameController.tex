@@ -1,0 +1,69 @@
+\hypertarget{classGameController}{}\doxysection{Game\+Controller Class Reference}
+\label{classGameController}\index{GameController@{GameController}}
+
+
+Collaboration diagram for Game\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGameController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameController_a58d1049595b70d00641d432d66a45eec}\label{classGameController_a58d1049595b70d00641d432d66a45eec}} 
+{\bfseries Game\+Controller} (\mbox{\hyperlink{classGameModel}{Game\+Model}} $\ast$model, \mbox{\hyperlink{classGameView}{Game\+View}} $\ast$view)
+\item 
+\mbox{\Hypertarget{classGameController_a8eb7c601f1daca511b1f556a087c81d1}\label{classGameController_a8eb7c601f1daca511b1f556a087c81d1}} 
+void {\bfseries on\+Key} (int key)
+\item 
+\mbox{\Hypertarget{classGameController_a2fb59f8cdaa930ebd82a0d924a62dc53}\label{classGameController_a2fb59f8cdaa930ebd82a0d924a62dc53}} 
+void {\bfseries game\+Loop} ()
+\item 
+\mbox{\Hypertarget{classGameController_a9312026142bdb83599b39f32c6fe9ae1}\label{classGameController_a9312026142bdb83599b39f32c6fe9ae1}} 
+void {\bfseries handle\+Key\+Event} (int key)
+\item 
+\mbox{\Hypertarget{classGameController_a5440a27f099c094813e774e0e89cf7ee}\label{classGameController_a5440a27f099c094813e774e0e89cf7ee}} 
+void {\bfseries link\+View} (\mbox{\hyperlink{classGameView}{Game\+View}} $\ast$view)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameController_a0cfefdd78ee1b2b61ad1050b3bedf49b}\label{classGameController_a0cfefdd78ee1b2b61ad1050b3bedf49b}} 
+void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classGameController_a2b9380471fcfa43b628511eeb93f0f4e}\label{classGameController_a2b9380471fcfa43b628511eeb93f0f4e}} 
+void {\bfseries reset\+Player\+Position} ()
+\item 
+\mbox{\Hypertarget{classGameController_a22ac068ef35a83df692146a4dbc5fad9}\label{classGameController_a22ac068ef35a83df692146a4dbc5fad9}} 
+void {\bfseries kill\+Player} ()
+\item 
+\mbox{\Hypertarget{classGameController_a466726ab5ccac77661d81925be5ea5ff}\label{classGameController_a466726ab5ccac77661d81925be5ea5ff}} 
+void {\bfseries reset\+Game} ()
+\item 
+\mbox{\Hypertarget{classGameController_a4914f1e7ceaa6a39c7e79fed09aedb76}\label{classGameController_a4914f1e7ceaa6a39c7e79fed09aedb76}} 
+void {\bfseries move\+Player} (int x, int y)
+\item 
+\mbox{\Hypertarget{classGameController_a01c6afb4b20a9b7e69faf16ba8686a61}\label{classGameController_a01c6afb4b20a9b7e69faf16ba8686a61}} 
+void {\bfseries check\+Victory} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGameController_af963b47080dba31038103a7e77130f0c}\label{classGameController_af963b47080dba31038103a7e77130f0c}} 
+\mbox{\hyperlink{classGameModel}{Game\+Model}} $\ast$ {\bfseries model}
+\item 
+\mbox{\Hypertarget{classGameController_aaa02b5f21474b4f9cbc74bce3f87e643}\label{classGameController_aaa02b5f21474b4f9cbc74bce3f87e643}} 
+\mbox{\hyperlink{classGameView}{Game\+View}} $\ast$ {\bfseries view}
+\item 
+\mbox{\Hypertarget{classGameController_a1ec8d1011e4421ed7a5733e787fd44e2}\label{classGameController_a1ec8d1011e4421ed7a5733e787fd44e2}} 
+int {\bfseries frame\+Counter} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/Game\+Controller.\+hpp\item 
+srcs/Game\+Controller.\+cpp\end{DoxyCompactItemize}

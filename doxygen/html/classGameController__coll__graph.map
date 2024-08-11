@@ -1,0 +1,13 @@
+<map id="GameController" name="GameController">
+<area shape="rect" id="node1" title=" " alt="" coords="331,733,498,957"/>
+<area shape="rect" id="node2" href="$classGameView.html" title=" " alt="" coords="337,1020,461,1156"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,807,152,884"/>
+<area shape="rect" id="node4" href="$classOverlayView.html" title=" " alt="" coords="176,785,307,906"/>
+<area shape="rect" id="node5" title=" " alt="" coords="208,491,275,568"/>
+<area shape="rect" id="node6" href="$classGameModel.html" title=" " alt="" coords="430,388,583,671"/>
+<area shape="rect" id="node10" href="$classBoardView.html" title=" " alt="" coords="621,799,739,891"/>
+<area shape="rect" id="node7" href="$classFrog.html" title=" " alt="" coords="351,189,483,325"/>
+<area shape="rect" id="node8" href="$structPosition.html" title=" " alt="" coords="355,5,479,112"/>
+<area shape="rect" id="node9" href="$classBoard.html" title=" " alt="" coords="508,189,615,325"/>
+<area shape="rect" id="node11" title=" " alt="" coords="637,491,723,568"/>
+</map>

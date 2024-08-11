@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBoardView" kind="class" language="C++" prot="public">
+    <compoundname>BoardView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fl_Widget</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBoardView_1a4dc7599b8eac3fc7bc783013670b6e9a" prot="private" static="no" mutable="no">
+        <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+        <definition>GameModel* BoardView::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoardView.hpp" line="14" column="15" bodyfile="includes/BoardView.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBoardView_1a18fff63713cc94ff2f5211e5b734619f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BoardView::BoardView</definition>
+        <argsstring>(int x, int y, int w, int h, GameModel *model)</argsstring>
+        <name>BoardView</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="classGameModel" kindref="compound">GameModel</ref> *</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoardView.hpp" line="10" column="5" bodyfile="srcs/BoardView.cpp" bodystart="3" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classBoardView_1aeef17f50503cd28a6b59c2ccf95a83f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoardView::draw</definition>
+        <argsstring>() override</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoardView.hpp" line="11" column="10" bodyfile="srcs/BoardView.cpp" bodystart="26" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BoardView</label>
+        <link refid="classBoardView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Fl_Widget</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BoardView</label>
+        <link refid="classBoardView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-model</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Position</label>
+        <link refid="structPosition"/>
+      </node>
+      <node id="2">
+        <label>Fl_Widget</label>
+      </node>
+      <node id="3">
+        <label>GameModel</label>
+        <link refid="classGameModel"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+frog</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+board</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Board</label>
+        <link refid="classBoard"/>
+      </node>
+      <node id="4">
+        <label>Frog</label>
+        <link refid="classFrog"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+position</edgelabel>
+          <edgelabel>+startPosition</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/BoardView.hpp" line="8" column="1" bodyfile="includes/BoardView.hpp" bodystart="8" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classBoardView_1a18fff63713cc94ff2f5211e5b734619f" prot="public" virt="non-virtual"><scope>BoardView</scope><name>BoardView</name></member>
+      <member refid="classBoardView_1aeef17f50503cd28a6b59c2ccf95a83f2" prot="public" virt="non-virtual"><scope>BoardView</scope><name>draw</name></member>
+      <member refid="classBoardView_1a4dc7599b8eac3fc7bc783013670b6e9a" prot="private" virt="non-virtual"><scope>BoardView</scope><name>model</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

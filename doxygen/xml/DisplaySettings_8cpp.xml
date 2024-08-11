@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="DisplaySettings_8cpp" kind="file" language="C++">
+    <compoundname>DisplaySettings.cpp</compoundname>
+    <includes refid="DisplaySettings_8hpp" local="yes">DisplaySettings.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>srcs/DisplaySettings.cpp</label>
+        <link refid="DisplaySettings_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>DisplaySettings.hpp</label>
+        <link refid="DisplaySettings_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Coordinate.hpp</label>
+        <link refid="Coordinate_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>DisplaySettings.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;DisplaySettings.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DisplaySettings::windowSize<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DisplaySettings::boardViewSize<sp/>=<sp/>800;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="classCoordinate" kindref="compound">Coordinate</ref><sp/>DisplaySettings::boardCoords<sp/>=<sp/><ref refid="classCoordinate" kindref="compound">Coordinate</ref>((windowSize<sp/>-<sp/>boardViewSize)<sp/>/<sp/>2,<sp/>(windowSize<sp/>-<sp/>boardViewSize)<sp/>/<sp/>2);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DisplaySettings::laneLength<sp/>=<sp/>13;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DisplaySettings::tileSize<sp/>=<sp/>boardViewSize<sp/>/<sp/>laneLength;</highlight></codeline>
+    </programlisting>
+    <location file="srcs/DisplaySettings.cpp"/>
+  </compounddef>
+</doxygen>

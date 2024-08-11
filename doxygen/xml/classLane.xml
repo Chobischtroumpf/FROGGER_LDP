@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLane" kind="class" language="C++" prot="public">
+    <compoundname>Lane</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classLane_1af314ca8432f17242ba08c93b4e07cdef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Lane::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="124" column="9" bodyfile="includes/Lane.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLane_1a8b3c4cb37184e12f2cc066df563ba444" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Lane::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="126" column="9" bodyfile="includes/Lane.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLane_1ae085698b0aaa7019e5a332b29d1a8a72" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Lane::rowIndex</definition>
+        <argsstring></argsstring>
+        <name>rowIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="127" column="9" bodyfile="includes/Lane.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLane_1af94a5f72ecd946aafd866dcb1535e7d3" prot="private" static="no" mutable="no">
+        <type>LaneType</type>
+        <definition>LaneType Lane::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="129" column="14" bodyfile="includes/Lane.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLane_1a5d9049330b662a6c8852a78c5a1fd13a" prot="private" static="no" mutable="no">
+        <type>Direction</type>
+        <definition>Direction Lane::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="130" column="15" bodyfile="includes/Lane.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLane_1aeee0b53e40b55b1c27a87fb1bc540c6a" prot="private" static="no" mutable="no">
+        <type><ref refid="classSpawnPattern" kindref="compound">SpawnPattern</ref></type>
+        <definition>SpawnPattern Lane::pattern</definition>
+        <argsstring></argsstring>
+        <name>pattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="131" column="18" bodyfile="includes/Lane.hpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLane_1a0833c71460b3c277e2b0f0ca2ed02b0e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classTile" kindref="compound">Tile</ref> &gt;</type>
+        <definition>std::vector&lt;Tile&gt; Lane::tiles</definition>
+        <argsstring></argsstring>
+        <name>tiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="132" column="17" bodyfile="includes/Lane.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLane_1a8809f8562c71cee93e7d76687b09944e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classVehicle" kindref="compound">Vehicle</ref> &gt;</type>
+        <definition>std::vector&lt;Vehicle&gt; Lane::vehicles</definition>
+        <argsstring></argsstring>
+        <name>vehicles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="133" column="17" bodyfile="includes/Lane.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLane_1a40837e5673ad1d3f066e1c51f11c1262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Lane::Lane</definition>
+        <argsstring>(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direction direction=Direction::Right)</argsstring>
+        <name>Lane</name>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rowIndex</declname>
+        </param>
+        <param>
+          <type>LaneType</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="classSpawnPattern" kindref="compound">SpawnPattern</ref></type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>Direction</type>
+          <declname>direction</declname>
+          <defval>Direction::Right</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="104" column="5" bodyfile="srcs/Lane.cpp" bodystart="31" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a4099b285d38108652768e4c817063b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Lane::spawnVehicle</definition>
+        <argsstring>()</argsstring>
+        <name>spawnVehicle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="106" column="10" bodyfile="srcs/Lane.cpp" bodystart="41" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1aee4e07162b9e770884a804c7b468211e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>VehicleType</type>
+        <definition>VehicleType Lane::generateVehicleType</definition>
+        <argsstring>()</argsstring>
+        <name>generateVehicleType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="107" column="17" bodyfile="srcs/Lane.cpp" bodystart="70" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a12c974886f517581abc607f58775d303" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Lane::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="108" column="10" bodyfile="srcs/Lane.cpp" bodystart="90" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a3a0105d1a32a752f44ad7259f5b15aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classTile" kindref="compound">Tile</ref> &gt; &amp;</type>
+        <definition>std::vector&lt; Tile &gt; &amp; Lane::getTiles</definition>
+        <argsstring>()</argsstring>
+        <name>getTiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="110" column="17" bodyfile="srcs/Lane.cpp" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a708e31faa2d8f7fbe8521eb215b71ec4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="classTile" kindref="compound">Tile</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Tile &gt; &amp; Lane::getTiles</definition>
+        <argsstring>() const</argsstring>
+        <name>getTiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="111" column="23" bodyfile="srcs/Lane.cpp" bodystart="115" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a9bf647c5eef194d4820df64ba540fab5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="classVehicle" kindref="compound">Vehicle</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Vehicle &gt; &amp; Lane::getVehicles</definition>
+        <argsstring>() const</argsstring>
+        <name>getVehicles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="112" column="23" bodyfile="srcs/Lane.cpp" bodystart="123" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1af0379cb2aa78196644bf5cfd135b456c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LaneType</type>
+        <definition>LaneType Lane::getType</definition>
+        <argsstring>() const</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="113" column="14" bodyfile="srcs/Lane.cpp" bodystart="127" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1aea44dc9bad20de70c1c73a0ab6785b4b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Direction</type>
+        <definition>Direction Lane::getDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>getDirection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="114" column="15" bodyfile="srcs/Lane.cpp" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1acc08fdf207fff1db0fc42c2cfdfefcb9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Lane::isSafe</definition>
+        <argsstring>(Position pos) const</argsstring>
+        <name>isSafe</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="117" column="10" bodyfile="srcs/Lane.cpp" bodystart="134" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a7851cec82e3b33003ac39ae26b209e23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classTile" kindref="compound">Tile</ref> &amp;</type>
+        <definition>Tile &amp; Lane::hit</definition>
+        <argsstring>(Position pos)</argsstring>
+        <name>hit</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="120" column="10" bodyfile="srcs/Lane.cpp" bodystart="164" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classLane_1a565261aed0fd28ef6bf93d670cfb9cb0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classTile" kindref="compound">Tile</ref> &amp;</type>
+        <definition>const Tile &amp; Lane::hit</definition>
+        <argsstring>(Position pos) const</argsstring>
+        <name>hit</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="122" column="16" bodyfile="srcs/Lane.cpp" bodystart="175" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>SpawnPattern</label>
+        <link refid="classSpawnPattern"/>
+      </node>
+      <node id="1">
+        <label>Lane</label>
+        <link refid="classLane"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-pattern</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Lane.hpp" line="102" column="1" bodyfile="includes/Lane.hpp" bodystart="102" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classLane_1a5d9049330b662a6c8852a78c5a1fd13a" prot="private" virt="non-virtual"><scope>Lane</scope><name>direction</name></member>
+      <member refid="classLane_1aee4e07162b9e770884a804c7b468211e" prot="public" virt="non-virtual"><scope>Lane</scope><name>generateVehicleType</name></member>
+      <member refid="classLane_1aea44dc9bad20de70c1c73a0ab6785b4b" prot="public" virt="non-virtual"><scope>Lane</scope><name>getDirection</name></member>
+      <member refid="classLane_1a3a0105d1a32a752f44ad7259f5b15aab" prot="public" virt="non-virtual"><scope>Lane</scope><name>getTiles</name></member>
+      <member refid="classLane_1a708e31faa2d8f7fbe8521eb215b71ec4" prot="public" virt="non-virtual"><scope>Lane</scope><name>getTiles</name></member>
+      <member refid="classLane_1af0379cb2aa78196644bf5cfd135b456c" prot="public" virt="non-virtual"><scope>Lane</scope><name>getType</name></member>
+      <member refid="classLane_1a9bf647c5eef194d4820df64ba540fab5" prot="public" virt="non-virtual"><scope>Lane</scope><name>getVehicles</name></member>
+      <member refid="classLane_1a7851cec82e3b33003ac39ae26b209e23" prot="public" virt="non-virtual"><scope>Lane</scope><name>hit</name></member>
+      <member refid="classLane_1a565261aed0fd28ef6bf93d670cfb9cb0" prot="public" virt="non-virtual"><scope>Lane</scope><name>hit</name></member>
+      <member refid="classLane_1acc08fdf207fff1db0fc42c2cfdfefcb9" prot="public" virt="non-virtual"><scope>Lane</scope><name>isSafe</name></member>
+      <member refid="classLane_1a40837e5673ad1d3f066e1c51f11c1262" prot="public" virt="non-virtual"><scope>Lane</scope><name>Lane</name></member>
+      <member refid="classLane_1a8b3c4cb37184e12f2cc066df563ba444" prot="private" virt="non-virtual"><scope>Lane</scope><name>length</name></member>
+      <member refid="classLane_1aeee0b53e40b55b1c27a87fb1bc540c6a" prot="private" virt="non-virtual"><scope>Lane</scope><name>pattern</name></member>
+      <member refid="classLane_1ae085698b0aaa7019e5a332b29d1a8a72" prot="private" virt="non-virtual"><scope>Lane</scope><name>rowIndex</name></member>
+      <member refid="classLane_1a4099b285d38108652768e4c817063b03" prot="public" virt="non-virtual"><scope>Lane</scope><name>spawnVehicle</name></member>
+      <member refid="classLane_1af314ca8432f17242ba08c93b4e07cdef" prot="public" virt="non-virtual"><scope>Lane</scope><name>speed</name></member>
+      <member refid="classLane_1a0833c71460b3c277e2b0f0ca2ed02b0e" prot="private" virt="non-virtual"><scope>Lane</scope><name>tiles</name></member>
+      <member refid="classLane_1af94a5f72ecd946aafd866dcb1535e7d3" prot="private" virt="non-virtual"><scope>Lane</scope><name>type</name></member>
+      <member refid="classLane_1a12c974886f517581abc607f58775d303" prot="public" virt="non-virtual"><scope>Lane</scope><name>update</name></member>
+      <member refid="classLane_1a8809f8562c71cee93e7d76687b09944e" prot="private" virt="non-virtual"><scope>Lane</scope><name>vehicles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

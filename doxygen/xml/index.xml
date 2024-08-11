@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classBoard" kind="class"><name>Board</name>
+    <member refid="classBoard_1a78da734b5c138b9517302e023d1c638c" kind="variable"><name>lanes</name></member>
+    <member refid="classBoard_1aedef7105f0accc0949b601afa97e9678" kind="variable"><name>size</name></member>
+    <member refid="classBoard_1a85f7fa3ac70f16cbccee5de9e76d53d1" kind="function"><name>contains</name></member>
+    <member refid="classBoard_1a23ec051234acfe51d94664f9ad52a469" kind="function"><name>Board</name></member>
+    <member refid="classBoard_1a05c52053b524b3368420aca5e9a53251" kind="function"><name>getLanes</name></member>
+    <member refid="classBoard_1a9a524c5abadc4b9cdaafcf38484c0ddf" kind="function"><name>hit</name></member>
+  </compound>
+  <compound refid="classBoardView" kind="class"><name>BoardView</name>
+    <member refid="classBoardView_1a4dc7599b8eac3fc7bc783013670b6e9a" kind="variable"><name>model</name></member>
+    <member refid="classBoardView_1a18fff63713cc94ff2f5211e5b734619f" kind="function"><name>BoardView</name></member>
+    <member refid="classBoardView_1aeef17f50503cd28a6b59c2ccf95a83f2" kind="function"><name>draw</name></member>
+  </compound>
+  <compound refid="classCoordinate" kind="class"><name>Coordinate</name>
+    <member refid="classCoordinate_1ad462d671f1feb865911333e3ff5f0a5d" kind="variable"><name>x</name></member>
+    <member refid="classCoordinate_1a5c7d59f0f65ff9371b6c3791f78880aa" kind="variable"><name>y</name></member>
+    <member refid="classCoordinate_1aba3fc03b1a25f335c9058ddf18290d59" kind="function"><name>Coordinate</name></member>
+    <member refid="classCoordinate_1a31ee1293c62697bf92c492f33c132832" kind="function"><name>Coordinate</name></member>
+  </compound>
+  <compound refid="classDisplaySettings" kind="class"><name>DisplaySettings</name>
+    <member refid="classDisplaySettings_1a84e86494d82f79b31d580a6493cf6b48" kind="variable"><name>windowSize</name></member>
+    <member refid="classDisplaySettings_1acf5a4ace45120a1d0d71669775952e75" kind="variable"><name>boardCoords</name></member>
+    <member refid="classDisplaySettings_1afc801725c9ad472de82147d386d26025" kind="variable"><name>boardViewSize</name></member>
+    <member refid="classDisplaySettings_1aaf30a4792832883649a4a8b89b763e2c" kind="variable"><name>laneLength</name></member>
+    <member refid="classDisplaySettings_1a692e3cdefef36e099edf8877bd33a494" kind="variable"><name>tileSize</name></member>
+  </compound>
+  <compound refid="classFrog" kind="class"><name>Frog</name>
+    <member refid="classFrog_1afc5b06b66155784127b682f92eda0669" kind="variable"><name>startPosition</name></member>
+    <member refid="classFrog_1a9fa45c37e4625120ccac9803503fc862" kind="variable"><name>position</name></member>
+    <member refid="classFrog_1a4259ab283009475cc223920d4341629a" kind="variable"><name>rotation</name></member>
+    <member refid="classFrog_1aca4f66f3360ad2d8f8031c6b44890a37" kind="function"><name>Frog</name></member>
+    <member refid="classFrog_1aca8f9a0c2bf409f2a0f876289881ede1" kind="function"><name>Frog</name></member>
+    <member refid="classFrog_1af73a748d333a9c2fbbfb355d6bfb322e" kind="function"><name>move</name></member>
+    <member refid="classFrog_1a6c1b8ade2a39b1f2ab46872235832460" kind="function"><name>resetPosition</name></member>
+    <member refid="classFrog_1ad5bfe17de14f712c60b7c4c191143d7d" kind="function"><name>getRotation</name></member>
+  </compound>
+  <compound refid="classGameController" kind="class"><name>GameController</name>
+    <member refid="classGameController_1af963b47080dba31038103a7e77130f0c" kind="variable"><name>model</name></member>
+    <member refid="classGameController_1aaa02b5f21474b4f9cbc74bce3f87e643" kind="variable"><name>view</name></member>
+    <member refid="classGameController_1a1ec8d1011e4421ed7a5733e787fd44e2" kind="variable"><name>frameCounter</name></member>
+    <member refid="classGameController_1a58d1049595b70d00641d432d66a45eec" kind="function"><name>GameController</name></member>
+    <member refid="classGameController_1a8eb7c601f1daca511b1f556a087c81d1" kind="function"><name>onKey</name></member>
+    <member refid="classGameController_1a2fb59f8cdaa930ebd82a0d924a62dc53" kind="function"><name>gameLoop</name></member>
+    <member refid="classGameController_1a9312026142bdb83599b39f32c6fe9ae1" kind="function"><name>handleKeyEvent</name></member>
+    <member refid="classGameController_1a5440a27f099c094813e774e0e89cf7ee" kind="function"><name>linkView</name></member>
+    <member refid="classGameController_1a0cfefdd78ee1b2b61ad1050b3bedf49b" kind="function"><name>update</name></member>
+    <member refid="classGameController_1a2b9380471fcfa43b628511eeb93f0f4e" kind="function"><name>resetPlayerPosition</name></member>
+    <member refid="classGameController_1a22ac068ef35a83df692146a4dbc5fad9" kind="function"><name>killPlayer</name></member>
+    <member refid="classGameController_1a466726ab5ccac77661d81925be5ea5ff" kind="function"><name>resetGame</name></member>
+    <member refid="classGameController_1a4914f1e7ceaa6a39c7e79fed09aedb76" kind="function"><name>movePlayer</name></member>
+    <member refid="classGameController_1a01c6afb4b20a9b7e69faf16ba8686a61" kind="function"><name>checkVictory</name></member>
+  </compound>
+  <compound refid="classGameModel" kind="class"><name>GameModel</name>
+    <member refid="classGameModel_1ad3446b64cb180bc61ad3bb166a59e4e2" kind="variable"><name>isGameOver</name></member>
+    <member refid="classGameModel_1a88c17c24cf2a30563aaa6479df75290a" kind="variable"><name>isVictory</name></member>
+    <member refid="classGameModel_1a9db4026c9fc0f32f8735951f0a64b588" kind="variable"><name>life</name></member>
+    <member refid="classGameModel_1a3dace1be4050754c3d3194379da00595" kind="variable"><name>victoryScore</name></member>
+    <member refid="classGameModel_1a485ccbaaba24b2b894736773bd83913f" kind="variable"><name>time</name></member>
+    <member refid="classGameModel_1a1992b7ef0f4a923278a61dce8d43992c" kind="variable"><name>score</name></member>
+    <member refid="classGameModel_1acb0e21adb86b2801ef67b06da1e6224a" kind="variable"><name>board</name></member>
+    <member refid="classGameModel_1a0cb658dd61fc201d85eb4f8d4f47e7dc" kind="variable"><name>frog</name></member>
+    <member refid="classGameModel_1ac860e1ab0016a5af0bbd09d42c46c837" kind="variable"><name>vehicles</name></member>
+    <member refid="classGameModel_1aa5637be937d4a2ffe81541d513838424" kind="function"><name>GameModel</name></member>
+    <member refid="classGameModel_1a3f78244349b809790a0789e6cb59c790" kind="function"><name>updateLanes</name></member>
+    <member refid="classGameModel_1ad01933940ac20842296465f768b4f4d5" kind="function"><name>transportFrog</name></member>
+    <member refid="classGameModel_1a2e093becf4149e1e2106172b8b6afa14" kind="function"><name>increaseScore</name></member>
+    <member refid="classGameModel_1a37c81612e54853e0ee260087bb9b1eae" kind="function"><name>endGame</name></member>
+    <member refid="classGameModel_1a40e65e007283cbd97515c6b46255759c" kind="function"><name>resetFinishLine</name></member>
+    <member refid="classGameModel_1abb30153822fe603325514afe835785ff" kind="function"><name>resetTimer</name></member>
+    <member refid="classGameModel_1af7f56c01b9ad17d509e3767dcf6d41a2" kind="function"><name>isSafe</name></member>
+    <member refid="classGameModel_1a01f0d9fff6a03095306ce632e559624d" kind="function"><name>tryEmptyLilyPad</name></member>
+  </compound>
+  <compound refid="classGameView" kind="class"><name>GameView</name>
+    <member refid="classGameView_1a9be471f321eb0010e640e97018dd6eff" kind="variable"><name>model</name></member>
+    <member refid="classGameView_1a89f700b49df1b6b1995b67947085d3eb" kind="variable"><name>controller</name></member>
+    <member refid="classGameView_1a6de320ea4b1b0595ff711ba48a39a600" kind="variable"><name>overlay</name></member>
+    <member refid="classGameView_1ae776ddd49cd5f341c503f6121690d0dd" kind="variable"><name>boardView</name></member>
+    <member refid="classGameView_1af1d7263c21abf7164cb826f66fe40d33" kind="variable"><name>frogBox</name></member>
+    <member refid="classGameView_1a5584421c405f4aa795b02c46a3ba8427" kind="variable"><name>vehicleBoxes</name></member>
+    <member refid="classGameView_1ab9b90f18511d6368b40c0a741e60b9ab" kind="function"><name>GameView</name></member>
+    <member refid="classGameView_1a125121df2f2efe47c15b009fb4b45a81" kind="function"><name>handle</name></member>
+    <member refid="classGameView_1a02c5bb9b8d203d577a19440aa78bbf4f" kind="function"><name>draw</name></member>
+    <member refid="classGameView_1a8159f7e111f8f05f1ea5b5dd262fac7b" kind="function"><name>updateView</name></member>
+  </compound>
+  <compound refid="classLane" kind="class"><name>Lane</name>
+    <member refid="classLane_1af314ca8432f17242ba08c93b4e07cdef" kind="variable"><name>speed</name></member>
+    <member refid="classLane_1a8b3c4cb37184e12f2cc066df563ba444" kind="variable"><name>length</name></member>
+    <member refid="classLane_1ae085698b0aaa7019e5a332b29d1a8a72" kind="variable"><name>rowIndex</name></member>
+    <member refid="classLane_1af94a5f72ecd946aafd866dcb1535e7d3" kind="variable"><name>type</name></member>
+    <member refid="classLane_1a5d9049330b662a6c8852a78c5a1fd13a" kind="variable"><name>direction</name></member>
+    <member refid="classLane_1aeee0b53e40b55b1c27a87fb1bc540c6a" kind="variable"><name>pattern</name></member>
+    <member refid="classLane_1a0833c71460b3c277e2b0f0ca2ed02b0e" kind="variable"><name>tiles</name></member>
+    <member refid="classLane_1a8809f8562c71cee93e7d76687b09944e" kind="variable"><name>vehicles</name></member>
+    <member refid="classLane_1a40837e5673ad1d3f066e1c51f11c1262" kind="function"><name>Lane</name></member>
+    <member refid="classLane_1a4099b285d38108652768e4c817063b03" kind="function"><name>spawnVehicle</name></member>
+    <member refid="classLane_1aee4e07162b9e770884a804c7b468211e" kind="function"><name>generateVehicleType</name></member>
+    <member refid="classLane_1a12c974886f517581abc607f58775d303" kind="function"><name>update</name></member>
+    <member refid="classLane_1a3a0105d1a32a752f44ad7259f5b15aab" kind="function"><name>getTiles</name></member>
+    <member refid="classLane_1a708e31faa2d8f7fbe8521eb215b71ec4" kind="function"><name>getTiles</name></member>
+    <member refid="classLane_1a9bf647c5eef194d4820df64ba540fab5" kind="function"><name>getVehicles</name></member>
+    <member refid="classLane_1af0379cb2aa78196644bf5cfd135b456c" kind="function"><name>getType</name></member>
+    <member refid="classLane_1aea44dc9bad20de70c1c73a0ab6785b4b" kind="function"><name>getDirection</name></member>
+    <member refid="classLane_1acc08fdf207fff1db0fc42c2cfdfefcb9" kind="function"><name>isSafe</name></member>
+    <member refid="classLane_1a7851cec82e3b33003ac39ae26b209e23" kind="function"><name>hit</name></member>
+    <member refid="classLane_1a565261aed0fd28ef6bf93d670cfb9cb0" kind="function"><name>hit</name></member>
+  </compound>
+  <compound refid="classMainWindow" kind="class"><name>MainWindow</name>
+    <member refid="classMainWindow_1aaeed1882e2b9bcbaf6fb17e83865b1c8" kind="variable"><name>canvas</name></member>
+    <member refid="classMainWindow_1af802883436df5a506cddd67a27fea1a6" kind="variable"><name>gameWon</name></member>
+    <member refid="classMainWindow_1aa1a8338ffc31c18fdf57b382f122b841" kind="variable"><name>gameLost</name></member>
+    <member refid="classMainWindow_1aef73acaf2325dce2fcedaf1ff00c6f99" kind="variable"><name>refreshPerSecond</name></member>
+    <member refid="classMainWindow_1a34c4b4207b46d11a4100c9b19f0e81bb" kind="function"><name>MainWindow</name></member>
+    <member refid="classMainWindow_1a1344d21eac13e282cf6644516e129ed4" kind="function"><name>draw</name></member>
+    <member refid="classMainWindow_1a4131f325ab64885af6c373d85d063c66" kind="function"><name>handle</name></member>
+    <member refid="classMainWindow_1a02076de46e6810174817ebfc6ddd2be5" kind="function"><name>reset</name></member>
+    <member refid="classMainWindow_1acf7be332873a89bce7eec435df6a02c2" kind="function"><name>resetCanvas</name></member>
+    <member refid="classMainWindow_1a64c570679035661523d7105b6dc46799" kind="function"><name>resetLoop</name></member>
+    <member refid="classMainWindow_1ae98d00a93bc118200eeef9f9bba1dba7" kind="function"><name>~MainWindow</name></member>
+    <member refid="classMainWindow_1a81f02db9847b66815725f657b81e9470" kind="function"><name>Timer_CB</name></member>
+    <member refid="classMainWindow_1a60954fef1e3df5da2512e717ffd64c74" kind="function"><name>Timer_Reset</name></member>
+  </compound>
+  <compound refid="classOverlayView" kind="class"><name>OverlayView</name>
+    <member refid="classOverlayView_1afa1611b9bfcc46fe0b070e1bab038cf3" kind="variable"><name>model</name></member>
+    <member refid="classOverlayView_1ac2644b686ce8bb1894060bd2fd64d64a" kind="variable"><name>gameOver</name></member>
+    <member refid="classOverlayView_1a0feda8a5a631dc2882db537b5ecd8ff9" kind="variable"><name>gameWon</name></member>
+    <member refid="classOverlayView_1a95a5ece8e2180251a46f4a7caa510ccb" kind="function"><name>OverlayView</name></member>
+    <member refid="classOverlayView_1ad36272bec8490464eb1a8754e5679f63" kind="function"><name>draw</name></member>
+    <member refid="classOverlayView_1ac72d361f026d000704cc38c8a835972e" kind="function"><name>updateHUD</name></member>
+  </compound>
+  <compound refid="structPosition" kind="struct"><name>Position</name>
+    <member refid="structPosition_1aeda152ffeee17ae5be9c02327b2408d8" kind="variable"><name>x</name></member>
+    <member refid="structPosition_1a3c08e9213d4726b21caba3073192c4a3" kind="variable"><name>y</name></member>
+    <member refid="structPosition_1acf13e7e45c7c07a67c2adf2f7e1dcc5f" kind="function"><name>operator==</name></member>
+    <member refid="structPosition_1ac51e6ddc3ca6dd529db82faeab3e307f" kind="function"><name>tilePos</name></member>
+  </compound>
+  <compound refid="structfrogger_1_1Rotation" kind="struct"><name>frogger::Rotation</name>
+    <member refid="structfrogger_1_1Rotation_1aeb5a083c13c11dae63fc5f1773b13710" kind="function"><name>Rotation</name></member>
+    <member refid="structfrogger_1_1Rotation_1a163e58315ba7cd8566016a6cc6569c16" kind="function"><name>~Rotation</name></member>
+  </compound>
+  <compound refid="classSpawnPattern" kind="class"><name>SpawnPattern</name>
+    <member refid="classSpawnPattern_1a4a46833a646f019740526dc36416c9cc" kind="variable"><name>pattern</name></member>
+    <member refid="classSpawnPattern_1a0aa4271c352fe5a28f0b4f46bbe21c2f" kind="variable"><name>delay</name></member>
+    <member refid="classSpawnPattern_1a9895ac9cb3c2d8c3a3dcd3c900548ae8" kind="variable"><name>currentIndex</name></member>
+    <member refid="classSpawnPattern_1a805b73e86fe3826038f9d4aeb1a84fed" kind="variable"><name>delayCounter</name></member>
+    <member refid="classSpawnPattern_1a9f4bff64de38ab0157ce63df004da5ab" kind="function"><name>SpawnPattern</name></member>
+    <member refid="classSpawnPattern_1afcc9230ad3e61f06eedf36694ee12c37" kind="function"><name>next</name></member>
+    <member refid="classSpawnPattern_1a0cfd1daf7ae2f20b85b8e2d3fd8d1d32" kind="function"><name>tick</name></member>
+  </compound>
+  <compound refid="classTile" kind="class"><name>Tile</name>
+    <member refid="classTile_1ae99a8c545d554c66a2783cec8f4401a8" kind="variable"><name>pos</name></member>
+    <member refid="classTile_1a86d32444511cf5bdd370330d7d642036" kind="variable"><name>type</name></member>
+    <member refid="classTile_1acc77b25a1268338c7afd0d1b4b09070b" kind="function"><name>Tile</name></member>
+    <member refid="classTile_1af6e6681b7f69c4d90a4e50b35d9d831d" kind="function"><name>setTileType</name></member>
+  </compound>
+  <compound refid="structfrogger_1_1Translation" kind="struct"><name>frogger::Translation</name>
+    <member refid="structfrogger_1_1Translation_1ae82962d2813c2470d684b564d0577cf8" kind="function"><name>Translation</name></member>
+    <member refid="structfrogger_1_1Translation_1a0b18e192941f2a34177cdf45816d1e73" kind="function"><name>~Translation</name></member>
+  </compound>
+  <compound refid="classVehicle" kind="class"><name>Vehicle</name>
+    <member refid="classVehicle_1a1412328a2f933db662cdb32179087b65" kind="variable"><name>position</name></member>
+    <member refid="classVehicle_1ab75b44a1e876ab63b933c0603324704b" kind="variable"><name>length</name></member>
+    <member refid="classVehicle_1a419d733cf899a7bb8d8fb8e0cbf4edeb" kind="variable"><name>type</name></member>
+    <member refid="classVehicle_1a14cea899b0649e4988cbfbf2f2a84f3b" kind="variable"><name>direction</name></member>
+    <member refid="classVehicle_1a0561a069dfc12cbea01ed21a664d108d" kind="function"><name>Vehicle</name></member>
+    <member refid="classVehicle_1a163055bc427e4ef2c64cc34e3a1005d0" kind="function"><name>Vehicle</name></member>
+    <member refid="classVehicle_1ae29a90948d444574577d4d4ba012eb94" kind="function"><name>getType</name></member>
+    <member refid="classVehicle_1a6cbb32a8b500d4ca2a3876b832aa527f" kind="function"><name>getDirection</name></member>
+    <member refid="classVehicle_1a50808724ee4061aa2996dc6fb88a40f5" kind="function"><name>move</name></member>
+    <member refid="classVehicle_1ab0afb329cadce9390a85418fddf96469" kind="function"><name>collides</name></member>
+  </compound>
+  <compound refid="structVehicleConfig" kind="struct"><name>VehicleConfig</name>
+    <member refid="structVehicleConfig_1ab231c772b5c8d33108987a62d897e034" kind="variable"><name>type</name></member>
+    <member refid="structVehicleConfig_1ad54f4baa05797d3ae9df89c1c685d782" kind="variable"><name>length</name></member>
+    <member refid="structVehicleConfig_1a86dc6f313d4c96216b56928c91b0acc2" kind="function"><name>VehicleConfig</name></member>
+  </compound>
+  <compound refid="namespacefrogger" kind="namespace"><name>frogger</name>
+  </compound>
+  <compound refid="Animation_8hpp" kind="file"><name>Animation.hpp</name>
+  </compound>
+  <compound refid="Board_8hpp" kind="file"><name>Board.hpp</name>
+  </compound>
+  <compound refid="BoardView_8hpp" kind="file"><name>BoardView.hpp</name>
+  </compound>
+  <compound refid="Coordinate_8hpp" kind="file"><name>Coordinate.hpp</name>
+  </compound>
+  <compound refid="DisplaySettings_8hpp" kind="file"><name>DisplaySettings.hpp</name>
+  </compound>
+  <compound refid="DrawingUtils_8hpp" kind="file"><name>DrawingUtils.hpp</name>
+    <member refid="DrawingUtils_8hpp_1a89834190eaf23b9a946f1223e2d47cda" kind="function"><name>drawFilledRect</name></member>
+    <member refid="DrawingUtils_8hpp_1a2c313cba1f9df837aea72dc2aa7b75a5" kind="function"><name>drawSquare</name></member>
+    <member refid="DrawingUtils_8hpp_1a94e5b170fdff20ac836b6282061946fe" kind="function"><name>drawPNG</name></member>
+    <member refid="DrawingUtils_8hpp_1a8774d2cc34eb33c0ffa722e15bb0ab44" kind="function"><name>drawVehicle</name></member>
+    <member refid="DrawingUtils_8hpp_1acd43c229bf5a36db30c05112cf476478" kind="function"><name>drawPlayer</name></member>
+    <member refid="DrawingUtils_8hpp_1a0bad46fe9cea2fbb6d200f0ad3f370c6" kind="function"><name>drawTile</name></member>
+    <member refid="DrawingUtils_8hpp_1ab9fb9b5c291b9afa5e37f32d8b81e18b" kind="function"><name>drawLilyPad</name></member>
+    <member refid="DrawingUtils_8hpp_1a87d4a79cb37bddb59dbc3a42f64dddc6" kind="function"><name>drawLife</name></member>
+    <member refid="DrawingUtils_8hpp_1a3c883d279150570389b4266e936126be" kind="function"><name>drawGameOver</name></member>
+    <member refid="DrawingUtils_8hpp_1a3c3559616bcb08f4ccb9373e27178758" kind="function"><name>drawScore</name></member>
+  </compound>
+  <compound refid="GameController_8hpp" kind="file"><name>GameController.hpp</name>
+  </compound>
+  <compound refid="GameModel_8hpp" kind="file"><name>GameModel.hpp</name>
+  </compound>
+  <compound refid="GameView_8hpp" kind="file"><name>GameView.hpp</name>
+  </compound>
+  <compound refid="Lane_8hpp" kind="file"><name>Lane.hpp</name>
+    <member refid="Lane_8hpp_1ac9e486ec80ccfdb28a4f4837d419c9f1" kind="enum"><name>TileType</name></member>
+    <member refid="Lane_8hpp_1ac9e486ec80ccfdb28a4f4837d419c9f1afc791e3fb627f1aec1b7e7c8527d984e" kind="enumvalue"><name>Classic</name></member>
+    <member refid="Lane_8hpp_1ac9e486ec80ccfdb28a4f4837d419c9f1a7f3f601d7920d9a6029071b06db6c09e" kind="enumvalue"><name>EmptyLilypad</name></member>
+    <member refid="Lane_8hpp_1ac9e486ec80ccfdb28a4f4837d419c9f1a593cec1fa81d9ff655279de2ff6e0f99" kind="enumvalue"><name>CompletedLilypad</name></member>
+    <member refid="Lane_8hpp_1a0c05c42b98a847f971385c81c2a81afa" kind="enum"><name>VehicleType</name></member>
+    <member refid="Lane_8hpp_1a0c05c42b98a847f971385c81c2a81afaa79308bb2129574e4a8579dae9dfeeb1c" kind="enumvalue"><name>Bus</name></member>
+    <member refid="Lane_8hpp_1a0c05c42b98a847f971385c81c2a81afaa86fae10ed9ff55f5dd60f668f75ed07d" kind="enumvalue"><name>Car</name></member>
+    <member refid="Lane_8hpp_1a0c05c42b98a847f971385c81c2a81afaa089fe3c8ed633fc44cb2e73b17af84ec" kind="enumvalue"><name>Log</name></member>
+    <member refid="Lane_8hpp_1a0c05c42b98a847f971385c81c2a81afaa23c62574d576a1baeddbdbfa86b49e7a" kind="enumvalue"><name>Turtle</name></member>
+    <member refid="Lane_8hpp_1a2e5ecaab42b966e76a474f365da28e33" kind="enum"><name>LaneType</name></member>
+    <member refid="Lane_8hpp_1a2e5ecaab42b966e76a474f365da28e33ad11aed2ff81f20a2e2b7e0cf06ee1a37" kind="enumvalue"><name>Road</name></member>
+    <member refid="Lane_8hpp_1a2e5ecaab42b966e76a474f365da28e33a149529f6dcbcc198787e69a11235422e" kind="enumvalue"><name>River</name></member>
+    <member refid="Lane_8hpp_1a2e5ecaab42b966e76a474f365da28e33aaac9a63596f76a62bb9f61a5dd7c0d25" kind="enumvalue"><name>Grass</name></member>
+    <member refid="Lane_8hpp_1a2e5ecaab42b966e76a474f365da28e33a5205c935b513ea21927c93e2b186a779" kind="enumvalue"><name>Railway</name></member>
+    <member refid="Lane_8hpp_1a2e5ecaab42b966e76a474f365da28e33a35103a5d003106c617e0f6817308d2b4" kind="enumvalue"><name>FinishLine</name></member>
+    <member refid="Lane_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa" kind="enum"><name>Direction</name></member>
+    <member refid="Lane_8hpp_1a224b9163917ac32fc95a60d8c1eec3aaad48f7af8c070184f3774c8e85854eb66" kind="enumvalue"><name>Right</name></member>
+    <member refid="Lane_8hpp_1a224b9163917ac32fc95a60d8c1eec3aaa9d4d8b0b72fc2659da772d761a3c5ecb" kind="enumvalue"><name>Left</name></member>
+  </compound>
+  <compound refid="MainWindow_8hpp" kind="file"><name>MainWindow.hpp</name>
+  </compound>
+  <compound refid="OverlayView_8hpp" kind="file"><name>OverlayView.hpp</name>
+  </compound>
+  <compound refid="Board_8cpp" kind="file"><name>Board.cpp</name>
+  </compound>
+  <compound refid="BoardView_8cpp" kind="file"><name>BoardView.cpp</name>
+    <member refid="BoardView_8cpp_1a05a51ea5a11e01a2a4c1e1aab7191fa6" kind="function"><name>getLaneColor</name></member>
+  </compound>
+  <compound refid="Coordinate_8cpp" kind="file"><name>Coordinate.cpp</name>
+  </compound>
+  <compound refid="DisplaySettings_8cpp" kind="file"><name>DisplaySettings.cpp</name>
+  </compound>
+  <compound refid="DrawingUtils_8cpp" kind="file"><name>DrawingUtils.cpp</name>
+    <member refid="DrawingUtils_8cpp_1a9fc52d06493f88014bb60133832ab56e" kind="function"><name>getVehicleColor</name></member>
+    <member refid="DrawingUtils_8cpp_1afef05aa5643224b6c958f73802044e5e" kind="function"><name>drawFilledRect</name></member>
+    <member refid="DrawingUtils_8cpp_1ace9963e61db0196bce16e380ec4adeb5" kind="function"><name>drawSquare</name></member>
+    <member refid="DrawingUtils_8cpp_1a8774d2cc34eb33c0ffa722e15bb0ab44" kind="function"><name>drawVehicle</name></member>
+    <member refid="DrawingUtils_8cpp_1a94e5b170fdff20ac836b6282061946fe" kind="function"><name>drawPNG</name></member>
+    <member refid="DrawingUtils_8cpp_1a2fd9608e7d61065b783e0e3556751f31" kind="function"><name>drawTransformedRectangle</name></member>
+    <member refid="DrawingUtils_8cpp_1acd43c229bf5a36db30c05112cf476478" kind="function"><name>drawPlayer</name></member>
+    <member refid="DrawingUtils_8cpp_1ac69ac8418134e503b0c4d6bc1bbfa0d0" kind="function"><name>drawTile</name></member>
+    <member refid="DrawingUtils_8cpp_1ab9fb9b5c291b9afa5e37f32d8b81e18b" kind="function"><name>drawLilyPad</name></member>
+    <member refid="DrawingUtils_8cpp_1a87d4a79cb37bddb59dbc3a42f64dddc6" kind="function"><name>drawLife</name></member>
+    <member refid="DrawingUtils_8cpp_1a3c883d279150570389b4266e936126be" kind="function"><name>drawGameOver</name></member>
+    <member refid="DrawingUtils_8cpp_1a3c3559616bcb08f4ccb9373e27178758" kind="function"><name>drawScore</name></member>
+  </compound>
+  <compound refid="GameController_8cpp" kind="file"><name>GameController.cpp</name>
+  </compound>
+  <compound refid="GameModel_8cpp" kind="file"><name>GameModel.cpp</name>
+  </compound>
+  <compound refid="GameView_8cpp" kind="file"><name>GameView.cpp</name>
+  </compound>
+  <compound refid="Lane_8cpp" kind="file"><name>Lane.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1af84c335a5ea0ea06d767303a4c7c7b93" kind="function"><name>gameLoopCallback</name></member>
+    <member refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="OverlayView_8cpp" kind="file"><name>OverlayView.cpp</name>
+  </compound>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  </compound>
+  <compound refid="dir_b73b02d482d1c4a3db20c3d9ad52d395" kind="dir"><name>srcs</name>
+  </compound>
+</doxygenindex>

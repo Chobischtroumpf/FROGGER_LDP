@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classBoard" kind="class" language="C++" prot="public">
+    <compoundname>Board</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classBoard_1a78da734b5c138b9517302e023d1c638c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classLane" kindref="compound">Lane</ref> &gt;</type>
+        <definition>std::vector&lt;Lane&gt; Board::lanes</definition>
+        <argsstring></argsstring>
+        <name>lanes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Board.hpp" line="13" column="17" bodyfile="includes/Board.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classBoard_1aedef7105f0accc0949b601afa97e9678" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Board::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Board.hpp" line="26" column="9" bodyfile="includes/Board.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classBoard_1a85f7fa3ac70f16cbccee5de9e76d53d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Board::contains</definition>
+        <argsstring>(Position pos) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Board.hpp" line="16" column="10" bodyfile="srcs/Board.cpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classBoard_1a23ec051234acfe51d94664f9ad52a469" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Board::Board</definition>
+        <argsstring>(int size)</argsstring>
+        <name>Board</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Board.hpp" line="18" column="5" bodyfile="srcs/Board.cpp" bodystart="3" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classBoard_1a05c52053b524b3368420aca5e9a53251" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="classLane" kindref="compound">Lane</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Lane &gt; &amp; Board::getLanes</definition>
+        <argsstring>() const</argsstring>
+        <name>getLanes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Board.hpp" line="20" column="23" bodyfile="srcs/Board.cpp" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classBoard_1a9a524c5abadc4b9cdaafcf38484c0ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLane" kindref="compound">Lane</ref> &amp;</type>
+        <definition>Lane &amp; Board::hit</definition>
+        <argsstring>(Position pos)</argsstring>
+        <name>hit</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Board.hpp" line="22" column="10" bodyfile="srcs/Board.cpp" bodystart="85" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Board</label>
+        <link refid="classBoard"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Board.hpp" line="10" column="1" bodyfile="includes/Board.hpp" bodystart="10" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classBoard_1a23ec051234acfe51d94664f9ad52a469" prot="public" virt="non-virtual"><scope>Board</scope><name>Board</name></member>
+      <member refid="classBoard_1a85f7fa3ac70f16cbccee5de9e76d53d1" prot="public" virt="non-virtual"><scope>Board</scope><name>contains</name></member>
+      <member refid="classBoard_1a05c52053b524b3368420aca5e9a53251" prot="public" virt="non-virtual"><scope>Board</scope><name>getLanes</name></member>
+      <member refid="classBoard_1a9a524c5abadc4b9cdaafcf38484c0ddf" prot="public" virt="non-virtual"><scope>Board</scope><name>hit</name></member>
+      <member refid="classBoard_1a78da734b5c138b9517302e023d1c638c" prot="public" virt="non-virtual"><scope>Board</scope><name>lanes</name></member>
+      <member refid="classBoard_1aedef7105f0accc0949b601afa97e9678" prot="private" virt="non-virtual"><scope>Board</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

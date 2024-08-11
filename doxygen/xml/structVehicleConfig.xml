@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structVehicleConfig" kind="struct" language="C++" prot="public">
+    <compoundname>VehicleConfig</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVehicleConfig_1ab231c772b5c8d33108987a62d897e034" prot="public" static="no" mutable="no">
+        <type>VehicleType</type>
+        <definition>VehicleType VehicleConfig::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="39" column="17" bodyfile="includes/Lane.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVehicleConfig_1ad54f4baa05797d3ae9df89c1c685d782" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int VehicleConfig::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="40" column="9" bodyfile="includes/Lane.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVehicleConfig_1a86dc6f313d4c96216b56928c91b0acc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>VehicleConfig::VehicleConfig</definition>
+        <argsstring>(VehicleType type, int length=1)</argsstring>
+        <name>VehicleConfig</name>
+        <param>
+          <type>VehicleType</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Lane.hpp" line="42" column="5" bodyfile="includes/Lane.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>VehicleConfig</label>
+        <link refid="structVehicleConfig"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Lane.hpp" line="38" column="1" bodyfile="includes/Lane.hpp" bodystart="38" bodyend="43"/>
+    <listofallmembers>
+      <member refid="structVehicleConfig_1ad54f4baa05797d3ae9df89c1c685d782" prot="public" virt="non-virtual"><scope>VehicleConfig</scope><name>length</name></member>
+      <member refid="structVehicleConfig_1ab231c772b5c8d33108987a62d897e034" prot="public" virt="non-virtual"><scope>VehicleConfig</scope><name>type</name></member>
+      <member refid="structVehicleConfig_1a86dc6f313d4c96216b56928c91b0acc2" prot="public" virt="non-virtual"><scope>VehicleConfig</scope><name>VehicleConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

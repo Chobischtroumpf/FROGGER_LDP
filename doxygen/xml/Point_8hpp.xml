@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="Point_8hpp" kind="file" language="C++">
+    <compoundname>Point.hpp</compoundname>
+    <includedby refid="Animation_8hpp" local="yes">includes/Animation.hpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>includes/Point.hpp</label>
+        <link refid="Point_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/Animation.hpp</label>
+        <link refid="Animation_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structPoint" prot="public">Point</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="structPoint" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref><sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><ref refid="structPoint" kindref="compound">Point</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)<sp/>:<sp/>x{x},<sp/>y{y}<sp/>{}</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/>y;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="includes/Point.hpp"/>
+  </compounddef>
+</doxygen>

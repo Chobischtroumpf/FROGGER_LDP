@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="DrawingUtils_8hpp" kind="file" language="C++">
+    <compoundname>DrawingUtils.hpp</compoundname>
+    <includes local="no">FL/fl_draw.H</includes>
+    <includes local="no">FL/Fl.H</includes>
+    <includes local="no">FL/Fl_PNG_Image.H</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="GameModel_8hpp" local="yes">GameModel.hpp</includes>
+    <includes refid="DisplaySettings_8hpp" local="yes">DisplaySettings.hpp</includes>
+    <includes refid="Coordinate_8hpp" local="yes">Coordinate.hpp</includes>
+    <includedby refid="DrawingUtils_8cpp" local="yes">srcs/DrawingUtils.cpp</includedby>
+    <includedby refid="OverlayView_8cpp" local="yes">srcs/OverlayView.cpp</includedby>
+    <includedby refid="BoardView_8hpp" local="yes">includes/BoardView.hpp</includedby>
+    <includedby refid="GameView_8hpp" local="yes">includes/GameView.hpp</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>Lane.hpp</label>
+        <link refid="Lane_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>stdexcept</label>
+      </node>
+      <node id="14">
+        <label>DisplaySettings.hpp</label>
+        <link refid="DisplaySettings_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>FL/Fl.H</label>
+      </node>
+      <node id="2">
+        <label>FL/fl_draw.H</label>
+      </node>
+      <node id="9">
+        <label>Board.hpp</label>
+        <link refid="Board_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Coordinate.hpp</label>
+        <link refid="Coordinate_8hpp_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="4">
+        <label>FL/Fl_PNG_Image.H</label>
+      </node>
+      <node id="11">
+        <label>cstdlib</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="1">
+        <label>includes/DrawingUtils.hpp</label>
+        <link refid="DrawingUtils_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>GameModel.hpp</label>
+        <link refid="GameModel_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>includes/GameView.hpp</label>
+        <link refid="GameView_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>includes/GameController.hpp</label>
+        <link refid="GameController_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/BoardView.hpp</label>
+        <link refid="BoardView_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/DrawingUtils.hpp</label>
+        <link refid="DrawingUtils_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a89834190eaf23b9a946f1223e2d47cda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawFilledRect</definition>
+        <argsstring>(int x, int y, int width, int height, Fl_Color fillColor, Fl_Color frameColor=FL_BLACK)</argsstring>
+        <name>drawFilledRect</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>Fl_Color</type>
+          <declname>fillColor</declname>
+        </param>
+        <param>
+          <type>Fl_Color</type>
+          <declname>frameColor</declname>
+          <defval>FL_BLACK</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="14" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="21" bodyend="27" declfile="includes/DrawingUtils.hpp" declline="14" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a2c313cba1f9df837aea72dc2aa7b75a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawSquare</definition>
+        <argsstring>(Position pos, int size, Fl_Color fillColor=FL_WHITE, Fl_Color frameColor=FL_BLACK)</argsstring>
+        <name>drawSquare</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>Fl_Color</type>
+          <declname>fillColor</declname>
+          <defval>FL_WHITE</defval>
+        </param>
+        <param>
+          <type>Fl_Color</type>
+          <declname>frameColor</declname>
+          <defval>FL_BLACK</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="15" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="29" bodyend="37" declfile="includes/DrawingUtils.hpp" declline="15" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a94e5b170fdff20ac836b6282061946fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawPNG</definition>
+        <argsstring>(const char *filename, Position pos, int size)</argsstring>
+        <name>drawPNG</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="16" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="63" bodyend="71" declfile="includes/DrawingUtils.hpp" declline="16" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a8774d2cc34eb33c0ffa722e15bb0ab44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawVehicle</definition>
+        <argsstring>(Vehicle v)</argsstring>
+        <name>drawVehicle</name>
+        <param>
+          <type><ref refid="classVehicle" kindref="compound">Vehicle</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="18" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="40" bodyend="60" declfile="includes/DrawingUtils.hpp" declline="18" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1acd43c229bf5a36db30c05112cf476478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawPlayer</definition>
+        <argsstring>(Position pos, int rotation)</argsstring>
+        <name>drawPlayer</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="19" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="82" bodyend="117" declfile="includes/DrawingUtils.hpp" declline="19" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a0bad46fe9cea2fbb6d200f0ad3f370c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawTile</definition>
+        <argsstring>(Tile tile, Fl_Color fillColor=FL_WHITE)</argsstring>
+        <name>drawTile</name>
+        <param>
+          <type><ref refid="classTile" kindref="compound">Tile</ref></type>
+          <declname>tile</declname>
+        </param>
+        <param>
+          <type>Fl_Color</type>
+          <declname>fillColor</declname>
+          <defval>FL_WHITE</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="20" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="120" bodyend="140" declfile="includes/DrawingUtils.hpp" declline="20" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1ab9fb9b5c291b9afa5e37f32d8b81e18b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawLilyPad</definition>
+        <argsstring>(Position pos, int size)</argsstring>
+        <name>drawLilyPad</name>
+        <param>
+          <type><ref refid="structPosition" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="21" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="143" bodyend="165" declfile="includes/DrawingUtils.hpp" declline="21" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a87d4a79cb37bddb59dbc3a42f64dddc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawLife</definition>
+        <argsstring>(int life)</argsstring>
+        <name>drawLife</name>
+        <param>
+          <type>int</type>
+          <declname>life</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="23" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="169" bodyend="180" declfile="includes/DrawingUtils.hpp" declline="23" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a3c883d279150570389b4266e936126be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawGameOver</definition>
+        <argsstring>(bool winOrLose)</argsstring>
+        <name>drawGameOver</name>
+        <param>
+          <type>bool</type>
+          <declname>winOrLose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="24" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="183" bodyend="193" declfile="includes/DrawingUtils.hpp" declline="24" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="DrawingUtils_8hpp_1a3c3559616bcb08f4ccb9373e27178758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawScore</definition>
+        <argsstring>(int score)</argsstring>
+        <name>drawScore</name>
+        <param>
+          <type>int</type>
+          <declname>score</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/DrawingUtils.hpp" line="25" column="6" bodyfile="srcs/DrawingUtils.cpp" bodystart="195" bodyend="203" declfile="includes/DrawingUtils.hpp" declline="25" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DRAWINGUTILS_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DRAWINGUTILS_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;FL/fl_draw.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;FL/Fl.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;FL/Fl_PNG_Image.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GameModel.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;DisplaySettings.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Coordinate.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>General<sp/>purpose<sp/>drawing<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawFilledRect(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/>Fl_Color<sp/>fillColor,<sp/>Fl_Color<sp/>frameColor<sp/>=<sp/>FL_BLACK);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawSquare(<ref refid="structPosition" kindref="compound">Position</ref><sp/>pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,<sp/>Fl_Color<sp/>fillColor<sp/>=<sp/>FL_WHITE,<sp/>Fl_Color<sp/>frameColor<sp/>=<sp/>FL_BLACK);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawPNG(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename,<sp/><ref refid="structPosition" kindref="compound">Position</ref><sp/>pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DGame<sp/>related<sp/>drawing<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawVehicle(<ref refid="classVehicle" kindref="compound">Vehicle</ref><sp/>v);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawPlayer(<ref refid="structPosition" kindref="compound">Position</ref><sp/>pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rotation);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawTile(<ref refid="classTile" kindref="compound">Tile</ref><sp/>tile,<sp/>Fl_Color<sp/>fillColor<sp/>=<sp/>FL_WHITE);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawLilyPad(<ref refid="structPosition" kindref="compound">Position</ref><sp/>pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Overlay<sp/>related<sp/>drawing<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawLife(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>life);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawGameOver(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>winOrLose);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawScore(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>score);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DRAWINGUTILS_HPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="includes/DrawingUtils.hpp"/>
+  </compounddef>
+</doxygen>
