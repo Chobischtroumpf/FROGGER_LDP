@@ -14,6 +14,15 @@ Direction Vehicle::getDirection() const {
     return direction;
 }
 
+// Check if the vehicle collides with the given position taking length and direction into account
+bool Vehicle::collides(Position pos) const {
+    if (direction == Direction::Right) {
+        return pos.x <= position.x && pos.x > position.x - length * DisplaySettings::tileSize;
+    } else {
+        return pos.x >= position.x && pos.x < position.x + length * DisplaySettings::tileSize;
+    }
+}
+
 
 VehicleConfig SpawnPattern::next() {
     // Return the next vehicle type in the pattern
@@ -36,6 +45,18 @@ Lane::Lane(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direct
         TileType tileType = ( type == LaneType::FinishLine && (i % 2 == 0 && i > 1 && i < length - 2)  ) ? TileType::EmptyLilypad: TileType::Classic;
         tiles[i] = Tile({i * DisplaySettings::tileSize, rowIndex * DisplaySettings::tileSize}, tileType); 
     }
+}
+
+// Constructor using LaneConfig
+Lane::Lane(int length, int rowIndex, LaneConfig config) : length(length), rowIndex(rowIndex), type(config.type), direction(config.direction), pattern(config.spawnPattern), tiles(length, Tile({0, 0}, Classic)) {
+        // Initialize tiles with corresponding positions
+        
+        for (int i = 0; i < length; ++i) {
+            // If the lane is a finish line, we need to add empty lilypads
+            TileType tileType = ( type == LaneType::FinishLine && (i % 2 == 0 && i > 1 && i < length - 2)  ) ? TileType::EmptyLilypad: TileType::Classic;
+            tiles[i] = Tile({i * DisplaySettings::tileSize, rowIndex * DisplaySettings::tileSize}, tileType); 
+        }
+
 }
 
 void Lane::spawnVehicle() {
@@ -75,15 +96,6 @@ VehicleType Lane::generateVehicleType() {
             return rand() % 2 == 0 ? Turtle : Log;
         default:
             throw std::runtime_error("Invalid lane type for vehicle generation");
-    }
-}
-
-// Check if the vehicle collides with the given position taking length and direction into account
-bool Vehicle::collides(Position pos) const {
-    if (direction == Direction::Right) {
-        return pos.x <= position.x && pos.x > position.x - length * DisplaySettings::tileSize;
-    } else {
-        return pos.x >= position.x && pos.x < position.x + length * DisplaySettings::tileSize;
     }
 }
 

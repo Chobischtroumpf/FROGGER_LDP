@@ -1,5 +1,5 @@
 #include "GameModel.hpp"
-#include <iostream>
+
 
 
 const Position Frog::startPosition = {(int)(round(6.5 * DisplaySettings::tileSize)), (int)(round(12.5 * DisplaySettings::tileSize))};
@@ -27,8 +27,44 @@ int Frog::getRotation() const {
     return rotation;
 }
 
-GameModel::GameModel() : isGameOver(true), isVictory(false), board(13), frog(Frog()) {
+// Function to read a file and return its content as a string
+std::string readFile(const std::string& path) {
+    // Open the file 
+    std::ifstream file(path, std::ios::binary);
 
+    // Check if the file was successfully opened
+    if (!file.is_open()) {
+        throw std::runtime_error("Coud not open file: " + path);
+    }
+
+    // Read the entire file
+    std::ostringstream contentStream;
+    contentStream << file.rdbuf();  
+
+    // Close the file explicitly (optional, since destructor will close it anyway)
+    file.close();
+
+    // Convert buffer into a string and return it
+    return contentStream.str();
+} 
+// ----------------- GameModel -----------------
+
+GameModel::GameModel() : isGameOver(false), isVictory(false), board(13), frog(Frog()) {
+
+}
+
+void GameModel::loadLevels() {
+    std::string path = "levels/";
+    
+    // Read all files in the levels folder
+    std::filesystem::path levelsPath = std::filesystem::current_path() / "levels";
+    for (const auto& entry : std::filesystem::directory_iterator(levelsPath)) {
+        if (entry.is_regular_file()) {
+            // Read the file and store the level
+            Level level(readFile(entry.path().string()));
+            levels.push_back(level);
+        }
+    }
 }
 
 void GameModel::updateLanes() {

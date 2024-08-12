@@ -4,6 +4,10 @@
 #include <vector>
 #include "Board.hpp"
 #include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <filesystem>
 
 class Frog {
 public:
@@ -22,6 +26,9 @@ private:
 
 class GameModel {
 public:
+
+    std::vector<Level> levels;
+
     bool isGameOver;
     bool isVictory;
     int life = 3;
@@ -35,6 +42,10 @@ public:
 
 
     GameModel();
+
+
+    // Loads game levels from the levels/folder
+    void loadLevels();
 
     // Updates each lane by moving their contained objects
     void updateLanes();   

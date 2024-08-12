@@ -42,7 +42,7 @@ struct VehicleConfig {
     VehicleConfig(VehicleType type, int length = 1) : type(type), length(length) {}
 };
 
-enum class LaneType {
+enum LaneType {
     Road,
     River,
     Grass,
@@ -65,7 +65,7 @@ public:
     Vehicle(Position pos, VehicleType t, Direction d ) 
         : position(pos), type(t), direction(d) {}
     
-    Vehicle(Position pos, const VehicleConfig& config, Direction d) : position(pos), type(config.type), direction(d), length(config.length) {}
+    Vehicle(Position pos, const VehicleConfig& config, Direction d) : position(pos),length(config.length),  type(config.type), direction(d)  {}
 
     // Getter methods
     VehicleType getType() const;
@@ -98,11 +98,17 @@ private:
     int delayCounter;
 };
 
+struct LaneConfig {
+    LaneType type;
+    Direction direction;
+    int speed;
+    SpawnPattern spawnPattern;
+};
 
 class Lane {
 public:
     Lane(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direction direction = Direction::Right);
-
+    Lane(int length, int rowIndex, LaneConfig config);
     void spawnVehicle();
     VehicleType generateVehicleType();
     void update(); // Method to process each game tick

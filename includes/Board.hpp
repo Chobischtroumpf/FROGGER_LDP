@@ -3,8 +3,23 @@
 
 #include <vector>
 #include "Lane.hpp"
+#include <tuple>
 
 
+
+
+// Represent a level confirugation
+struct Level {
+    // A vector of tuple of lanetype, speed and spawn pattern
+    std::vector<LaneConfig> lanes;
+
+    int bestScore = 0;
+    
+    // Decode a level from a string
+    Level(std::string encoded);
+
+    std::string encode() const;
+};
 
 // Represents the game board.
 class Board {

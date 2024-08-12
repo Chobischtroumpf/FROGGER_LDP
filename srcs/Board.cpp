@@ -1,4 +1,81 @@
 #include "Board.hpp"
+#include <sstream>
+
+std::istringstream getNextLine(std::istream& input) {
+    std::string line;
+    std::getline(input, line);
+    return std::istringstream(line);
+}
+
+std::istream& operator>>(std::istream& is, LaneType& l) {
+    int val;
+    if (is >> val) {
+        l = static_cast<LaneType>(val);
+    }
+    return is;
+}
+
+std::istream& operator>>(std::istream& is, Direction& d) {
+    int val;
+    if (is >> val) {
+        d = static_cast<Direction>(val);
+    }
+    return is;
+}
+
+std::istream& operator>>(std::istream& is, VehicleType& v) {
+    int val;
+    if (is >> val) {
+        v = static_cast<VehicleType>(val);
+    }
+    return is;
+}
+
+Level::Level(std::string encoded) {
+    // Get the first line of the encoded string
+    std::istringstream lvl(encoded);
+    std::istringstream line;
+    int score;
+
+    getNextLine(lvl) >> score;
+
+    for(int i = 0; i < 12; i++) {
+        LaneType laneType;
+        Direction dir;
+        int speed;
+        int delay;
+        std::vector<VehicleConfig> pattern;
+
+        getNextLine(lvl) >> laneType >> dir >> speed >> delay;
+        
+        VehicleType vType;
+        int length;
+        while(getNextLine(lvl) >> vType >> length) {
+            pattern.push_back({vType, length});
+        }
+
+        this->lanes.push_back({laneType, dir, speed, SpawnPattern(pattern, delay) });
+        
+    }
+
+    //Push the finish line
+    this->lanes.push_back({FinishLine, Right, 0, SpawnPattern({}, 0) });
+
+}
+
+std::string Level::encode() const {
+    std::ostringstream lvl;
+    lvl << bestScore << std::endl;
+
+    for (auto lane : lanes) {
+        lvl << lane.type << " " << lane.direction << " " << lane.speed << " " << lane.spawnPattern.delay << std::endl;
+        for (auto vehicle : lane.spawnPattern.pattern) {
+            lvl << vehicle.type << " " << vehicle.length << std::endl;
+        }
+    }
+
+    return lvl.str();
+}
 
 Board::Board(int size) : size(size) {
 
