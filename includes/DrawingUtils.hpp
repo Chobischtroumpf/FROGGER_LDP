@@ -4,6 +4,7 @@
 #include <FL/fl_draw.H>
 #include <FL/Fl.H>
 #include <FL/Fl_PNG_Image.H>
+#include <Fl/Fl_Image.H>
 #include <cmath>
 #include <iostream>
 #include "GameModel.hpp"
@@ -13,7 +14,7 @@
 // General purpose drawing functions
 void drawFilledRect(int x, int y, int width, int height, Fl_Color fillColor, Fl_Color frameColor = FL_BLACK);
 void drawSquare(Position pos, int size, Fl_Color fillColor = FL_WHITE, Fl_Color frameColor = FL_BLACK);
-void drawPNG(const char* filename, Position pos, int size);
+void drawPNG(const char* filename, Coordinate coord, int size);
 // DGame related drawing functions
 void drawVehicle(Vehicle v);
 void drawPlayer(Position pos, int rotation);
@@ -23,6 +24,9 @@ void drawLilyPad(Position pos, int size);
 void drawLife(int life);
 void drawGameOver(bool winOrLose);
 void drawScore(int score);
+
+void drawSplashScreen();
+void drawMenu(int selectedOption);
 #endif // DRAWINGUTILS_HPP
 
 

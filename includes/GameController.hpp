@@ -4,6 +4,8 @@
 #include "GameModel.hpp"
 #include "GameView.hpp"
 #include <FL/Fl.H>
+#include "MenuController.hpp"
+#include "MenuModel.hpp"
 #include <iostream>
 
 // Forward declaration to avoid circular dependency
@@ -11,7 +13,7 @@ class GameView;
 
 class GameController {
 public:
-    GameController(GameModel* model, GameView* view);
+    GameController(MenuModel* menuModel, GameModel* model, GameView* view);
 
     void onKey(int key);
     void gameLoop();
@@ -23,6 +25,8 @@ public:
 
 private:
     GameModel* model;
+    MenuModel* menuModel;
+    MenuController* menuController;
     GameView* view;
     int frameCounter = 0;
 
@@ -32,6 +36,8 @@ private:
     void resetPlayerPosition();
     void killPlayer();
     void resetGame();
+    // Ends the game and clears the board
+    void endGame();
 
     void movePlayer(int x, int y);
     void checkVictory();

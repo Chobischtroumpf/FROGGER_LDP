@@ -1,10 +1,17 @@
 #include "GameController.hpp"
 
 
-GameController::GameController(GameModel* model, GameView* view) 
-    : model(model), view(view) {}
+GameController::GameController(MenuModel* menuModel, GameModel* model, GameView* view) 
+    :  model(model), menuModel(menuModel), menuController(new MenuController(menuModel)),  view(view) {}
 
 void GameController::onKey(int key) {
+    
+    if(menuModel->isMenu){
+        std::cout << "Menu key event" << std::endl;
+        menuController->onKey(key);
+        return;
+    }
+
     switch (key) {
         case FL_Up:
             movePlayer(0, -1);
@@ -20,6 +27,10 @@ void GameController::onKey(int key) {
             break;
         case FL_Enter:
             resetGame();
+            break;
+        case FL_Escape:
+            endGame();
+            menuModel->isMenu = true;
             break;
     }
 }
@@ -132,9 +143,20 @@ void GameController::update() {
 // The main loop of the game, it manages the game events 
 void GameController::gameLoop() {
     //std::cout << "Gameloop trigger" << std::endl;
-        view->updateView();
+
+    view->updateView();
+
+    if(menuModel->isMenu){
+        return;
+    }
+
     if (!model->isGameOver) {
         update();
         view->updateView();
     }
+}
+
+void GameController::endGame(){
+    resetGame();
+    model->isGameOver = true;
 }

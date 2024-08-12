@@ -18,6 +18,7 @@
 #include "GameModel.hpp"
 #include "GameView.hpp"
 #include "GameController.hpp"
+#include "MenuModel.hpp"
 #include "DisplaySettings.hpp"
 #include <iostream>
 
@@ -56,16 +57,18 @@ int main(int argc, char** argv) {
 
 
     // Initialize mvc instances
-    
-    std::cout << "Initializing model" << std::endl;
+    std::cout << "Initializing menu model" << std::endl;
+    MenuModel menuModel;
+
+    std::cout << "Initializing game model" << std::endl;
     GameModel model;
+
     std::cout << "Initializing Controller" << std::endl;
-    
     GameView* view = nullptr;
-    GameController controller(&model, view);
+    GameController controller(&menuModel, &model, view);
 
     std::cout << "Initializing View" << std::endl;
-    view = new GameView(DisplaySettings::windowSize, DisplaySettings::windowSize, &model, &controller);
+    view = new GameView(DisplaySettings::windowSize, DisplaySettings::windowSize, &menuModel, &model, &controller);
 
     controller.linkView(view); // Set the view in the controller
 

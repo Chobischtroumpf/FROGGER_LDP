@@ -60,15 +60,36 @@ void drawVehicle(Vehicle v) {
 }
 
 // Draw a PNG image on the board
-void drawPNG(const char* filename, Position pos, int size) {
+void drawPNG(const char* filename, Coordinate coord, int size) {
     std::string imagePath = "assets/" + std::string(filename);
-    Fl_PNG_Image png(imagePath.c_str());
-    int imageWidth = png.w();
-    int imageHeight = png.h();
-    int x = pos.x - imageWidth / 2;
-    int y = pos.y - imageHeight / 2;
-    png.draw(x, y, imageWidth, imageHeight);
+    Fl_PNG_Image originalImage(imagePath.c_str());
+
+    Fl_Image* scaledImage = &originalImage;
+
+    if (size != 0) {
+        double aspectRatio = static_cast<double>(originalImage.w()) / originalImage.h();
+
+        // Calculate the new width and height based on the desired size and aspect ratio
+        int newWidth = size;
+        int newHeight = static_cast<int>(size / aspectRatio);
+
+        // Resize the image to the new dimensions using copy(), which returns a new Fl_Image
+        scaledImage = originalImage.copy(newWidth, newHeight);
+    }
+
+    // Calculate position to center the image at the coordinate
+    int x = coord.x - scaledImage->w() / 2;
+    int y = coord.y - scaledImage->h() / 2;
+
+    // Draw the image at calculated position
+    scaledImage->draw(x, y);
+
+    // Clean up if a new image was created
+    if (scaledImage != &originalImage) {
+        delete scaledImage;
+    }
 }
+
 
 void drawTransformedRectangle(int x, int y, int w, int h) {
     fl_begin_polygon();
@@ -186,9 +207,9 @@ void drawGameOver(bool winOrLose) {
     // Draw the message at the center of the board
     fl_color( winOrLose ? FL_GREEN : FL_RED);
     fl_font(FL_HELVETICA, 36);
-    drawPNG(winOrLose ? "youwin.png" : "gameover.png", Position{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 }, 200);
-    drawPNG("tryagain.png", Position{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 + 100  }, 200);
-    drawPNG("menu.png", Position{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 + 300}, 200);
+    drawPNG(winOrLose ? "youwin.png" : "gameover.png", Coordinate{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 }, 200);
+    drawPNG("tryagain.png", Coordinate{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 + 100  }, 200);
+    drawPNG("menu.png", Coordinate{DisplaySettings::boardCoords.x + DisplaySettings::boardViewSize/2 , DisplaySettings::boardCoords.y + DisplaySettings::boardViewSize/4 + 300}, 200);
 
 }
 
@@ -200,4 +221,46 @@ void drawScore(int score) {
     fl_color(FL_WHITE);
     fl_font(FL_COURIER_BOLD, 18);
     fl_draw(scoreStr.c_str(), DisplaySettings::boardViewSize - 50, DisplaySettings::boardCoords.y - 30);
+}
+
+
+void drawSplashScreen() {
+    drawPNG("froggers.png", Coordinate{DisplaySettings::windowSize / 2, DisplaySettings::windowSize / 2 - 150 }, 600);
+    drawPNG("credits.png",  Coordinate{110 , 100 }, 200);
+}
+
+
+void drawTriangle(int x, int y, int baseSize) {
+    fl_color(FL_WHITE);  
+    fl_begin_polygon(); 
+    fl_vertex(x - baseSize, y - baseSize / 2);  
+    fl_vertex(x, y);  
+    fl_vertex(x - baseSize, y + baseSize / 2); 
+    fl_end_polygon();
+}
+
+
+void drawMenu(int selectedOption) {
+    // Draw the game title in small size
+    drawPNG("froggers.png", Coordinate{ DisplaySettings::windowSize / 2 , 100 }, 300);    
+    
+    // Draw the menu options
+    std::vector<std::string> options = {"Play", "Exit"};
+
+    for (int i = 0; i < options.size(); ++i) {
+        // Set the color to white if the option is selected
+        Fl_Color color = i == selectedOption ? FL_WHITE : FL_GRAY;
+        fl_color(color);
+        int fontSize = 24;
+        fl_font(FL_COURIER_BOLD, fontSize);
+        Coordinate coord = Coordinate{DisplaySettings::windowSize / 2 - 50, DisplaySettings::windowSize / 2 + i * 50};
+        // Draw the text
+        fl_draw(options[i].c_str(), DisplaySettings::windowSize / 2 - 50, i * 50 + DisplaySettings::windowSize / 2 );
+        // Draw the selector triangle
+        if (i == selectedOption) {
+            drawTriangle(coord.x - 20, coord.y - fontSize/2 , 16);
+        }
+
+
+    }
 }

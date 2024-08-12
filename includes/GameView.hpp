@@ -10,21 +10,28 @@
 #include "OverlayView.hpp"
 #include <iostream>
 #include "BoardView.hpp"
+#include "MenuView.hpp"
+
 // Froward declaration to avoid circular dependency
 class GameController;
 
 class GameView : public Fl_Double_Window {
 public:
-    GameView(int w, int h, GameModel* model, GameController* controller);
+    GameView(int w, int h, MenuModel* menuModel, GameModel* model, GameController* controller);
 
     int handle(int event) override;
     void draw() override;
     void updateView();
 
+    // Start the game by showing the board and overlay
+    void showGame();
+    void hideGame();
 private:
     GameModel* model;
+    MenuModel* menuModel;
     GameController* controller;
-    OverlayView* overlay;
+    MenuView* mainMenu;
+    OverlayView* overlayView;
     BoardView* boardView;
     Fl_Box* frogBox;
     std::vector<Fl_Box*> vehicleBoxes;
