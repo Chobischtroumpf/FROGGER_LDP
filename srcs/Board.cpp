@@ -1,9 +1,11 @@
 #include "Board.hpp"
 #include <sstream>
+#include <algorithm>
 
 std::istringstream getNextLine(std::istream& input) {
     std::string line;
     std::getline(input, line);
+    std::cout << "Decoding line: " << line << std::endl;
     return std::istringstream(line);
 }
 
@@ -54,13 +56,11 @@ Level::Level(std::string encoded) {
             pattern.push_back({vType, length});
         }
 
-        this->lanes.push_back({laneType, dir, speed, SpawnPattern(pattern, delay) });
-        
+        this->lanes.push_back({laneType, dir, speed, SpawnPattern(pattern, delay)});
     }
 
-    //Push the finish line
-    this->lanes.push_back({FinishLine, Right, 0, SpawnPattern({}, 0) });
-
+    // Insert the finish line at pos 0
+    this->lanes.insert(this->lanes.begin(), {FinishLine, Right, 0, SpawnPattern({}, 0)});
 }
 
 std::string Level::encode() const {
@@ -68,86 +68,51 @@ std::string Level::encode() const {
     lvl << bestScore << std::endl;
 
     for (auto lane : lanes) {
+        if (lane.type == FinishLine) {
+            continue;
+        }
         lvl << lane.type << " " << lane.direction << " " << lane.speed << " " << lane.spawnPattern.delay << std::endl;
         for (auto vehicle : lane.spawnPattern.pattern) {
             lvl << vehicle.type << " " << vehicle.length << std::endl;
         }
+        lvl << std::endl; // Empty line to separate lanes
     }
 
     return lvl.str();
 }
 
-Board::Board(int size) : size(size) {
+Board::Board(int size) : size(size), level(Level()) {
 
-    // Initiate board Lanes ( and tiles )
+    std::vector<LaneConfig> lanes = {
+        {Grass, Right, 1, SpawnPattern({}, 0)},
+        {Road, Left, 2, SpawnPattern({Car}, 3)},
+        {Road, Left, 1, SpawnPattern({Car, Bus}, 3)},
+        {Road, Left, 2, SpawnPattern({Bus, Bus, Car}, 5)},
+        {Road, Right, 1, SpawnPattern({Bus}, 5)},
+        {Road, Right, 1, SpawnPattern({Car}, 5)},
+        {Grass, Right, 1, SpawnPattern({}, 0)},
+        {River, Right, 1, SpawnPattern({{Log, 2}}, 3)},
+        {River, Right, 1, SpawnPattern({{Log, 2}}, 3)},
+        {River, Right, 1, SpawnPattern({Turtle}, 3)},
+        {River, Right, 1, SpawnPattern({{Log, 5}}, 6)},
+        {River, Right, 1, SpawnPattern({{Log, 3}, Turtle}, 4)},
+        {FinishLine, Right, 0, SpawnPattern({}, 0)}
+    };
+    // Invert the lane order
+    std::reverse(lanes.begin(), lanes.end());
     
+    level = Level(lanes);
+}
+
+void Board::loadLevel(Level level) {
+    // Set the level and clear the lanes
+    this->level = level;
+    this->lanes.clear();
+
+    // Load the level 
     for (int i = 0; i < size; i++) {
-        LaneType laneType = LaneType::Grass;
-        Direction dir = Right;
-        SpawnPattern pattern = SpawnPattern({Car},0);
-
-        // Makes it easier to count lanes
-        int y = 12 - i; 
-
-        switch (y)
-        {
-        case 0 :
-            laneType = LaneType::Grass;
-            break;
-        case 1 :
-            laneType = LaneType::Road;
-            //dir = Left;
-            pattern = SpawnPattern({Car}, 3);
-            break;
-        case 2 :
-            laneType = LaneType::Road;
-            dir = Left;
-            pattern = SpawnPattern({Car, Bus}, 3);
-            break;
-        case 3 :
-            laneType = LaneType::Road;
-            dir = Left;
-            pattern = SpawnPattern({Bus, Bus, Car}, 5);
-            break;
-        case 4 :
-            laneType = LaneType::Road;
-            pattern = SpawnPattern({Bus}, 5);
-            break;
-        case 5 :
-            laneType = LaneType::Road;
-            pattern = SpawnPattern({Car}, 5);
-            break;
-        case 7 :
-            laneType = LaneType::River;
-            pattern = SpawnPattern({{Log, 2}}, 3);
-            break;
-        case 8 :
-            laneType = LaneType::River;
-            pattern = SpawnPattern({{Log, 2}}, 3);
-            break;
-        case 9 :
-            laneType = LaneType::River;
-            pattern = SpawnPattern({Turtle}, 3);
-            break;
-        case 10 :
-            laneType = LaneType::River;
-            pattern = SpawnPattern({{Log, 5}}, 6);
-            break;
-        case 11 :
-            laneType = LaneType::River;
-            pattern = SpawnPattern({{Log, 3}, Turtle}, 4);
-            break;
-        case 12 :
-            laneType = LaneType::FinishLine;
-            break;
-        default:
-            break;
-        }
-
-        Lane lane = {size, i, laneType, pattern, dir};
-        lanes.push_back(lane);
+        this->lanes.push_back({size, i, level.lanes.at(i)});
     }
-
 }
 
 // Checks if given position if inside the board bounds using the board size

@@ -2,7 +2,35 @@
 
 
 GameController::GameController(MenuModel* menuModel, GameModel* model, GameView* view) 
-    :  model(model), menuModel(menuModel), menuController(new MenuController(menuModel)),  view(view) {}
+    :  model(model), menuModel(menuModel), view(view) {
+        // Pass itself to the controller
+        menuController = new MenuController(menuModel, this);
+
+        // Load the levels from the files
+        menuModel->setLevelList(model->loadLevels());
+        
+        // Initialize the menu
+        menuController->init();
+
+        model->saveLevel(model->board.level, "Level 1");
+
+}
+
+// The main loop of the game, it manages the game events 
+void GameController::gameLoop() {
+    //std::cout << "Gameloop trigger" << std::endl;
+
+    view->updateView();
+
+    if(menuModel->isMenu){
+        return;
+    }
+
+    if (!model->isGameOver) {
+        update();
+        view->updateView();
+    }
+}
 
 void GameController::onKey(int key) {
     
@@ -37,6 +65,16 @@ void GameController::onKey(int key) {
 
 void GameController::handleKeyEvent(int key) {
     onKey(key);
+}
+
+void GameController::startGame(const std::string& level) {
+    // Load the selected level into the board
+    model->startLevel(level);
+    view->showGame();
+}
+
+void GameController::reloadLevels(){
+    menuModel->setLevelList(model->loadLevels());
 }
 
 void GameController::resetGame(){
@@ -140,21 +178,7 @@ void GameController::update() {
 
 }
 
-// The main loop of the game, it manages the game events 
-void GameController::gameLoop() {
-    //std::cout << "Gameloop trigger" << std::endl;
 
-    view->updateView();
-
-    if(menuModel->isMenu){
-        return;
-    }
-
-    if (!model->isGameOver) {
-        update();
-        view->updateView();
-    }
-}
 
 void GameController::endGame(){
     resetGame();

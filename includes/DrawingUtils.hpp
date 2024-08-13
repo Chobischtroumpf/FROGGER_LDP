@@ -26,7 +26,7 @@ void drawGameOver(bool winOrLose);
 void drawScore(int score);
 
 void drawSplashScreen();
-void drawMenu(int selectedOption);
+void drawMenu(int selectedOption, std::vector<std::string> options);
 #endif // DRAWINGUTILS_HPP
 
 

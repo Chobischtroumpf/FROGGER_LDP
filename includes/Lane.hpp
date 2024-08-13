@@ -65,7 +65,7 @@ public:
     Vehicle(Position pos, VehicleType t, Direction d ) 
         : position(pos), type(t), direction(d) {}
     
-    Vehicle(Position pos, const VehicleConfig& config, Direction d) : position(pos),length(config.length),  type(config.type), direction(d)  {}
+    Vehicle(Position pos, const VehicleConfig& config, Direction d) ;
 
     // Getter methods
     VehicleType getType() const;

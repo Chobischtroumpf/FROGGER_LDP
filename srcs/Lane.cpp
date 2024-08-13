@@ -1,5 +1,16 @@
 #include "Lane.hpp"
 
+Vehicle::Vehicle(Position pos, const VehicleConfig& config, Direction d) : position(pos), length(config.length),  type(config.type), direction(d)  {
+    // Ensure that the length is set correctly
+    if(type == Bus) {
+        length = 2;
+    } else if(type == Log) {
+        length = config.length;
+    } else {
+        length = 1;
+    }
+}
+
 
 void Vehicle::move(int x) {
     // Move vehicle 
@@ -48,7 +59,7 @@ Lane::Lane(int length, int rowIndex, LaneType type, SpawnPattern pattern, Direct
 }
 
 // Constructor using LaneConfig
-Lane::Lane(int length, int rowIndex, LaneConfig config) : length(length), rowIndex(rowIndex), type(config.type), direction(config.direction), pattern(config.spawnPattern), tiles(length, Tile({0, 0}, Classic)) {
+Lane::Lane(int length, int rowIndex, LaneConfig config) : length(length), rowIndex(rowIndex), type(config.type), direction(config.direction), speed(config.speed), pattern(config.spawnPattern), tiles(length, Tile({0, 0}, Classic)) {
         // Initialize tiles with corresponding positions
         
         for (int i = 0; i < length; ++i) {

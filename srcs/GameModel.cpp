@@ -53,18 +53,41 @@ GameModel::GameModel() : isGameOver(false), isVictory(false), board(13), frog(Fr
 
 }
 
-void GameModel::loadLevels() {
-    std::string path = "levels/";
-    
-    // Read all files in the levels folder
-    std::filesystem::path levelsPath = std::filesystem::current_path() / "levels";
-    for (const auto& entry : std::filesystem::directory_iterator(levelsPath)) {
-        if (entry.is_regular_file()) {
-            // Read the file and store the level
-            Level level(readFile(entry.path().string()));
-            levels.push_back(level);
+std::vector<std::string> GameModel::loadLevels() {
+    // Clear the levels map
+    levels.clear();
+
+    std::vector<std::string> levelNames = {};
+    try {
+        std::string path = "levels/";
+        
+        // Read all files in the levels folder
+        std::filesystem::path levelsPath = std::filesystem::current_path() / "levels";
+        for (const auto& entry : std::filesystem::directory_iterator(levelsPath)) {
+            if (entry.is_regular_file()) {
+                // Read the file and store the level
+                std::string levelName = entry.path().filename().string();
+                Level level(readFile(entry.path().string()));
+                levels.insert({levelName, level});
+                levelNames.push_back(entry.path().filename().string()); // Add the level name to the vector
+            }
         }
+    } catch (const std::exception& e) {
+        std::cerr << "Error loading levels: " << e.what() << std::endl;
     }
+    return levelNames;
+}
+
+void GameModel::saveLevel(Level level, std::string name) {
+    std::string path = "levels/" + name;
+    std::ofstream file(path);
+    file << level.encode();
+    file.close();
+}
+
+void GameModel::startLevel(std::string level) {
+    // Load the level from the levels map
+    board.loadLevel(levels[level]);
 }
 
 void GameModel::updateLanes() {
@@ -79,7 +102,7 @@ void GameModel::transportFrog() {
     Lane lane = board.getLanes()[frog.position.tilePos().second]; 
 
     if( lane.getType() == LaneType::River){
-        frog.move(lane.speed, 0, false);
+        frog.move(lane.getDirection() == Right ? lane.speed : -lane.speed, 0, false);
     }
 } 
 

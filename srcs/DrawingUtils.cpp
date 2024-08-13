@@ -240,22 +240,19 @@ void drawTriangle(int x, int y, int baseSize) {
 }
 
 
-void drawMenu(int selectedOption) {
+void drawMenu(int selectedOption, std::vector<std::string> options) {
     // Draw the game title in small size
     drawPNG("froggers.png", Coordinate{ DisplaySettings::windowSize / 2 , 100 }, 300);    
-    
-    // Draw the menu options
-    std::vector<std::string> options = {"Play", "Exit"};
-
-    for (int i = 0; i < options.size(); ++i) {
+    int optionsNum = options.size();
+    for (int i = 0; i < optionsNum; ++i) {
         // Set the color to white if the option is selected
         Fl_Color color = i == selectedOption ? FL_WHITE : FL_GRAY;
         fl_color(color);
         int fontSize = 24;
         fl_font(FL_COURIER_BOLD, fontSize);
-        Coordinate coord = Coordinate{DisplaySettings::windowSize / 2 - 50, DisplaySettings::windowSize / 2 + i * 50};
+        Coordinate coord = Coordinate{DisplaySettings::windowSize / 2 - 50, DisplaySettings::windowSize / 2 + (i - optionsNum/2) * 50};
         // Draw the text
-        fl_draw(options[i].c_str(), DisplaySettings::windowSize / 2 - 50, i * 50 + DisplaySettings::windowSize / 2 );
+        fl_draw(options[i].c_str(), DisplaySettings::windowSize / 2 - 50, (i - optionsNum/2) * 50 + DisplaySettings::windowSize / 2 );
         // Draw the selector triangle
         if (i == selectedOption) {
             drawTriangle(coord.x - 20, coord.y - fontSize/2 , 16);

@@ -8,8 +8,9 @@
 #include "MenuModel.hpp"
 #include <iostream>
 
-// Forward declaration to avoid circular dependency
+// Forward declarations to avoid circular dependency
 class GameView;
+class MenuController;
 
 class GameController {
 public:
@@ -23,6 +24,10 @@ public:
         this->view = view;
     }
 
+    void startGame(const std::string& level);
+    // Reloads the levels from the files
+    void reloadLevels();
+
 private:
     GameModel* model;
     MenuModel* menuModel;
@@ -30,6 +35,7 @@ private:
     GameView* view;
     int frameCounter = 0;
 
+   
     void update(); // Update the game state
 
 

@@ -23,6 +23,6 @@ void MenuView::draw() {
 	if (isSplashScreen) {
 		drawSplashScreen();
 	} else {
-		drawMenu(model->selectedOption);
+		drawMenu(model->selectedOption, model->getOptions());
 	}
 }

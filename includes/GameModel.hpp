@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <map>
 
 class Frog {
 public:
@@ -27,7 +28,7 @@ private:
 class GameModel {
 public:
 
-    std::vector<Level> levels;
+    std::map<std::string, Level> levels;
 
     bool isGameOver;
     bool isVictory;
@@ -44,8 +45,12 @@ public:
     GameModel();
 
 
-    // Loads game levels from the levels/folder
-    void loadLevels();
+    // Loads game levels from the levels/folder and returns the level list
+    std::vector<std::string> loadLevels();
+    // Saves the given level to the levels/folder with the given name
+    void saveLevel(Level level, std::string name);
+    // Starts the given level
+    void startLevel(std::string level);
 
     // Updates each lane by moving their contained objects
     void updateLanes();   

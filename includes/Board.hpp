@@ -17,6 +17,8 @@ struct Level {
     
     // Decode a level from a string
     Level(std::string encoded);
+    Level(std::vector<LaneConfig> lanes) : lanes(lanes) {};
+    Level() {};
 
     std::string encode() const;
 };
@@ -24,17 +26,21 @@ struct Level {
 // Represents the game board.
 class Board {
     public:
-    // the vector of lanes representing the board
-    std::vector<Lane> lanes;
-
-    // Checks if the given position is within the board.
-    bool contains(Position pos) const;
-
     Board(int size);
 
+
+    Level level;
+    
+    // Load a level into the board
+    void loadLevel(Level level);
+
+    // the vector of lanes representing the board
+    std::vector<Lane> lanes;
     const std::vector<Lane>& getLanes() const;
 
     Lane& hit(Position pos);
+    // Checks if the given position is within the board.
+    bool contains(Position pos) const;
 
     private:
     // We assume the board is square
