@@ -15,6 +15,17 @@ Vehicle::Vehicle(Position pos, const VehicleConfig& config, Direction d) : posit
 void Vehicle::move(int x) {
     // Move vehicle 
     position.x += x;
+
+    // If the vehicle is a turtle, update the diving counter
+    if (type == Turtle) {
+        
+        diveCounter++;
+        if (diveCounter >= 300) {
+            isDiving = !isDiving;
+            diveCounter = 0;
+        }
+        
+    }
 }
 
 VehicleType Vehicle::getType() const {
@@ -172,7 +183,7 @@ bool Lane::isSafe(Position pos) const {
         // Checks if there is a vehicle at the given pos, pos is not safe otherwise
         case LaneType::River:
             for( auto& v : vehicles){
-                if( v.collides(pos)  ){
+                if( v.collides(pos) && !v.isDiving  ){
                     return true;
                 }
             }

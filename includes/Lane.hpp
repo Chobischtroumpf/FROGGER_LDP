@@ -61,6 +61,10 @@ public:
     Position position;
     int length = 1;
 
+    // Property only used for the turtle
+    bool isDiving = false;
+    int diveCounter = 0; // Counter to keep track of how long the turtle has been diving
+
     // Constructor
     Vehicle(Position pos, VehicleType t, Direction d ) 
         : position(pos), type(t), direction(d) {}

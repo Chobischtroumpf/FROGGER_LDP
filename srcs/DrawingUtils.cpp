@@ -44,6 +44,14 @@ void drawVehicle(Vehicle v) {
     Coordinate coord = Coordinate{v.position};
 
     Fl_Color vehicleColor = getVehicleColor(v.getType());
+
+    // Change the color to give an underwater effect to the diving turtles
+    if (v.getType() == VehicleType::Turtle && v.isDiving) {
+
+        // Set the new color
+        vehicleColor = fl_rgb_color(0, 100, 20);
+    }
+
     fl_color(vehicleColor);
 
  
