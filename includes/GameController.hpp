@@ -27,6 +27,7 @@ public:
     void startGame(const std::string& level);
     // Reloads the levels from the files
     void reloadLevels();
+    void resetHighScore(std::string level);
 
 private:
     GameModel* model;

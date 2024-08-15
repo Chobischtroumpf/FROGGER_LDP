@@ -75,6 +75,10 @@ void GameController::reloadLevels(){
     menuModel->setLevelList(model->loadLevels());
 }
 
+void GameController::resetHighScore(std::string level){
+    model->resetHighScore(level);
+}
+
 void GameController::resetGame(){
     model->isGameOver = false;
     model->isVictory = false;
@@ -179,6 +183,7 @@ void GameController::update() {
 
 
 void GameController::exitGame(){
+    reloadLevels();
     resetGame();
     menuModel->isMenu = true;
 }

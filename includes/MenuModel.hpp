@@ -14,6 +14,7 @@ class MenuModel {
 public:
 	// Structure for menu options and submenus
 	struct Menu {
+		std::string title;
 		std::vector<std::string> options;
 		std::function<void(int)> handleSelection;
 	};
@@ -24,6 +25,7 @@ public:
     
 	int getSelectedOption() const;
 	void setSelectedOption(int option);
+	std::string getSelectedLevel() const;
 	
 	bool isMenu = true;
 	int selectedOption;

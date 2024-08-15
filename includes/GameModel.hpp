@@ -50,6 +50,7 @@ public:
     // Saves the given level to the levels/folder 
     void saveLevel(Level level);
     void saveHighScore(std::string level);
+    void resetHighScore(std::string level);
 
     // Starts the given level
     void startLevel(std::string level);

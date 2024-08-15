@@ -19,6 +19,25 @@ std::vector<std::string> MenuModel::getLevelStrings() {
     return levelStrings;
 }
 
+// Returns the name of the current selected level
+std::string MenuModel::getSelectedLevel() const {
+    
+    if (menuStack.empty() || menuStack.top().title != "Levels") {
+        return "";
+    }
+
+    Menu playMenu = menuStack.top();
+
+    // Extract the level name without the high score part
+    std::string selectedLevel = playMenu.options[selectedOption];
+    auto pos = selectedLevel.find(" - High Score : ");
+    if (pos != std::string::npos) {
+        selectedLevel = selectedLevel.substr(0, pos);
+    }
+    
+    return selectedLevel;
+}
+
 const std::vector<std::string>& MenuModel::getOptions() const {
     return menuStack.top().options;
 }

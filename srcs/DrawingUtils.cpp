@@ -265,7 +265,10 @@ void drawMenu(int selectedOption, std::vector<std::string> options) {
         if (i == selectedOption) {
             drawTriangle(coord.x - 20, coord.y - fontSize/2 , 16);
         }
+    }
 
-
+    // If the menu is the level selection menu, draw the high score reset hint
+    if (options[selectedOption].find("High Score") != std::string::npos) {
+            drawPNG("resetHS.png",  Coordinate{DisplaySettings::windowSize / 2, DisplaySettings::windowSize / 2 + 350 }, 400);
     }
 }

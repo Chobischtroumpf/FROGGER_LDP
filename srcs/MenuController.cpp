@@ -14,7 +14,21 @@ void MenuController::onKey(int key) {
 		shiftOption(1);
 	} else if (key == FL_Enter) {
 		handleMenuSelection(model->getSelectedOption());
-	}
+	} else if (key == FL_Escape) {
+        if (model->menuStack.top().title == "Main Menu") {
+            return;
+        }
+        model->popMenu();
+    // Reset the level's highscore when pressing X
+    } else if (key == 'x') {
+        // Check if we're in the level selection menu
+        if (model->menuStack.top().title == "Levels") {
+            gameController->resetHighScore(model->getSelectedLevel());
+            // Blink the main menu so it updates the highscore
+            model->popMenu();
+            handleMenuSelection(0);
+        }
+    }
 }
 
 void MenuController::shiftOption(int inc) {
@@ -30,6 +44,9 @@ void MenuController::shiftOption(int inc) {
 void MenuController::startGame() {
     model->isMenu = false;
     gameController->startGame(model->selectedLevel);
+    
+    //Return to the main menu after the game is over
+    model->popMenu();
 }
 
 void MenuController::handleMenuSelection(int selectedOption) {
@@ -42,6 +59,7 @@ void MenuController::handleMenuSelection(int selectedOption) {
 void MenuController::setupMenus() {
     // Main menu
     MenuModel::Menu mainMenu;
+    mainMenu.title = "Main Menu";
     mainMenu.options = {"Play", "Options", "Exit"};
     mainMenu.handleSelection = [this](int selectedOption) {
         if (selectedOption == 0) {
@@ -51,7 +69,7 @@ void MenuController::setupMenus() {
 
             // Push the play menu
             MenuModel::Menu playMenu;
-            // Extract the key vector from the map
+            playMenu.title = "Levels";
             playMenu.options = model->getLevelStrings();
             playMenu.options.push_back("Back");
             playMenu.handleSelection = [this, playMenu](int selectedOption) {
@@ -62,18 +80,13 @@ void MenuController::setupMenus() {
                     return;
                 }
                 
-                // Extract the level name without the high score part
-                std::string selectedLevel = playMenu.options[selectedOption];
-                auto pos = selectedLevel.find(" - High Score : ");
-                if (pos != std::string::npos) {
-                    selectedLevel = selectedLevel.substr(0, pos);
-                }
+                
 
                 // Print each level name for debugging
                 for (const auto& level : this->model->levelList) {
                     std::cout << level.first << level.second.name << std::endl;
                 }
-                this->model->selectedLevel = this->model->levelList[selectedLevel].name;
+                this->model->selectedLevel = this->model->getSelectedLevel();
 
                 std::cout << "Selected level is : " << this->model->selectedLevel << std::endl;
                 startGame();
@@ -82,6 +95,7 @@ void MenuController::setupMenus() {
         } else if (selectedOption == 1) {
             // Push the options menu
             MenuModel::Menu optionsMenu;
+            optionsMenu.title = "Options";
             optionsMenu.options = {"Sound", "Graphics", "Back"};
             optionsMenu.handleSelection = [this](int selectedOption) {
                 if (selectedOption == 2) {

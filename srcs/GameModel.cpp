@@ -94,6 +94,12 @@ void GameModel::saveHighScore(std::string level) {
     saveLevel(lvl);
 }
 
+void GameModel::resetHighScore(std::string level) {
+    Level& lvl = levels[level];
+    lvl.bestScore = 0;
+    saveLevel(lvl);
+}
+
 void GameModel::startLevel(std::string level) {
     // Load the level from the levels map
     board.loadLevel(levels[level]);
