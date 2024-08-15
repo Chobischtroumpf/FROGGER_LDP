@@ -112,17 +112,19 @@ VehicleType Lane::generateVehicleType() {
 
 void Lane::update() {
 
+    // Determine the sign of the relative speed
+    int s = direction == Direction::Right ? 1 : -1;
     
     // Move existing vehicles
     for (auto v = vehicles.begin(); v != vehicles.end(); ) {
-        if(direction == Direction::Right) {
-            v->move(speed); // Move each vehicle
-        } else {
-            v->move(-speed); 
-        }
         
+        v->move(s * speed); // Move each vehicle
+        
+        // Position of the tail of the vehicle
+        int vTailPos = v->position.x - s * v->length * DisplaySettings::tileSize;
+
         // If the vehicle reaches the end of the lane, remove it
-        if (v->position.x >= length * DisplaySettings::tileSize || v->position.x < 0 ) {
+        if ( ( vTailPos >= length * DisplaySettings::tileSize && direction == Right) || ( vTailPos < 0 && direction == Left)) {
             v = vehicles.erase(v); // Erase returns the next iterator
         } else {
             ++v; // Move to the next vehicle
