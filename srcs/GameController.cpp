@@ -12,8 +12,6 @@ GameController::GameController(MenuModel* menuModel, GameModel* model, GameView*
         // Initialize the menu
         menuController->init();
 
-        model->saveLevel(model->board.level, "Level 1");
-
 }
 
 // The main loop of the game, it manages the game events 
@@ -57,8 +55,8 @@ void GameController::onKey(int key) {
             resetGame();
             break;
         case FL_Escape:
-            endGame();
-            menuModel->isMenu = true;
+            exitGame();
+            
             break;
     }
 }
@@ -180,7 +178,7 @@ void GameController::update() {
 
 
 
-void GameController::endGame(){
+void GameController::exitGame(){
     resetGame();
-    model->isGameOver = true;
+    menuModel->isMenu = true;
 }

@@ -5,7 +5,6 @@
 std::istringstream getNextLine(std::istream& input) {
     std::string line;
     std::getline(input, line);
-    std::cout << "Decoding line: " << line << std::endl;
     return std::istringstream(line);
 }
 
@@ -33,13 +32,18 @@ std::istream& operator>>(std::istream& is, VehicleType& v) {
     return is;
 }
 
-Level::Level(std::string encoded) {
+Level::Level(std::string name, std::string encoded) {
+
+    this->name = name;
+
     // Get the first line of the encoded string
     std::istringstream lvl(encoded);
     std::istringstream line;
     int score;
 
     getNextLine(lvl) >> score;
+    
+    this->bestScore = score;
 
     for(int i = 0; i < 12; i++) {
         LaneType laneType;
@@ -101,7 +105,7 @@ Board::Board(int size) : size(size), level(Level()) {
     // Invert the lane order
     std::reverse(lanes.begin(), lanes.end());
     
-    level = Level(lanes);
+    level = Level("Default", lanes);
 }
 
 void Board::loadLevel(Level level) {

@@ -6,6 +6,8 @@
 #include <functional>
 #include <stack>
 #include <iostream>
+#include <map>
+#include "Board.hpp"
 
 
 class MenuModel {
@@ -27,10 +29,12 @@ public:
 	int selectedOption;
 	std::string selectedLevel = "Level 1";
 
-	// List of level names
-	std::vector<std::string> levelList = {};
+	// List of levels
+	std::map<std::string, Level> levelList;
 
-	void setLevelList(std::vector<std::string> levels);
+	void setLevelList(std::map<std::string, Level> levels);
+	// Returns a vector of level name and highscore strings
+	std::vector<std::string> getLevelStrings();
 	
 
 	void pushMenu(const Menu& menu);

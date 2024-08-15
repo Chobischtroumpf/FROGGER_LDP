@@ -43,7 +43,7 @@ private:
     void killPlayer();
     void resetGame();
     // Ends the game and clears the board
-    void endGame();
+    void exitGame();
 
     void movePlayer(int x, int y);
     void checkVictory();

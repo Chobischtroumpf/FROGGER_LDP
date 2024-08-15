@@ -10,14 +10,16 @@
 
 // Represent a level confirugation
 struct Level {
+    std::string name = "Default";
+
     // A vector of tuple of lanetype, speed and spawn pattern
     std::vector<LaneConfig> lanes;
 
     int bestScore = 0;
     
     // Decode a level from a string
-    Level(std::string encoded);
-    Level(std::vector<LaneConfig> lanes) : lanes(lanes) {};
+    Level(std::string name,std::string encoded);
+    Level(std::string name, std::vector<LaneConfig> lanes) : name(name), lanes(lanes) {};
     Level() {};
 
     std::string encode() const;

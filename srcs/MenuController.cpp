@@ -45,13 +45,14 @@ void MenuController::setupMenus() {
     mainMenu.options = {"Play", "Options", "Exit"};
     mainMenu.handleSelection = [this](int selectedOption) {
         if (selectedOption == 0) {
-            
+
             // Reload the levels
             gameController->reloadLevels();
 
             // Push the play menu
             MenuModel::Menu playMenu;
-            playMenu.options = model->levelList;
+            // Extract the key vector from the map
+            playMenu.options = model->getLevelStrings();
             playMenu.options.push_back("Back");
             playMenu.handleSelection = [this, playMenu](int selectedOption) {
                             
@@ -61,7 +62,18 @@ void MenuController::setupMenus() {
                     return;
                 }
                 
-                this->model->selectedLevel = playMenu.options[selectedOption];
+                // Extract the level name without the high score part
+                std::string selectedLevel = playMenu.options[selectedOption];
+                auto pos = selectedLevel.find(" - High Score : ");
+                if (pos != std::string::npos) {
+                    selectedLevel = selectedLevel.substr(0, pos);
+                }
+
+                // Print each level name for debugging
+                for (const auto& level : this->model->levelList) {
+                    std::cout << level.first << level.second.name << std::endl;
+                }
+                this->model->selectedLevel = this->model->levelList[selectedLevel].name;
 
                 std::cout << "Selected level is : " << this->model->selectedLevel << std::endl;
                 startGame();

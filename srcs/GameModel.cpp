@@ -53,36 +53,45 @@ GameModel::GameModel() : isGameOver(false), isVictory(false), board(13), frog(Fr
 
 }
 
-std::vector<std::string> GameModel::loadLevels() {
+std::map<std::string, Level> GameModel::loadLevels() {
     // Clear the levels map
     levels.clear();
 
-    std::vector<std::string> levelNames = {};
     try {
         std::string path = "levels/";
         
         // Read all files in the levels folder
         std::filesystem::path levelsPath = std::filesystem::current_path() / "levels";
+
         for (const auto& entry : std::filesystem::directory_iterator(levelsPath)) {
+            
             if (entry.is_regular_file()) {
                 // Read the file and store the level
                 std::string levelName = entry.path().filename().string();
-                Level level(readFile(entry.path().string()));
+                Level level(levelName, readFile(entry.path().string()));
                 levels.insert({levelName, level});
-                levelNames.push_back(entry.path().filename().string()); // Add the level name to the vector
+                
             }
         }
     } catch (const std::exception& e) {
         std::cerr << "Error loading levels: " << e.what() << std::endl;
     }
-    return levelNames;
+    return levels;
 }
 
-void GameModel::saveLevel(Level level, std::string name) {
-    std::string path = "levels/" + name;
+void GameModel::saveLevel(Level level) {
+    std::string path = "levels/" + level.name;
     std::ofstream file(path);
     file << level.encode();
     file.close();
+}
+
+// Saves the highscore to the level file by modifying the first line
+void GameModel::saveHighScore(std::string level) {
+    std::cout << "Saving highscore for level: " << level << std::endl;
+    Level& lvl = levels[level];
+    lvl.bestScore = score;
+    saveLevel(lvl);
 }
 
 void GameModel::startLevel(std::string level) {
@@ -118,6 +127,10 @@ void GameModel::endGame() {
     }
 
     score += life * 150; // Add life bonus to score
+
+    board.level.bestScore = std::max(board.level.bestScore, score); // Update the best score
+
+    saveHighScore(board.level.name); // Save the highscore
 
     resetTimer();
 }

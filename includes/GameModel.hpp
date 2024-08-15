@@ -46,9 +46,11 @@ public:
 
 
     // Loads game levels from the levels/folder and returns the level list
-    std::vector<std::string> loadLevels();
-    // Saves the given level to the levels/folder with the given name
-    void saveLevel(Level level, std::string name);
+    std::map<std::string, Level> loadLevels();
+    // Saves the given level to the levels/folder 
+    void saveLevel(Level level);
+    void saveHighScore(std::string level);
+
     // Starts the given level
     void startLevel(std::string level);
 
