@@ -7,7 +7,7 @@ std::istringstream getNextLine(std::istream& input) {
     std::getline(input, line);
     return std::istringstream(line);
 }
-
+// Overloaded the stream extract operator to smoothly read the enum values
 std::istream& operator>>(std::istream& is, LaneType& l) {
     int val;
     if (is >> val) {
@@ -68,6 +68,14 @@ Level::Level(std::string name, std::string encoded) {
 }
 
 std::string Level::encode() const {
+    /* Encode the level to a string
+    * The format is as follows:
+    * <bestScore>
+    * // then for each lane:
+    * <laneType> <direction> <speed> <delay> 
+    * <vehicleType> <length> // for each vehicle in the pattern
+    * <empty line> // to separate lanes
+    */
     std::ostringstream lvl;
     lvl << bestScore << std::endl;
 
