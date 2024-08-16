@@ -68,6 +68,7 @@ void GameController::handleKeyEvent(int key) {
 void GameController::startGame(const std::string& level) {
     // Load the selected level into the board
     model->startLevel(level);
+    
     view->showGame();
 }
 

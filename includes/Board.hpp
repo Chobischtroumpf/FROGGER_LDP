@@ -35,6 +35,8 @@ class Board {
     
     // Load a level into the board
     void loadLevel(Level level);
+    // Initialize the level by virtually fast forwarding the lanes
+    void initLevel();
 
     // the vector of lanes representing the board
     std::vector<Lane> lanes;

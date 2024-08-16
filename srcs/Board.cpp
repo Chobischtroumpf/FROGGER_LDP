@@ -42,7 +42,7 @@ Level::Level(std::string name, std::string encoded) {
     int score;
 
     getNextLine(lvl) >> score;
-    
+
     this->bestScore = score;
 
     for(int i = 0; i < 12; i++) {
@@ -116,6 +116,15 @@ void Board::loadLevel(Level level) {
     // Load the level 
     for (int i = 0; i < size; i++) {
         this->lanes.push_back({size, i, level.lanes.at(i)});
+    }
+}
+
+void Board::initLevel() {
+    // Fast forward 600 ticks
+    for (int i = 0; i < 600; i++) {
+        for (auto& lane : lanes) {
+            lane.update();
+        }
     }
 }
 

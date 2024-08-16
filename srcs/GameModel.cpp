@@ -103,6 +103,7 @@ void GameModel::resetHighScore(std::string level) {
 void GameModel::startLevel(std::string level) {
     // Load the level from the levels map
     board.loadLevel(levels[level]);
+    board.initLevel();
 }
 
 void GameModel::updateLanes() {
