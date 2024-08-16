@@ -60,7 +60,7 @@ void MenuController::setupMenus() {
     // Main menu
     MenuModel::Menu mainMenu;
     mainMenu.title = "Main Menu";
-    mainMenu.options = {"Play", "Options", "Exit"};
+    mainMenu.options = {"Play", "Exit"};
     mainMenu.handleSelection = [this](int selectedOption) {
         if (selectedOption == 0) {
 
@@ -93,20 +93,8 @@ void MenuController::setupMenus() {
             };
             this->model->pushMenu(playMenu);
         } else if (selectedOption == 1) {
-            // Push the options menu
-            MenuModel::Menu optionsMenu;
-            optionsMenu.title = "Options";
-            optionsMenu.options = {"Sound", "Graphics", "Back"};
-            optionsMenu.handleSelection = [this](int selectedOption) {
-                if (selectedOption == 2) {
-                    this->model->popMenu();
-                }
-                
-            };
-            this->model->pushMenu(optionsMenu);
-        } else if (selectedOption == 2) {
             // Exit the game
-            exit(0);
+            exit(0);;
         }
     };
     model->pushMenu(mainMenu);
