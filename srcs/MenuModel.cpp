@@ -11,9 +11,6 @@ std::vector<std::string> MenuModel::getLevelStrings() {
     std::vector<std::string> levelStrings;
     for (const auto& level : levelList) {
         // Add the level name to the vecotr + the highscore if its not null
-        // print the level name and highscore for debugging
-        std::cout << level.first << level.second.bestScore << std::endl;
-
         levelStrings.push_back(level.first + (level.second.bestScore > 0 ? " - High Score : " + std::to_string(level.second.bestScore) : ""));
     }
     return levelStrings;
@@ -34,7 +31,7 @@ std::string MenuModel::getSelectedLevel() const {
     if (pos != std::string::npos) {
         selectedLevel = selectedLevel.substr(0, pos);
     }
-    
+
     return selectedLevel;
 }
 

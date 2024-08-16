@@ -33,7 +33,6 @@ void GameController::gameLoop() {
 void GameController::onKey(int key) {
     
     if(menuModel->isMenu){
-        std::cout << "Menu key event" << std::endl;
         menuController->onKey(key);
         return;
     }
