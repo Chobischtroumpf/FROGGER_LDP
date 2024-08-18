@@ -84,11 +84,11 @@ void MenuController::setupMenus() {
 
                 // Print each level name for debugging
                 for (const auto& level : this->model->levelList) {
-                    std::cout << level.first << level.second.name << std::endl;
+                    std::clog << level.first << level.second.name << std::endl;
                 }
                 this->model->selectedLevel = this->model->getSelectedLevel();
 
-                std::cout << "Selected level is : " << this->model->selectedLevel << std::endl;
+                std::clog << "Selected level is : " << this->model->selectedLevel << std::endl;
                 startGame();
             };
             this->model->pushMenu(playMenu);

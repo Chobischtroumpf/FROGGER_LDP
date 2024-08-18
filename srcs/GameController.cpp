@@ -16,7 +16,7 @@ GameController::GameController(MenuModel* menuModel, GameModel* model, GameView*
 
 // The main loop of the game, it manages the game events 
 void GameController::gameLoop() {
-    //std::cout << "Gameloop trigger" << std::endl;
+    //std::clog << "Gameloop trigger" << std::endl;
 
     view->updateView();
 
@@ -119,7 +119,7 @@ void GameController::movePlayer(int x, int y){
     Position newPos = Position{pos.x + x * DisplaySettings::tileSize , pos.y + y * DisplaySettings::tileSize};
 
     if (!model->board.contains(newPos)){
-        std::cout << "Out of bounds" << std::endl;
+        std::clog << "Out of bounds" << std::endl;
         return;
     }
 
@@ -161,7 +161,7 @@ void GameController::update() {
 
     // Check if frog is out of bounds of board
     if (!model->board.contains(model->frog.position)){
-        std::cout << "Out of bounds death" << std::endl;
+        std::clog << "Out of bounds death" << std::endl;
         killPlayer();
         return;
     }

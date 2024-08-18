@@ -88,7 +88,7 @@ void GameModel::saveLevel(Level level) {
 
 // Saves the highscore to the level file by modifying the first line
 void GameModel::saveHighScore(std::string level) {
-    std::cout << "Saving highscore for level: " << level << std::endl;
+    std::clog << "Saving highscore for level: " << level << std::endl;
     Level& lvl = levels[level];
     lvl.bestScore = score;
     saveLevel(lvl);
@@ -177,7 +177,7 @@ bool GameModel::tryEmptyLilyPad(Position pos)  {
 
     // If the tile is a lily pad, change it to a completed lily pad
     if (isLilyPad) {
-        std::cout << "Setting tile to completed lily pad" << std::endl;
+        std::clog << "Setting tile to completed lily pad" << std::endl;
         tile.setTileType(TileType::CompletedLilypad);
     }
     return isLilyPad;

@@ -190,7 +190,7 @@ bool Lane::isSafe(Position pos) const {
             return false;
             
         case LaneType::FinishLine:
-            std::cout << "Checking finish line" << hit(pos).type << std::endl;
+            std::clog << "Checking finish line" << hit(pos).type << std::endl;
             return this->hit(pos).type == TileType::EmptyLilypad;
         default:
             return true;

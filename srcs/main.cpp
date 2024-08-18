@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
 
   
   /*
-  * From line 23 to line 34, as well as line 42 and 43 is copy pasted code that was written by myself
+  * From line 42 to line 53, as well as line 87 and 88 is copy pasted code that was written by myself
   * for the project in the Projet d'Informatique 2 course, and can be found at the following repository:
   * https://github.com/Chobischtroumpf/Bataille-Navale-Projet-Informatique-2/blob/master/src/Client/main.cc
   */ 
@@ -57,26 +57,26 @@ int main(int argc, char** argv) {
 
 
     // Initialize mvc instances
-    std::cout << "Initializing menu model" << std::endl;
+    std::clog << "Initializing menu model" << std::endl;
     MenuModel menuModel;
 
-    std::cout << "Initializing game model" << std::endl;
+    std::clog << "Initializing game model" << std::endl;
     GameModel model;
 
-    std::cout << "Initializing Controller" << std::endl;
+    std::clog << "Initializing Controller" << std::endl;
     GameView* view = nullptr;
     GameController controller(&menuModel, &model, view);
 
-    std::cout << "Initializing View" << std::endl;
+    std::clog << "Initializing View" << std::endl;
     view = new GameView(DisplaySettings::windowSize, DisplaySettings::windowSize, &menuModel, &model, &controller);
 
     controller.linkView(view); // Set the view in the controller
 
-    std::cout << "Displaying view" << std::endl;
+    std::clog << "Displaying view" << std::endl;
     // Display the view
     view->show(argc, argv);
     
-    std::cout << "Starting game loop" << std::endl;
+    std::clog << "Starting game loop" << std::endl;
     // Game loop using FLTK timeout
     Fl::add_timeout(1.0 / 60, gameLoopCallback, &controller);
 
